@@ -2,7 +2,6 @@ class CreateParkings < ActiveRecord::Migration[5.2]
   def change
     create_table :parkings do |t|
       t.string :description
-      t.string :parking
       t.string :name
       t.string :address
       t.float :latitude
