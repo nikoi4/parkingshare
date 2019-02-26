@@ -1,4 +1,5 @@
 class Parking < ApplicationRecord
+  SIZE_CAR = ["Small Car", "Medium Car", "Big Car", "Truck"]
   belongs_to :user
   has_many :parking_lot_features, dependent: :destroy
   has_many :features, through: :parking_lot_features
@@ -8,7 +9,7 @@ class Parking < ApplicationRecord
   validates :name, presence: true
   validates :address, presence: true, uniqueness: { scope: :name }
   validates :description, length: { minimum: 20 }
-  validates :size, inclusion: { in: ["Small Car", "Medium Car", "Big Car", "Truck"] }
+  validates :size, inclusion: { in: SIZE_CAR }
   validates :price_cents, presence: true
   mount_uploader :picture, PictureUploader
 end
