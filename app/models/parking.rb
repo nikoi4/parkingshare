@@ -5,11 +5,9 @@ class Parking < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings
   has_many :users, through: :bookings
-
-  validates :name, precense: true
-  validates :address, precense: true, uniqueness: { scope: :name }
-  validates :picture, precense: true
+  validates :name, presence: true
+  validates :address, presence: true, uniqueness: { scope: :name }
   validates :description, length: { minimum: 20 }
   validates :size, inclusion: { in: ["Small Car", "Medium Car", "Big Car", "Truck"] }
-  validates :price_cents, precense: true
+  validates :price_cents, presence: true
 end
