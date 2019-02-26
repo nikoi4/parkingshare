@@ -1,0 +1,21 @@
+<div class="container">
+  <%= simple_form_for(@parking) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :picture %>
+    <%= f.input :size %>
+    <%= f.input :price_cents %>
+    <%= f.input :features %>
+    <ul class="list-inline">
+      <% @features.each do |feature| %>
+      <li>
+        <p><%= feature.name %></p>
+        <div style="background-image: url('<%= cl_image_path feature.icon, height: 20, width: 20 %>');" class="feature-icon"></div>
+      </li>
+      <% end %>
+    </ul>
+    <%= f.submit %>
+  <% end %>
+</div>
+

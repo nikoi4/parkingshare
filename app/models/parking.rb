@@ -10,4 +10,5 @@ class Parking < ApplicationRecord
   validates :description, length: { minimum: 20 }
   validates :size, inclusion: { in: ["Small Car", "Medium Car", "Big Car", "Truck"] }
   validates :price_cents, presence: true
+  mount_uploader :picture, PictureUploader
 end

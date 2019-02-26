@@ -3,7 +3,7 @@ class CreateParkingLotFeatures < ActiveRecord::Migration[5.2]
     create_table :parking_lot_features do |t|
       t.references :parking, foreign_key: true
       t.references :feature, foreign_key: true
-
+      t.boolean :value, default: false
       t.timestamps
     end
   end

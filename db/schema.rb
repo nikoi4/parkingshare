@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_02_25_192446) do
   create_table "parking_lot_features", force: :cascade do |t|
     t.bigint "parking_id"
     t.bigint "feature_id"
+    t.boolean "value", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["feature_id"], name: "index_parking_lot_features_on_feature_id"
