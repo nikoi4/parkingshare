@@ -1,7 +1,31 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts "Creating Features"
+
+features_attributes = [
+  {
+    name:      'Instant',
+    icon:      'https://res.cloudinary.com/nikoi4/image/upload/v1551210641/bolt-solid.svg'
+  },
+  {
+    name:      'Security',
+    icon:      'https://res.cloudinary.com/nikoi4/image/upload/v1551210642/policeman.svg'
+  },
+  {
+    name:      'Gated',
+    icon:      'https://res.cloudinary.com/nikoi4/image/upload/v1551210642/fence-with-three-planks.svg'
+  },
+  {
+    name:      'Camera',
+    icon:      'https://res.cloudinary.com/nikoi4/image/upload/v1551210642/video-solid.svg'
+  },
+  {
+    name:      'Cover',
+    icon:      'https://res.cloudinary.com/nikoi4/image/upload/v1551210642/umbrella-solid.svg'
+  },
+]
+
+  features_attributes.each_with_index do |feature, index|
+    f = Feature.new(feature)
+    f.save
+  end
+
+  puts "finished seeding"

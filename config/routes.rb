@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'parkings#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :parkings, only: [:index, :new, :create, :edit, :update, :delete] do
+  resources :parkings, only: [:index, :new, :create, :update, :delete] do
     resources :bookings, only: [:create]
     resources :parking_lot_features, only: [:create, :update]
   end
