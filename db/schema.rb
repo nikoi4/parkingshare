@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2019_02_25_192446) do
 
   create_table "bookings", force: :cascade do |t|
     t.string "status"
+    t.string "car_plate"
     t.datetime "start_date"
     t.datetime "end_date"
     t.string "price_cents"
