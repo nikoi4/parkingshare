@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :parkings, only: [:index, :new, :create, :edit, :update, :delete] do
     resources :bookings, only: [:create]
+    resources :parking_lot_features, only: [:create, :update]
   end
 
   resources :bookings, only: [:index, :show, :update] do
