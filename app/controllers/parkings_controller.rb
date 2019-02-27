@@ -7,22 +7,22 @@ class ParkingsController < ApplicationController
 
   def new
     @parking = Parking.new
-    @features = Feature.all
     authorize @parking
   end
 
   def create
     @parking = Parking.new(parking_params)
+    binding.pry
     # @features = array??
     authorize @parking
     if @parking.save
-      @parking_lot_features = @features.each do |feature|
-        plf = ParkingLotFeatures.new
-        plf.feature = feature.first
-        plf.value = feature.last
-        plf.parking = @parking
-        plf.save
-      end
+      # @parking_lot_features = @features.each do |feature|
+      #   plf = ParkingLotFeatures.new
+      #   plf.feature = feature.first
+      #   plf.value = feature.last
+      #   plf.parking = @parking
+      #   plf.save
+      # end
       # redirect_to ...
     else
       render :new
@@ -43,7 +43,7 @@ class ParkingsController < ApplicationController
   private
 
   def parking_params
-    params.require(:parking).permit(:name, :address, :picture, :size, :description, :pice_cents, :features)
+    params.require(:parking).permit(:name, :address, :picture, :size, :description, :pice_cents, :features_ids)
   end
 
   def set_parking

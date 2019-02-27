@@ -1,5 +1,6 @@
-<div style="background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('<%= cl_image_path 'https://res.cloudinary.com/nikoi4/image/upload/v1551219919/sahin-yesilyaprak-1207014-unsplash_1.jpg' %>'); position: center; background-size: cover;" class="container-fluid parkingnew">
+<!-- <div style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('<%= cl_image_path 'https://res.cloudinary.com/nikoi4/image/upload/v1551219919/sahin-yesilyaprak-1207014-unsplash_1.jpg' %>');" class="container-fluid parkingnew">
   <div class="form-wrapper">
+    <h3>List your space</h3>
     <div class="form">
       <%= simple_form_for(@parking) do |f| %>
         <%= f.input :name %>
@@ -11,19 +12,57 @@
         <%= f.input :features %>
         <div class="features">
           <span>Features
+          </span>
             <ul class="feature-icons">
-              <% @features.each do |feature| %>
+              <% Feature.all.each do |feature| %>
               <li>
-                <!-- <p><%= feature.name %></p> -->
+                <p><%= feature.name %></p>
                 <div style="background-image: url('<%= cl_image_path feature.icon, height: 200, width: 200 %>');" class="feature-icon">
                 </div>
               </li>
               <% end %>
             </ul>
-          </span>
         </div>
         <%= f.submit %>
       <% end %>
+    </div>
+  </div>
+</div> -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-parking">
+        <h1>Publish your spot</h1>
+        <%= simple_form_for(@parking) do |f| %>
+        <div class="row">
+          <div class="col-xs-6">
+            <%= f.input :name, placeholder: "How to design a form" %>
+          </div>
+          <div class="col-xs-6">
+            <%= f.input :size, collection: Parking::SIZE_CAR, prompt: "Which status" %>
+          </div>
+        </div>
+          <!-- Inject categories here -->
+          <div class="form-group">
+            <label class="control-label check_boxes optional">Features</label>
+            <input type="hidden" name="parking[feature_ids][]" value="">
+            <div class="feature-choices">
+              <% Feature.all.each do |feature| %>
+              <div>
+                <input type="checkbox" class="hidden" value="<%= feature.id %>" name="parking[feature_ids][]" id="parking_feature_ids_<%= feature.id %>">
+                <label class="feature-choice" for="parking_feature_ids_<%= feature.id %>">
+                  <!-- <%= feature.name %> -->
+                  <div style="background-image: url('<%= cl_image_path feature.icon, height: 200, width: 200 %>');" class="feature-icon">
+                </div>
+                </label>
+                </div>
+              <% end %>
+             </div>
+          </div>
+          <%= f.input :description, placeholder: "In this tutorial..." %>
+          <%= f.submit "Save", class: "btn btn-primary"  %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
