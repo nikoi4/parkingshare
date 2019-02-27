@@ -1,0 +1,101 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  color: #333;
+}
+
+p {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+a:link {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+a:visited {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+::selection {
+  color: #fff;
+  background-color: #333;
+}
+
+::-moz-selection {
+  color: #fff;
+  background-color: #333;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear:both;
+}
+
+.banner-input {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 15em;
+  input {
+    border: none;
+    width: 100%;
+    &::placeholder {
+      color: black;
+      font-weight: bold;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+  label {
+    font-size: 12px;
+    color: grey;
+  }
+  .input-pin {
+    display: flex;
+    justify-content: space-between;
+    i {
+      color: blue;
+      font-size: 17px;
+    }
+  }
+}
+
+body {
+  background-color: blue;
+}
+
+.search-submit {
+  background-color: #0B5577;
+  border: none;
+  color: #0B5577;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border: 1px solid #C4C4C4;
+  border-radius: 50px;
+}
