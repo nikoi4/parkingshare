@@ -3,5 +3,61 @@
   width: 494px;
   overflow: scroll;
   color: $greytext;
+  padding: 20px
 }
 
+.lot-head, .lot-description, .lot-photo-container, .lot-review {
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 20px;
+}
+.lot-description, .lot-photo-container, .lot-review {
+  border-bottom: 1px solid lightgrey;
+  padding-top: 20px;
+}
+
+.lot-address, .lot-description-details, .lot-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lot-stars {
+ margin: 0px;
+ padding-left: 10px;
+ font-size: 12px;
+}
+.lot-stars li {
+  padding: 0px;
+}
+.lot-category {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.lot-address {
+  padding-bottom: 10px;
+}
+.lot-address span {
+ font-size: 28px;
+ font-weight: bold;
+}
+
+.lot-name {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.lot-dates {
+  text-align: center;
+}
+
+.lot-cta {
+ text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  strong {
+    font-size: 24px;
+  }
+}

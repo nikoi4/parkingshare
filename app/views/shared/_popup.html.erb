@@ -2,7 +2,7 @@
   <div class="lot-head">
     <div class="lot-address">
       <span>Jean Jaures 1165</span>
-      <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+      <img class="avatar-large" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
     </div>
     <div class="lot-name">
       <span>Cochera de Rodrigo</span>
@@ -17,12 +17,7 @@
       </div>
     </div>
     <div class="lot-info">
-      <div class="lot-dates">
-        <span>Feb 28 - 10:00 pm</span>
-        <i class="fas fa-arrow-right"></i>
-        <span>Feb 28 - 18:00 pm</span>
-      </div>
-      <div class="lot-cta">Book now | $50</div>
+      <span>Small Car</span>
       <div class="lot-features">
         <ul class= "list-inline lot-features">
           <li><i class="fas fa-umbrella active"></i></li>
@@ -31,14 +26,23 @@
           <li><i class="fas fa-umbrella active"></i></li>
         </ul>
       </div>
-      <span>Small Car</span>
+      <div class="lot-dates">
+        <span>Feb 28 - 10:00 pm</span>
+        <i class="fas fa-arrow-right"></i>
+        <span>Feb 28 - 18:00 pm</span>
+      </div>
+      <div class="lot-cta">
+        <a class="round-buttom" href="">Book now  |  <strong>$50</strong></a>
+      </div>
     </div>
   </div>
   <div class="lot-description">
-    <span class="lot-category">Space details</span>
-    <div class="lot-description-distance">
-      <i class="fas fa-male"></i>
-      <span>0.26km</span>
+    <div class="lot-description-details">
+      <span class="lot-category">Space details</span>
+      <div class="lot-description-distance">
+        <i class="fas fa-male"></i>
+        <span>0.26km</span>
+      </div>
     </div>
     <p> Garage with security. Available for smallcars.
     Underground garage. Safe Zone.</p>
@@ -60,5 +64,9 @@
   <div class="lot-reviews">
     <span class="lot-category">Reviews</span>
     <%= render "shared/review" %>
+    <div class="lot-review-link">
+      <a href="">Read More Reviews</a>
+      <i class="fas fa-chevron-down"></i>
+    </div>
   </div>
 </div>
