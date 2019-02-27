@@ -2,52 +2,15 @@
 <p>Find me in app/views/parkings/index.html.erb</p>
 
 <div class="container">
-  <div class="card-wrapper">
-    <div class="card">
-      <div class="card-title">
-        <span>Jean Jaures 1165</span>
-        <i class="fas fa-bolt active"></i>
+  <div class="parking-holder">
+    <div id="parkings-options">
+      <div class="card-wrapper">
+        <%= render "shared/popup" %>
       </div>
-
-      <div class="card-body">
-        <div class="card-img" style="background-image: url('https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg')">
-        </div>
-        <div class="card-description">
-          <div class="card-description-name">
-            <span>Cochera de Rodrigo</span>
-            <div class="card-description-rating">
-              <ul class= "list-inline card-description-stars">
-                <li><i class="fas fa-star rated"></i></li>
-                <li><i class="fas fa-star rated"></i></li>
-                <li><i class="fas fa-star rated"></i></li>
-                <li><i class="fas fa-star rated"></i></li>
-                <li><i class="fas fa-star rated"></i></li>
-              </ul>
-            </div>
-          </div>
-          <div class="card-description-info">
-            <p>Small Car</p>
-            <div class=" list-inline card-description-features">
-              <li><i class="fas fa-umbrella active"></i></li>
-              <li><i class="fas fa-umbrella active"></i></li>
-              <li><i class="fas fa-umbrella active"></i></li>
-              <li><i class="fas fa-umbrella active"></i></li>
-            </div>
-          </div>
-          <div class="card-description-footer">
-            <div class="card-description-distance">
-              <i class="fas fa-male"></i>
-              <span>0.26km</span>
-            </div>
-            <span class="card-description-price">$ 55</span>
-          </div>
-        </div>
-      </div>
-      <!-- <a class="card-link" href="#" ></a> -->
     </div>
-  </div>
-
-  <div class="map">
-
+    <div id="parkings-map">
+      <div class="map">
+      </div>
+    </div>
   </div>
 </div>
