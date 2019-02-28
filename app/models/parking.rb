@@ -13,5 +13,5 @@ class Parking < ApplicationRecord
   validates :price_cents, presence: true
 
   mount_uploaders :pictures, PictureUploader
-  serialize :pictures, JSON
+  # serialize :pictures, JSON
 end
