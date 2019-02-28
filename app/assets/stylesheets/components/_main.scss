@@ -56,12 +56,14 @@ ul, ol {
   display: flex;
   flex-direction: column;
   width: 15em;
+
   input {
     border: none;
     width: 100%;
     &::placeholder {
       color: black;
       font-weight: bold;
+
     }
     &:focus{
       outline: none;
