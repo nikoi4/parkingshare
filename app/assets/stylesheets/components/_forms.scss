@@ -24,8 +24,6 @@
     margin-top: 30px;
     border-radius: 5px;
   }
-
-
 }
 .btn-form{
   background-color: #0B5577;
@@ -47,13 +45,8 @@ div > .feature-choice {
   // flex: 0 0 30%;
   text-align: center;
   &:hover {
-    opacity: .5;
+    opacity: .8;
     cursor: pointer;
-  }
-  &.active {
-  background: $brand-primary;
-  color: white;
-  opacity: 1;
   }
 }
 .features{
