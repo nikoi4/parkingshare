@@ -9,11 +9,11 @@ class ParkingPolicy < ApplicationPolicy
     true
   end
 
-  def update
+  def update?
     record.user == user
   end
 
-  def destroy
-    record.user == user
+  def destroy?
+    update?
   end
 end
