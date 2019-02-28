@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-title">
     <span><%= parking.address %></span>
-    <i class="fas fa-bolt active yellow"></i>
+    <!-- <i class="fas fa-bolt active yellow"></i> -->
   </div>
   <div class="card-body">
     <div class="card-img" style="background-image: url('https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg'); width: 100%;">
@@ -11,11 +11,20 @@
         <span><%= parking.name %></span>
         <div class="card-description-rating">
           <ul class= "list-inline card-description-stars">
-            <li><i class="fas fa-star rated"></i></li>
-            <li><i class="fas fa-star rated"></i></li>
-            <li><i class="fas fa-star rated"></i></li>
-            <li><i class="fas fa-star rated"></i></li>
-            <li><i class="fas fa-star rated"></i></li>
+            <li>
+              <% if parking.reviews.empty? %>
+                <% 5.times do %>
+                  <i class="fas fa-star not-rated"></i>
+                <% end %>
+              <% else %>
+              <% parking.rating.times do %>
+                <i class="fas fa-star rated"></i>
+              <% end %>
+              <% (5 - parking.rating).times do %>
+                <i class="fas fa-star not-rated"></i>
+              <% end %>
+              <% end %>
+            </li>
           </ul>
         </div>
       </div>
@@ -25,22 +34,22 @@
           <% @features.each do |feature| %>
           <li>
             <% if parking.includes_feature?(feature) %>
-              <% url = cl_image_path feature.icon, height: 5, width: 5 %>
-              <div style="background-image: url('<%= cl_image_path feature.icon, height: 5, width: 5 %>'); opacity: 0.8;";" class="feature-icon-2">
-            <% else %>
-              <div style="background-image: url('<%= cl_image_path feature.icon, height: 5, width: 5 %>'); opacity: 0.3;" class="feature-icon-2">
-            <% end %>
-          </li>
-          <% end %>
+            <% url = cl_image_path feature.icon, height: 5, width: 5 %>
+            <div style="background-image: url('<%= cl_image_path feature.icon, height: 5, width: 5 %>'); opacity: 0.6;";" class="feature-icon-2">
+              <% else %>
+              <div style="background-image: url('<%= cl_image_path feature.icon, height: 5, width: 5 %>'); opacity: 0.2;" class="feature-icon-2">
+                <% end %>
+              </li>
+              <% end %>
+            </div>
+          </div>
+          <div class="card-description-footer">
+            <div class="card-description-distance">
+              <i class="fas fa-male"></i>
+              <span>0.26km</span>
+            </div>
+            <span class="card-description-price">$ <%= parking.price_cents %></span>
+          </div>
         </div>
-      </div>
-      <div class="card-description-footer">
-        <div class="card-description-distance">
-          <i class="fas fa-male"></i>
-          <span>0.26km</span>
-        </div>
-        <span class="card-description-price">$ <%= parking.price_cents %></span>
       </div>
     </div>
-  </div>
-</div>

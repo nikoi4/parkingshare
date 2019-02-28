@@ -64,7 +64,9 @@
 }
 
 .card-description-name {
-  padding-top:13px;
+  padding-top:0px;
+  padding-bottom:0px;
+
 }
 .card-description-name span {
   font-size: 18px;
@@ -128,6 +130,6 @@
   background-color: rgba(20,152,213,0.01);
 }
 
-.link-more {
-
+.not-rated {
+  color: lightgrey;
 }

@@ -3,7 +3,12 @@
   width: 494px;
   overflow: scroll;
   color: $greytext;
-  padding: 20px
+  padding: 20px;
+  background-color: white;
+  position: absolute;
+  top: 85px;
+  left: 510px;
+  z-index: 100;
 }
 
 .vertical-align-items {

@@ -19,4 +19,12 @@ class Parking < ApplicationRecord
   def includes_feature?(feature)
     self.parking_lot_features.map { |plf| plf.feature.id }.include?(feature.id)
   end
+
+  def reviews
+    self.bookings.map { |booking| booking.reviews }.flatten
+  end
+
+  def rating
+    self.reviews.map { |review| review.rating }.sum / self.reviews.count.ceil
+  end
 end

@@ -22,7 +22,7 @@ features_attributes = [
   },
   {
     name:      'Cover',
-    icon:      'https://res.cloudinary.com/nikoi4/image/upload/v1551303542/icons/fence-with-three-planks.svg'
+    icon:      'https://res.cloudinary.com/nikoi4/image/upload/v1551303542/icons/umbrella-solid.svg'
   },
 ]
 
@@ -123,7 +123,7 @@ parking_attributes = [
   },
     {
     name:         "Cochera de Claire",
-    address:      'Migueletes 1500, Buenos Aires',
+    address:      'Thames 2038, Buenos Aires',
     description:  'Lorem ipsum sdafkljasfd  laksf askdljflajfds  aldsfkj',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(50..200),
@@ -346,7 +346,7 @@ puts 'Creating reviews...'
 reviews_attributes = [
   {
     content:      'Muy buena cochera, dueño muy atento y pendiente',
-    rating:       5,
+    rating:       1,
     date:         '20/02/19',
     booking:      Booking.first,
   },
