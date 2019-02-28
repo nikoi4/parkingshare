@@ -1,13 +1,17 @@
 .card-wrapper {
-  height: 70vh;
+  height: 80vh;
+  width: 494px;
   overflow: scroll;
+  color: $greytext;
 }
 
 .card {
-  margin: 20px;
-  padding: 10px;
-  height: 300px;
-  width: 100%;
+  margin: 0px;
+  padding: 12px 20px 20px 20px;
+  height: 180px;
+  width: 480px;
+  border: 1px solid lightgrey;
+  background-color: white;
 }
 
 .card-description-footer, .card-description-name, .card-title {
@@ -16,20 +20,28 @@
   align-items: center;
 }
 
-.card-description, .card {
+.card-description {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
 .card-body{
   display: flex;
+  padding-bottom: 2px;
 }
 
 .card-img {
-  height: 50px;
-  flex: 1 0 30%;
-  object-fit: cover;
+  flex: 1 0 12%;
+  margin: 13px 24px 0px 10px;
+  background-size: cover;
+  background-position: center;
 }
 
 .card-description {
@@ -41,35 +53,81 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+
+.card-title {
+  margin-bottom: 2px;
+}
 .card-title span {
   font-size: 20px;
   font-weight: bold;
-  margin: 0;
+  margin: 0px;
 }
 
+.card-description-name {
+  padding-top:13px;
+}
 .card-description-name span {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: normal;
   margin: 0;
+
 }
 
 .card-description-info p {
   font-size: 14px;
   font-weight: lighter;
   margin: 0;
+  padding-top: 10px;
+  padding-left: 0px;
 }
 
+.card-description-features {
+  padding-bottom: 8px;
+  padding-top: 5px;
+  line-height: 20px;
+  font-size: 14px;
+  margin: 0px;
+}
+
+.card-description-features li{
+  margin: 0px;
+  padding: 0px 1px 0px 0px;
+  font-size: 14px;
+}
+
+.card-description-footer {
+  padding-top: 10px;
+}
 .card-description-distance span {
   font-size: 14px;
   font-weight: lighter;
   margin: 0;
 }
-
-.card-description-footer span {
+.card-description-distance i {
+  font-size: 14px;
+  position: relative;
+  top: -1px;
+}
+.card-description-price {
   font-size: 18px;
   font-weight: bold;
   margin: 0;
 }
 
+.card-description-stars {
+  margin: 0px;
+  padding-left: 10px;
+  font-size: 12px;
+}
 
+.card-description-name li {
+  padding: 0px;
+}
 
+.card:hover {
+  background-color: rgba(20,152,213,0.01);
+}
+
+.link-more {
+
+}

@@ -1,0 +1,120 @@
+.lot {
+  height: 80vh;
+  width: 494px;
+  overflow: scroll;
+  color: $greytext;
+  padding: 20px
+}
+
+.vertical-align-items {
+  display: flex;
+  align-items: center;
+}
+
+.primary-color {
+  color: $primary;
+}
+
+.lot-head, .lot-description, .lot-photo-wrapper, .lot-reviews {
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 20px;
+}
+.lot-description, .lot-photo-wrapper, .lot-reviews {
+  border-bottom: 1px solid lightgrey;
+  padding-top: 20px;
+}
+
+.lot-address, .lot-description-details, .lot-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.margin-icon {
+  margin: 0px 4px;
+}
+.lot-stars, .lot-distance {
+ margin: 0px;
+ padding-left: 10px;
+ font-size: 12px;
+}
+.lot-stars li {
+  padding: 0px;
+}
+.lot-category {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.lot-address {
+  padding-bottom: 10px;
+}
+.lot-address span {
+ font-size: 28px;
+ font-weight: bold;
+}
+
+.lot-name {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.lot-dates {
+  text-align: center;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.lot-cta {
+ text-align: center;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ strong {
+  font-size: 24px;
+  }
+}
+
+.lot-description-distance {
+  font-size: 13px;
+}
+
+.lot-photo-big {
+  height: 200px;
+  flex: 1 0 50%;
+  margin-right: 10px;
+  background-size: cover;
+  background-position: center;
+}
+
+.lot-photo-group {
+  display: flex;
+  padding: 20px 0px;
+}
+
+.photo-group-2 {
+  height: 200px;
+  flex: 1 0 50%;
+}
+
+.lot-photo-small {
+  height: 95px;
+  flex: 1 0 50%;
+  background-size: cover;
+  background-position: center;
+  width: 95%;
+}
+
+.photo-top {
+  margin-bottom: 10px;
+}
+
+.link-more {
+  font-size: 16px;
+}
+
+.icon-size {
+ margin: 0px;
+ padding-left: 3px;
+ font-size: 16px;
+}

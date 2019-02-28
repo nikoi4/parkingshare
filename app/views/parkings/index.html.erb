@@ -1,44 +1,64 @@
 <h1>Parkings#index</h1>
 <p>Find me in app/views/parkings/index.html.erb</p>
+<%= render "shared/popup" %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <div class="container">
-  <div class="card-wrapper">
-    <div class="card">
-      <div class="card-title">
-        <span>Jean Jaures 1165</span>
-        <i class="fas fa-bolt active"></i>
-      </div>
-
-      <div class="card-body">
-        <div class="card-img">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-        </div>
-        <div class="card-description">
-          <div class="card-description-name">
-            <span>Cochera de Rodrigo</span>
-            <div class="card-description-rating">
-              <i class="fas fa-star rated"></i>
-            </div>
-          </div>
-          <div class="card-description-info">
-            <p>Small Car</p>
-            <div class="card-description-features">
-              <i class="fas fa-umbrella active"></i>
-            </div>
-          </div>
-          <div class="card-description-footer">
-            <div class="card-description-distance">
-              <i class="fas fa-male"></i>
-              <span>0.26km</span>
-            </div>
-            <span>$ 55</span>
-          </div>
-        </div>
+  <div class="parking-holder">
+    <div id="parkings-options">
+      <div class="card-wrapper">
+      <%= render "shared/card" %>
       </div>
     </div>
-  </div>
-
-  <div class="map">
-
+    <div id="parkings-map">
+      <div class="map">
+      </div>
+    </div>
   </div>
 </div>
