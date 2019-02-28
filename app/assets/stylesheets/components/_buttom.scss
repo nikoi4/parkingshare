@@ -1,27 +1,13 @@
 .round-buttom {
-  background-color: #0B5577;
+  background-color: $primary;
   border: none;
   color: white;
-  padding: 15px 30px;
+  padding: 14px 20px;
   text-align: center;
   text-decoration: none;
   font-size: 20px;
-  margin: 4px 2px;
   cursor: pointer;
-  border-radius: 50px;
   font-weight: bold;
+  border-radius: 50px;
 }
 
-.square-buttom {
-  background-color: #0B5577;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 20px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 14px;
-  font-weight: bold;
-}
