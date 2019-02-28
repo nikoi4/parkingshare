@@ -2,7 +2,9 @@
 <div id="parking-holder">
   <div id="parkings-options">
     <div class="card-wrapper">
-      <%= render "shared/card" %>
+    <% @parkings.each do |parking| %>
+    <%= render "shared/card", parking: parking, features: @features %>
+    <% end %>
     </div>
   </div>
   <div id="parkings-map">

@@ -15,4 +15,8 @@ class Parking < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   mount_uploaders :pictures, PictureUploader
   # serialize :pictures, JSON
+
+  def includes_feature?(feature)
+    self.parking_lot_features.map { |plf| plf.feature.id }.include?(feature.id)
+  end
 end
