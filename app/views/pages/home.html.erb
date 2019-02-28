@@ -1,4 +1,10 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url(https://res.cloudinary.com/nikoi4/image/upload/v1551219919/sahin-yesilyaprak-1207014-unsplash_1.jpg);">
+<% if !user_signed_in? %>
+  <div style="width: 100vw;">
+  <%= render "shared/navbar" %>
+  </div>
+<% end %>
+<div>
 <%= simple_form_for(@search) do |f| %>
 
 <div class="search-wrapper">
@@ -8,7 +14,7 @@
     </div>
     <div class="search-content-input">
       <%= f.text_field :address, placeholder: "Where do you want to park?" %>
-      <i class="fas fa-map-marker-alt"></i>
+      <i class="fas fa-map-marker-alt primary-color"></i>
     </div>
   </div>
   <div class="search-content search-date">
@@ -33,7 +39,7 @@
     <%= f.submit "Show parking spaces" %>
   </div>
 </div>
-
 <% end %>
-
+</div>
+<div></div>
 </div>
