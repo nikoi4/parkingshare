@@ -5,6 +5,7 @@ class ParkingsController < ApplicationController
   def index
     @parkings = policy_scope(Parking)
     @parkings = Parking.where.not(latitude: nil, longitude: nil)
+    @features = Feature.all
 
     @markers = @parkings.map do |parking|
       {

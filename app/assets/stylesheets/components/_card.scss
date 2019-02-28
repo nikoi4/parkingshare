@@ -1,7 +1,8 @@
 .card-wrapper {
-  height: 80vh;
-  width: 483px;
+  height: 85vh;
+  width: 100%;
   color: $greytext;
+  overflow: scroll;
 }
 
 .card {
@@ -37,14 +38,14 @@
 }
 
 .card-img {
-  flex: 1 0 12%;
-  margin: 13px 24px 0px 10px;
+  flex: 1 0 30%;
   background-size: cover;
   background-position: center;
 }
 
 .card-description {
-  flex: 1 0 auto;
+  flex: 1 0 70%;
+  padding-left: 15px;
 }
 .card-trip {
   overflow: hidden;
@@ -54,7 +55,7 @@
 
 
 .card-title {
-  margin-bottom: 2px;
+  margin-bottom: 15px;
 }
 .card-title span {
   font-size: 20px;
@@ -63,7 +64,9 @@
 }
 
 .card-description-name {
-  padding-top:13px;
+  padding-top:0px;
+  padding-bottom:0px;
+
 }
 .card-description-name span {
   font-size: 18px;
@@ -127,6 +130,6 @@
   background-color: rgba(20,152,213,0.01);
 }
 
-.link-more {
-
+.not-rated {
+  color: lightgrey;
 }

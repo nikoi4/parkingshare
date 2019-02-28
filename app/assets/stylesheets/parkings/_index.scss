@@ -4,11 +4,12 @@
 
 #parkings-options {
   flex: 1 0 31%;
-  overflow: scroll;
+  height: 80vh;
 }
 
 #parkings-map {
   flex: 1 0 69%;
+  height: 80vh;
 }
 
 /* On screens that are 600px or less, set the background color to olive */
