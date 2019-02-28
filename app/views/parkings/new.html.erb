@@ -1,33 +1,3 @@
-<!-- <div style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('<%= cl_image_path 'https://res.cloudinary.com/nikoi4/image/upload/v1551219919/sahin-yesilyaprak-1207014-unsplash_1.jpg' %>');" class="container-fluid parkingnew">
-  <div class="form-wrapper">
-    <h3>List your space</h3>
-    <div class="form">
-      <%= simple_form_for(@parking) do |f| %>
-        <%= f.input :name %>
-        <%= f.input :address %>
-        <%= f.input :description %>
-        <%= f.input :picture %>
-        <%= f.input :size %>
-        <%= f.input :price_cents %>
-        <%= f.input :features %>
-        <div class="features">
-          <span>Features
-          </span>
-            <ul class="feature-icons">
-              <% Feature.all.each do |feature| %>
-              <li>
-                <p><%= feature.name %></p>
-                <div style="background-image: url('<%= cl_image_path feature.icon, height: 200, width: 200 %>');" class="feature-icon">
-                </div>
-              </li>
-              <% end %>
-            </ul>
-        </div>
-        <%= f.submit %>
-      <% end %>
-    </div>
-  </div>
-</div> -->
 <div class="container-fluid" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('<%= cl_image_path 'https://res.cloudinary.com/nikoi4/image/upload/v1551219919/sahin-yesilyaprak-1207014-unsplash_1.jpg' %>'); background-position: center; background-size: cover;">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-sm-offset-4">
@@ -64,8 +34,7 @@
           </div>
           <div class="form-img">
             <span>Images</span>
-            <%= f.input :picture, label: false %>
-            <%= f.input :picture_cache, as: :hidden %>
+            <%= f.file_field :pictures, multiple:true, label: false %>
           </div>
           <%= f.submit "Save", class: "btn btn-form"  %>
         <% end %>
