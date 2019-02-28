@@ -13,5 +13,6 @@ class Parking < ApplicationRecord
   validates :price_cents, presence: true
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-  mount_uploader :picture, PictureUploader
+  mount_uploaders :pictures, PictureUploader
+  # serialize :pictures, JSON
 end

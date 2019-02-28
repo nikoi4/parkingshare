@@ -6,7 +6,6 @@ class CreateParkings < ActiveRecord::Migration[5.2]
       t.string :address
       t.float :latitude
       t.float :longitude
-      t.string :picture
       t.string :size
       t.string :price_cents
       t.references :user, foreign_key: true
