@@ -4,6 +4,14 @@ class ParkingsController < ApplicationController
 
   def index
     @parkings = policy_scope(Parking)
+    @parkings = Parking.where.not(latitude: nil, longitude: nil)
+
+    @markers = @parkings.map do |parking|
+      {
+        lng: parking.longitude,
+        lat: parking.latitude
+      }
+    end
   end
 
   def new
@@ -41,7 +49,7 @@ class ParkingsController < ApplicationController
   private
 
   def parking_params
-    params.require(:parking).permit(:name, :address, :picture, :size, :description, :price_cents, feature_ids: [])
+    params.require(:parking).permit(:name, :address, :size, :description, :price_cents, { pictures: [] }, feature_ids: [])
   end
 
   def set_parking

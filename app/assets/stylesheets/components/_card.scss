@@ -1,7 +1,6 @@
 .card-wrapper {
   height: 80vh;
-  width: 494px;
-  overflow: scroll;
+  width: 483px;
   color: $greytext;
 }
 
@@ -9,7 +8,7 @@
   margin: 0px;
   padding: 12px 20px 20px 20px;
   height: 180px;
-  width: 480px;
+  width: 483px;
   border: 1px solid lightgrey;
   background-color: white;
 }
@@ -75,7 +74,7 @@
 
 .card-description-info p {
   font-size: 14px;
-  font-weight: lighter;
+  font-weight: lighternormal;
   margin: 0;
   padding-top: 10px;
   padding-left: 0px;
@@ -100,7 +99,7 @@
 }
 .card-description-distance span {
   font-size: 14px;
-  font-weight: lighter;
+  font-weight: normal;
   margin: 0;
 }
 .card-description-distance i {
