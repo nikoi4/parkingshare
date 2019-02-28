@@ -3,23 +3,23 @@ puts "Creating Features"
 features_attributes = [
   {
     name:      'Instant',
-    icon:      'https://res.cloudinary.com/nikoi4/image/upload/v1551210641/bolt-solid.svg'
+    icon:      'https://res.cloudinary.com/nikoi4/image/upload/v1551303544/icons/bolt-solid.svg'
   },
   {
     name:      'Security',
-    icon:      'https://res.cloudinary.com/nikoi4/image/upload/v1551210642/policeman.svg'
+    icon:      'https://res.cloudinary.com/nikoi4/image/upload/v1551303544/icons/policeman.svg'
   },
   {
     name:      'Gated',
-    icon:      'https://res.cloudinary.com/nikoi4/image/upload/v1551210642/fence-with-three-planks.svg'
+    icon:      'https://res.cloudinary.com/nikoi4/image/upload/v1551303542/icons/fence-with-three-planks.svg'
   },
   {
     name:      'Camera',
-    icon:      'https://res.cloudinary.com/nikoi4/image/upload/v1551210642/video-solid.svg'
+    icon:      'https://res.cloudinary.com/nikoi4/image/upload/v1551303544/icons/video-solid.svg'
   },
   {
     name:      'Cover',
-    icon:      'https://res.cloudinary.com/nikoi4/image/upload/v1551210642/umbrella-solid.svg'
+    icon:      'https://res.cloudinary.com/nikoi4/image/upload/v1551303542/icons/fence-with-three-planks.svg'
   },
 ]
 

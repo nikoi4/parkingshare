@@ -1,6 +1,7 @@
 class ParkingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :new]
   before_action :set_parking, only: [:update, :destroy]
+
   def index
     @parkings = policy_scope(Parking)
   end
@@ -11,43 +12,47 @@ class ParkingsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @parking = Parking.new(parking_params)
-    binding.pry
-    # @features = array??
+    @parking.user = current_user
     authorize @parking
-    if @parking.save
-      # @parking_lot_features = @features.each do |feature|
-      #   plf = ParkingLotFeatures.new
-      #   plf.feature = feature.first
-      #   plf.value = feature.last
-      #   plf.parking = @parking
-      #   plf.save
-      # end
-      # redirect_to ...
-    else
-      render :new
-    end
+    @parking.save
+
+    assign_features
   end
 
   def update
+    @parking.update(parking_params)
+    #getting parking_lot_features instances to update it
+    @parking.parking_lot_features.destroy
+    assign_features
+    if @parking.save
+      # redirect_to dashboard
+    else
+      # render :dashboard
+    end
   end
 
   def destroy
-    if @parking.destroy
-    # redirect_to ...
-    else
-      # render :
-    end
+    @parking.destroy
+    redirect_to root_path
   end
 
   private
 
   def parking_params
-    params.require(:parking).permit(:name, :address, :picture, :size, :description, :pice_cents, :features_ids)
+    params.require(:parking).permit(:name, :address, :picture, :size, :description, :price_cents, feature_ids: [])
   end
 
   def set_parking
     @parking = Parking.find(params[:id])
+    authorize @parking
   end
 
+  def assign_features
+    @features = parking_params[:feature_ids]
+    @features.each do |feature_id|
+      ParkingLotFeature.create(feature_id: feature_id.to_i, parking: @parking)
+    end
+  end
 end
