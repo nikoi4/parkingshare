@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :parkings, only: [:index, :new, :create, :update, :delete] do
-    resources :bookings, only: [:create]
+    resources :bookings, only: [:new, :create]
     resources :parking_lot_features, only: [:create, :update]
   end
 
