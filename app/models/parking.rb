@@ -11,5 +11,7 @@ class Parking < ApplicationRecord
   validates :description, length: { minimum: 20 }
   validates :size, inclusion: { in: SIZE_CAR }
   validates :price_cents, presence: true
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
   mount_uploader :picture, PictureUploader
 end
