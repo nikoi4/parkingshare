@@ -1,1 +1,85 @@
 // Specific CSS for your home-page
+.search-content {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 15em;
+  margin: 0px 10px;
+  input {
+    border: none;
+    width: 100%;
+    &::placeholder {
+      color: black;
+      font-weight: bold;
+
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+  label {
+    font-size: 12px;
+    color: grey;
+  }
+  .input-pin {
+    display: flex;
+    justify-content: space-between;
+    i {
+      color: white;
+      font-size: 17px;
+    }
+  }
+}
+
+
+
+.search-submit {
+  background-color: #0B5577;
+  border: none;
+  color: white;
+  padding: 13px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-left: 20px;
+  input {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+  }
+}
+
+.search-wrapper {
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 45px;
+}
+
+
+.search-content-title {
+  font-size: 10px;
+}
+
+.search-content-input {
+  display: flex;
+  font-size: 14px;
+}
+
+#search-address {
+  width: 25vw;
+}
+
+.search-date {
+  width: 20vw;
+}
+
