@@ -1,5 +1,7 @@
 <h1>Testing</h1>
 
 
-<%= @wned_bookings %>
-<%= @booked_bookings %>
+<% @owned_bookings.each do |booking| %>
+    <%= booking.car_plate %>
+<% end %>
+<%= @booked_bookings.each{|booking| booking.car_plate} %>
