@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get "home", to: "pages#home"
-  root to: 'parkings#index'
+  root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :parkings, only: [:index, :new, :create, :update, :delete] do
