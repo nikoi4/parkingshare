@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2019_02_28_193053) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -71,6 +70,16 @@ ActiveRecord::Schema.define(version: 2019_02_28_193053) do
     t.index ["booking_id"], name: "index_reviews_on_booking_id"
   end
 
+  create_table "searches", force: :cascade do |t|
+    t.text "address"
+    t.datetime "starting"
+    t.datetime "ending"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_searches_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -89,4 +98,5 @@ ActiveRecord::Schema.define(version: 2019_02_28_193053) do
   add_foreign_key "parking_lot_features", "parkings"
   add_foreign_key "parkings", "users"
   add_foreign_key "reviews", "bookings"
+  add_foreign_key "searches", "users"
 end

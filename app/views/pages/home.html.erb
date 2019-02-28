@@ -1,60 +1,39 @@
-<html>
-  <head>
-    <title>ParkingShare</title>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" type="text/css" href=https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="_homepage.scss"/>
-  </head>
-  <body>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url(https://res.cloudinary.com/nikoi4/image/upload/v1551219919/sahin-yesilyaprak-1207014-unsplash_1.jpg);">
+<%= form_for(@search) do |f| %>
 
-  </body>
-
-
-
-
-
-
-
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/nikoi4/image/upload/v1551219919/sahin-yesilyaprak-1207014-unsplash_1.jpg);">
-  <div class="container">
-    <h1></h1>
-    <p></p>
-    <a class="btn btn-flat" href="#"><span>meli</span><span>meli</span></a>
-    <a class="btn btn-flat" href="#">Show Parking Spaces</a>
-
+<div class="search-wrapper">
+  <div class="search-content" id="search-address">
+    <div class="search-content-title">
+      <span>Parking</span>
+    </div>
+    <div class="search-content-input">
+      <%= f.text_field :address, placeholder: "Where do you want to park?" %>
+      <i class="fas fa-map-marker-alt"></i>
+    </div>
   </div>
+  <div class="search-content search-date">
+    <div class="search-content-title">
+      <span>Arriving</span>
+    </div>
+    <div class="search-content-input">
+      <%= f.text_field :starting, placeholder: "Select day and time" %>
+      <i class="fas fa-chevron-down primary-color"></i>
+    </div>
+  </div>
+  <div class="search-content search-date">
+    <div class="search-content-title">
+      <span>Leaving</span>
+    </div>
+    <div class="search-content-input">
+      <%= f.text_field :ending, placeholder: "Select day and time" %>
+    <i class="fas fa-chevron-down primary-color"></i>
+    </div>
+  </div>
+  <div class="search-submit">
+    <%= f.submit "Show parking spaces" %>
+  </div>
+</div>
+
+<% end %>
+
 </div>
