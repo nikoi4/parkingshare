@@ -1,64 +1,16 @@
-<h1>Parkings#index</h1>
-<p>Find me in app/views/parkings/index.html.erb</p>
-<%= render "shared/popup" %>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-<div class="container">
-  <div class="parking-holder">
-    <div id="parkings-options">
-      <div class="card-wrapper">
+<div id="parking-holder">
+  <div id="parkings-options">
+    <div class="card-wrapper">
       <%= render "shared/card" %>
-      </div>
     </div>
-    <div id="parkings-map">
-      <div class="map">
-      </div>
-    </div>
+  </div>
+  <div id="parkings-map">
+    <div
+    id="map"
+    style="width: 100%; height: 100%;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
   </div>
 </div>

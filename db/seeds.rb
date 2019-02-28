@@ -123,7 +123,7 @@ parking_attributes = [
   },
     {
     name:         "Cochera de Claire",
-    address:      'Migueketes 1500, Buenos Aires',
+    address:      'Migueletes 1500, Buenos Aires',
     description:  'Lorem ipsum sdafkljasfd  laksf askdljflajfds  aldsfkj',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(50..200),
