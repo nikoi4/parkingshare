@@ -19,6 +19,17 @@
 .primary-color {
   color: $primary;
 }
+.popup-mgn {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+}
+.popup-features {
+  margin: 0px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
 .lot-head, .lot-description, .lot-photo-wrapper, .lot-reviews {
   border-bottom: 1px solid lightgrey;
@@ -64,9 +75,10 @@
   padding-bottom: 10px;
 }
 
-.lot-dates {
+.popup-dates {
   text-align: center;
   margin-bottom: 8px;
+  margin-top: 10px;
   font-weight: bold;
 }
 
@@ -122,4 +134,8 @@
  margin: 0px;
  padding-left: 3px;
  font-size: 16px;
+}
+
+.close-popup {
+  cursor: pointer;
 }
