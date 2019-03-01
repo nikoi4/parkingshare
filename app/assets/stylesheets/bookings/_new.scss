@@ -1,0 +1,150 @@
+.booking-wrapper {
+  display: flex;
+  background-color: lightgrey;
+  justify-content: space-between;
+}
+
+.booking-summary {
+  flex: 1 0 30%;
+  height: 80vh;
+  width: 100%;
+  color: $greytext;
+  padding: 30px;
+  background-color: white;
+  margin: 20px;
+}
+
+.booking-complete-info, {
+  flex: 1 0 60%;
+  height: 80vh;
+  width: 100%;
+  color: $greytext;
+  padding: 30px;
+  background-color: white;
+  margin: 20px;
+}
+
+.vertical-align-items {
+  display: flex;
+  align-items: center;
+}
+
+.booking-price-details{
+  display: flex;
+  align-items: center;
+  margin: 0px 80px;
+  padding: 2px 50px;
+  height: 27px;
+  justify-content: space-between;
+  p{ display:flex}
+}
+
+.primary-color {
+  color: $primary;
+}
+
+.booking-car-info, .booking-confirmation, .booking-head, .booking-description, .booking-price{
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 20px;
+}
+.booking-car-info, .booking-confirmation, .booking-description, .booking-price {
+  border-bottom: 1px solid lightgrey;
+  padding-top: 20px;
+}
+
+.booking-address, .booking-description-details, .booking-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.margin-icon {
+  margin: 0px 4px;
+}
+.booking-stars, .booking-distance {
+ margin: 0px;
+ padding-left: 10px;
+ font-size: 12px;
+}
+.booking-stars li {
+  padding: 0px;
+}
+.booking-category {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.booking-address {
+  padding-bottom: 10px;
+}
+.booking-address span {
+ font-size: 28px;
+ font-weight: bold;
+}
+
+.booking-name {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.booking-dates {
+  text-align: center;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.booking-cta {
+ text-align: center;
+ display: flex;
+ justify-content: start;
+ align-items: center;
+ padding-left: 20px;
+ padding-top: 20px;
+ strong {
+  font-size: 24px;
+ }
+}
+
+.booking-description-distance {
+  font-size: 13px;
+}
+
+.booking-photo-big {
+  height: 200px;
+  flex: 1 0 50%;
+  margin-right: 10px;
+  background-size: cover;
+  background-position: center;
+}
+
+.booking-photo-group {
+  display: flex;
+  padding: 20px 0px;
+}
+
+.photo-group-2 {
+  height: 200px;
+  flex: 1 0 50%;
+}
+
+.booking-photo-small {
+  height: 95px;
+  flex: 1 0 50%;
+  background-size: cover;
+  background-position: center;
+  width: 95%;
+}
+
+.photo-top {
+  margin-bottom: 10px;
+}
+
+.link-more {
+  font-size: 16px;
+}
+
+.icon-size {
+ margin: 0px;
+ padding-left: 3px;
+ font-size: 16px;
+}
