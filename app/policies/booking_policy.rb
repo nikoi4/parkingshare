@@ -17,5 +17,4 @@ class BookingPolicy < ApplicationPolicy
   def update?
     record.parking.user == user
   end
-
 end
