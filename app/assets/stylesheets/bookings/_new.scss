@@ -1,14 +1,27 @@
-.lot {
+.booking-wrapper {
+  display: flex;
+  background-color: lightgrey;
+  justify-content: space-between;
+}
+
+.booking-summary {
+  flex: 1 0 30%;
   height: 80vh;
-  width: 494px;
-  overflow: scroll;
+  width: 100%;
   color: $greytext;
-  padding: 20px;
+  padding: 30px;
   background-color: white;
-  position: absolute;
-  top: 85px;
-  left: 510px;
-  z-index: 100;
+  margin: 20px;
+}
+
+.booking-complete-info, {
+  flex: 1 0 60%;
+  height: 80vh;
+  width: 100%;
+  color: $greytext;
+  padding: 30px;
+  background-color: white;
+  margin: 20px;
 }
 
 .vertical-align-items {
@@ -16,31 +29,30 @@
   align-items: center;
 }
 
+.booking-price-details{
+  display: flex;
+  align-items: center;
+  margin: 0px 80px;
+  padding: 2px 50px;
+  height: 27px;
+  justify-content: space-between;
+  p{ display:flex}
+}
+
 .primary-color {
   color: $primary;
 }
-.popup-mgn {
-  margin-top: 5px;
-  display: flex;
-  align-items: center;
-}
-.popup-features {
-  margin: 0px 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
 
-.lot-head, .lot-description, .lot-photo-wrapper, .lot-reviews {
+.booking-car-info, .booking-confirmation, .booking-head, .booking-description, .booking-price{
   border-bottom: 1px solid lightgrey;
   padding-bottom: 20px;
 }
-.lot-description, .lot-photo-wrapper, .lot-reviews {
+.booking-car-info, .booking-confirmation, .booking-description, .booking-price {
   border-bottom: 1px solid lightgrey;
   padding-top: 20px;
 }
 
-.lot-address, .lot-description-details, .lot-name {
+.booking-address, .booking-description-details, .booking-name {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,55 +60,56 @@
 .margin-icon {
   margin: 0px 4px;
 }
-.lot-stars, .lot-distance {
+.booking-stars, .booking-distance {
  margin: 0px;
  padding-left: 10px;
  font-size: 12px;
 }
-.lot-stars li {
+.booking-stars li {
   padding: 0px;
 }
-.lot-category {
+.booking-category {
   font-size: 20px;
   font-weight: bold;
 }
 
-.lot-address {
+.booking-address {
   padding-bottom: 10px;
 }
-.lot-address span {
+.booking-address span {
  font-size: 28px;
  font-weight: bold;
 }
 
-.lot-name {
+.booking-name {
   font-size: 20px;
   font-weight: bold;
   padding-bottom: 10px;
 }
 
-.popup-dates {
+.booking-dates {
   text-align: center;
   margin-bottom: 8px;
-  margin-top: 10px;
   font-weight: bold;
 }
 
-.lot-cta {
+.booking-cta {
  text-align: center;
  display: flex;
- justify-content: center;
+ justify-content: start;
  align-items: center;
+ padding-left: 20px;
+ padding-top: 20px;
  strong {
   font-size: 24px;
-  }
+ }
 }
 
-.lot-description-distance {
+.booking-description-distance {
   font-size: 13px;
 }
 
-.lot-photo-big {
+.booking-photo-big {
   height: 200px;
   flex: 1 0 50%;
   margin-right: 10px;
@@ -104,7 +117,7 @@
   background-position: center;
 }
 
-.lot-photo-group {
+.booking-photo-group {
   display: flex;
   padding: 20px 0px;
 }
@@ -114,7 +127,7 @@
   flex: 1 0 50%;
 }
 
-.lot-photo-small {
+.booking-photo-small {
   height: 95px;
   flex: 1 0 50%;
   background-size: cover;
@@ -134,8 +147,4 @@
  margin: 0px;
  padding-left: 3px;
  font-size: 16px;
-}
-
-.close-popup {
-  cursor: pointer;
 }
