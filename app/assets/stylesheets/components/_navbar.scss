@@ -34,11 +34,9 @@
 .navbar-wagon-link {
   font-family: 'Raleway', sans-serif;
   font-weight: lighter;
-  color: white;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: white;
   text-decoration: none;
 }
 /* Dropdown menu */
@@ -77,4 +75,14 @@
   box-shadow: none !important;
   color: white;
   font-weight: bold;
+}
+
+.transparent {
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  box-shadow: none;
+  a {
+    color: white;
+  }
 }
