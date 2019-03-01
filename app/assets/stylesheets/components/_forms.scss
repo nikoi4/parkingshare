@@ -16,6 +16,10 @@
     font-size: 16px;
     font-weight: bold;
   }
+  input {
+    font-weight: lighter;
+    font-size: 12px;
+  }
   .btn {
     text-align: center;
     width: 100%;
@@ -39,7 +43,7 @@
 
 div > .feature-choice {
   // background: #b7b7b7;
-  padding: 0 10px;
+  padding: 0 5px;
   // border-radius: 5px;
   opacity: 1;
   // flex: 0 0 30%;
