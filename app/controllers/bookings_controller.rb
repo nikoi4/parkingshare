@@ -51,7 +51,7 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
-    authorize @parking
+    authorize @booking
   end
 
   def set_parking
