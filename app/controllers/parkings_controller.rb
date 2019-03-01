@@ -21,13 +21,15 @@ class ParkingsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @parking = Parking.new(parking_params)
     @parking.user = current_user
     authorize @parking
-    @parking.save
-
-    assign_features
+    if @parking.save
+      redirect_to root_path
+      assign_features
+    else
+      render :new
+    end
   end
 
   def update
