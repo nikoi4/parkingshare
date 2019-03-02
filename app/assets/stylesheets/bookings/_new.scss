@@ -42,12 +42,19 @@
 .primary-color {
   color: $primary;
 }
+.booking-status {
+  text-align: right;
+}
+.booking-map {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
 
-.booking-car-info, .booking-confirmation, .booking-head, .booking-description, .booking-price{
+.booking-car-info, .booking-confirmation, .booking-head, .booking-description, .booking-price ,.booking-status{
   border-bottom: 1px solid lightgrey;
   padding-bottom: 20px;
 }
-.booking-car-info, .booking-confirmation, .booking-description, .booking-price {
+.booking-car-info, .booking-confirmation, .booking-description, .booking-price, {
   border-bottom: 1px solid lightgrey;
   padding-top: 20px;
 }
@@ -147,4 +154,12 @@
  margin: 0px;
  padding-left: 3px;
  font-size: 16px;
+}
+
+.approved-status {
+  color: green;
+}
+
+.pending-status {
+
 }
