@@ -2,8 +2,7 @@
   background: white;
   padding: 10px 20px;
   margin-top: 50px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  font-family: 'Raleway';
   h2 {
     font-size: 25px;
     font-weight: bold;
@@ -11,7 +10,19 @@
     text-align: center;
   }
   .btn {
-    width: 100%;
-    margin-bottom: 20px
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #5FC2EF;
+  border: none;
+  border-radius: 50px;
+  position: relative;
+  left: 200px;
+
   }
 }
