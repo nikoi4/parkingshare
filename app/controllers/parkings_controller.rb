@@ -17,17 +17,21 @@ class ParkingsController < ApplicationController
 
   def new
     @parking = Parking.new
+    @parking.pictures.build
     authorize @parking
   end
 
   def create
-    # binding.pry
     @parking = Parking.new(parking_params)
     @parking.user = current_user
     authorize @parking
-    @parking.save
+    if @parking.save
+      assign_features
+      redirect_to parkings_path
+    else
+      render :new
+    end
 
-    assign_features
   end
 
   def update
@@ -50,7 +54,7 @@ class ParkingsController < ApplicationController
   private
 
   def parking_params
-    params.require(:parking).permit(:name, :address, :size, :description, :price_cents, { pictures: [] }, feature_ids: [])
+    params.require(:parking).permit(:name, :address, :size, :description, :price_cents, pictures_attributes: [:picture], feature_ids: [])
   end
 
   def set_parking

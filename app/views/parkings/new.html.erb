@@ -34,9 +34,17 @@
           </div>
           <div class="form-img">
             <span>Images</span>
-            <%= f.file_field :pictures, multiple:true, label: false %>
+            <%= f.simple_fields_for :pictures do |p| %>
+              <%= p.input :picture, label: false %>
+            <% end %>
+            <%= f.simple_fields_for :pictures do |p| %>
+              <%= p.input :picture, label: false %>
+            <% end %>
+            <%= f.simple_fields_for :pictures do |p| %>
+              <%= p.input :picture, label: false %>
+            <% end %>
           </div>
-          <%= f.submit "Save", class: "btn btn-form"  %>
+          <%= f.submit "Save", class: "btn btn-success"  %>
         <% end %>
       </div>
     </div>
