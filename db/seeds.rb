@@ -227,6 +227,15 @@ parking_attributes = [
   },
 ]
 
+parking_attributes.each do |parking_attribute|
+  p = Parking.new(parking_attribute)
+  p.save!
+end
+
+#-----------------------------------------------------------
+
+puts 'Assigning Pictures to Parkings...'
+
 COCHERAS = [
             ["https://images.unsplash.com/photo-1486006920555-c77dcf18193c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1440&q=80",
             "https://images.unsplash.com/photo-1495435229349-e86db7bfa013?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1440&q=80",
@@ -289,10 +298,21 @@ COCHERAS = [
             "https://images.unsplash.com/photo-1548343361-02248be15911?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjE2ODQ0fQ&auto=format&fit=crop&w=1440&q=80",
             "https://images.unsplash.com/photo-1494255177615-8af17149db84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1440&q=60"]
             ]
-parking_attributes.each_with_index do |parking, index|
-  p = Parking.new(parking)
-  p.remote_pictures_urls = COCHERAS[index]
-  p.save!
+
+
+Parking.all.each_with_index do |parking, index|
+  pic = Picture.new()
+  pic.remote_picture_url = COCHERAS[index][0]
+  pic.parking = parking
+  pic.save!
+  pic1 = Picture.new()
+  pic1.remote_picture_url = COCHERAS[index][1]
+  pic1.parking = parking
+  pic1.save!
+  pic2 = Picture.new()
+  pic2.remote_picture_url = COCHERAS[index][2]
+  pic2.parking = parking
+  pic2.save!
 end
 
 #-----------------------------------------------------------
