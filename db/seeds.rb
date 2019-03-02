@@ -57,8 +57,8 @@ User.create!(user_attributes)
 
 owner = User.all[0]
 user = User.all[1]
-user1 = User.all[2]
-owner1 = User.all[3]
+owner1 = User.all[2]
+user1 = User.all[3]
 
 #-----------------------------------------------------------
 
