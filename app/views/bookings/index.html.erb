@@ -2,8 +2,19 @@
 
 
 <div class="container booking">
+
+  <div class="tabs">
+    <a class="tab active" href="#">
+      <h3><%= @booked_bookings.count %> </h3>
+      <p>Made</p>
+    </a>
+    <a class="tab" href="#">
+      <h3><%= @owned_bookings.count %> </h3>
+      <p>Recieved</p>
+    </a>
+
+  </div>
   <div class="bookings-wrapper">
-    <h3>Received</h3>
     <div class="bookings-board">
       <% @owned_bookings.each do |booking| %>
         <div class="message">
@@ -56,14 +67,13 @@
     </div>
   </div>
   <div class="bookings-wrapper">
-    <h3>Made</h3>
     <div class="bookings-board">
       <% @booked_bookings.each do |booking| %>
         <div class="message">
           <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
           <div class="message-name">
             <p><%= booking.start_date %></p>
-            <h3><%= booking.user.email %></h3>
+            <h3><%= booking.parking.user.email %></h3>
             <span><%= booking.car_plate %></span>
           </div>
           <div class="message-body">
@@ -73,18 +83,25 @@
                 <i class="far fa-calendar-alt"></i><span><%= booking.start_date %>  <%= booking.end_date %> </span>
               </div>
               <div class="message-review">
-                Review:
-                <% if booking.reviews.last.rating.nil? %>
-                  not rated
-                <% else %>
-                  <%= booking.reviews.last.rating %> Stars
-                <% end %>
+                <ul class= "list-inline card-description-stars">
+                  <li>
+                    <% if booking.reviews.empty? %>
+                      <% 5.times do %>
+                        <i class="fas fa-star not-rated"></i>
+                      <% end %>
+                    <% else %>
+                    <% booking.reviews.last.rating.times do %>
+                      <i class="fas fa-star rated"></i>
+                    <% end %>
+                    <% (5 - booking.reviews.last.rating).times do %>
+                      <i class="fas fa-star not-rated"></i>
+                    <% end %>
+                    <% end %>
+                  </li>
+                </ul>
               </div>
             </div>
             <div class="message-action">
-              <%= link_to booking_path(booking), method: :patch do %>
-                <i class="far fa-check-circle">Approve</i>
-              <% end %>
               <%= link_to do %>
                 <i class="far fa-comments">Chat</i>
               <% end %>
