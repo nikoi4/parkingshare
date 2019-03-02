@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_02_121443) do
+ActiveRecord::Schema.define(version: 2019_02_28_193053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,15 +56,8 @@ ActiveRecord::Schema.define(version: 2019_03_02_121443) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.json "pictures"
     t.index ["user_id"], name: "index_parkings_on_user_id"
-  end
-
-  create_table "pictures", force: :cascade do |t|
-    t.string "picture"
-    t.bigint "parking_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["parking_id"], name: "index_pictures_on_parking_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -105,7 +98,6 @@ ActiveRecord::Schema.define(version: 2019_03_02_121443) do
   add_foreign_key "parking_lot_features", "features"
   add_foreign_key "parking_lot_features", "parkings"
   add_foreign_key "parkings", "users"
-  add_foreign_key "pictures", "parkings"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "searches", "users"
 end
