@@ -2,11 +2,11 @@
  <i class="fas fa-times-circle close-popup"></i>
   <div class="lot-head">
     <div class="lot-address">
-      <span><%= parking.address %></span>
+      <span><%= parking.address.truncate(27) %></span>
       <img class="avatar-large" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
     </div>
     <div class="lot-name">
-      <span><%= parking.name %></span>
+      <span><%= parking.name.truncate(21) %></span>
       <div class="lot-rating">
         <ul class= "list-inline lot-stars">
          <li>
@@ -74,10 +74,10 @@
       <div class="lot-photo-wrapper">
         <span class="lot-category">Photos</span>
         <div class="lot-photo-group">
-          <div class="lot-photo-big" style="background-image: url(<%= parking.pictures[0].url %>)"></div>
+          <div class="lot-photo-big" style="background-image: url('<%= cl_image_path parking.pictures[0].picture %>')"></div>
           <div class="photo-group-2">
-            <div class="lot-photo-small photo-top" style="background-image: url(<%= parking.pictures[0].url %>)"></div>
-            <div class="lot-photo-small" style="background-image: url(<%= parking.pictures[0].url %>)"></div>
+            <div class="lot-photo-small photo-top" style="background-image: url('<%= cl_image_path parking.pictures[1].picture %>')"></div>
+            <div class="lot-photo-small" style="background-image: url('<%= cl_image_path parking.pictures[2].picture %>')"></div>
           </div>
         </div>
       </div>
@@ -90,3 +90,5 @@
         </div>
       </div>
     </div>
+
+
