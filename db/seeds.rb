@@ -315,6 +315,7 @@ Parking.all.each_with_index do |parking, index|
   pic2.save!
 end
 
+
 #-----------------------------------------------------------
 
 puts 'Creating Parking Lot Features'
