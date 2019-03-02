@@ -295,7 +295,6 @@ parking_attributes.each_with_index do |parking, index|
   p.save!
 end
 
-
 #-----------------------------------------------------------
 
 puts 'Creating Parking Lot Features'
