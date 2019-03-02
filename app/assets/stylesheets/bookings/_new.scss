@@ -47,7 +47,9 @@
 }
 .booking-map {
   padding-top: 20px;
-  padding-bottom: 10px;
+  padding-bottom-bottom: 20px;
+  width:100%;
+  height:92%;
 }
 
 .booking-car-info, .booking-confirmation, .booking-head, .booking-description, .booking-price ,.booking-status{
@@ -158,8 +160,22 @@
 
 .approved-status {
   color: green;
+  margin-left: 8px;
+  padding-right: 5px
 }
 
 .pending-status {
+  color: orange;
+}
 
+.booking-map-container {
+  height:100%;
+  width: 100%;
+  display: flex;
+   justify-content: space-between;
+  align-items: center;
+}
+
+.booking-map-details {
+  margin-bottom: 15px;
 }

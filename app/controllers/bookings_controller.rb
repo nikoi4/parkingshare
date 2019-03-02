@@ -29,6 +29,11 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @parking = @booking.parking
+    @markers = [{
+      lng: @parking.longitude,
+      lat: @parking.latitude,
+      }]
   end
 
   def edit

@@ -54,7 +54,7 @@
     </div>
     <div class="booking-description">
       <div class="booking-description-details">
-        <span class="booking-category">Booking details</span>
+        <span class="booking-category">Space details</span>
         <div class="booking-description-distance">
           <i class="fas fa-male booking-distance"></i>
           <span>0.26km</span>
@@ -76,14 +76,17 @@
       <i class="fas fa-check-circle approved-status"></i>
     </div>
     <div class="booking-map">
-      <div class="booking-map-details">
-        <span class="booking-category">Map</span>
+     <!--  <div class="booking-map-details">
+        <span class="booking-category maptittle">Map</span>
+      </div> -->
+      <div class="booking-map-container">
         <div
         id="map"
         style="width: 100%; height: 100%;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
         ></div>
+
       </div>
     </div>
   </div>
