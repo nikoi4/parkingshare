@@ -1,5 +1,47 @@
 
-
+<div>
+  <%= simple_form_for(@search) do |f| %>
+    <div class="index-filterbar">
+      <div class="search-content" id="search-address">
+        <div class="search-content-title">
+          <span>Parking</span>
+        </div>
+        <div class="search-content-input">
+          <%= f.text_field :address, id:'parking_address', placeholder: "Where do you want to park?" %>
+        </div>
+      </div>
+      <div class="search-content search-date">
+        <div class="search-content-title">
+          <span>Arriving</span>
+        </div>
+        <div class="search-content-input">
+          <%= f.input :starting, as: :string, required: false, input_html: { class: "datepicker", placeholder: "Select day and time", label: false }, label_html: { style: 'display: none' }, wrapper_html: { style: 'margin-bottom: 0;' } %>
+          <i class="fas fa-chevron-down primary-color"></i>
+        </div>
+      </div>
+      <div class="search-content search-date">
+        <div class="search-content-title">
+          <span>Leaving</span>
+        </div>
+        <div class="search-content-input">
+          <%= f.input :ending, as: :string, required: false, input_html: { class: "datepicker", placeholder: "Select day and time" }, label_html: { style: 'display: none' }, wrapper_html: { style: 'margin-bottom: 0;' } %>
+        <i class="fas fa-chevron-down primary-color"></i>
+        </div>
+      </div>
+      <div class="search-content search-content-outer" id="search-address">
+        <i class="fas fa-filter"></i>
+        <div class="search-content-inner">
+          <div class="search-content-title">
+            <span>Filters</span>
+          </div>
+          <div class="search-content-input">
+            <%= f.text_field :address, placeholder: "Select special filters" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 <div id="parking-holder">
   <div id="parkings-options">
     <div class="card-wrapper">
