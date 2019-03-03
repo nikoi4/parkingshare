@@ -1,5 +1,5 @@
 class ParkingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :new]
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_parking, only: [:update, :destroy]
 
   def index
