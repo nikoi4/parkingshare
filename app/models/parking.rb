@@ -27,10 +27,4 @@ class Parking < ApplicationRecord
   def rating
     self.reviews.map { |review| review.rating }.sum / self.reviews.count.ceil
   end
-
-  def dist(lat_long)
-    x = (self.latitude - lat_long[0])
-    y = (self.longitude - lat_long[1])
-    Math.hypot(x, y)
-  end
 end

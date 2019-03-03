@@ -52,7 +52,7 @@
           <div class="card-description-footer">
             <div class="card-description-distance">
               <i class="fas fa-male"></i>
-              <span>0.26km</span>
+              <span><%= parking.distance_from(@lat_long).to_d.round(2,:truncate).to_f %>km</span>
             </div>
             <span class="card-description-price">$ <%= parking.price_cents %></span>
           </div>

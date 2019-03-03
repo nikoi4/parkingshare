@@ -6,7 +6,7 @@ class ParkingsController < ApplicationController
     @parkings = policy_scope(Parking)
     @parkings = Parking.where.not(latitude: nil, longitude: nil)
     @features = Feature.all
-    raise
+    @lat_long = params[:lat_long]
     @markers = @parkings.map do |parking|
       {
         lng: parking.longitude,
