@@ -7,6 +7,7 @@ class ParkingsController < ApplicationController
     @parkings = Parking.where.not(latitude: nil, longitude: nil)
     @features = Feature.all
     @lat_long = params[:lat_long]
+    @dates = [params[:starting], params[:ending]]
     @markers = @parkings.map do |parking|
       {
         lng: parking.longitude,

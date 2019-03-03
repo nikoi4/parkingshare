@@ -5,7 +5,7 @@
     <div class="card-wrapper">
     <% @parkings.each do |parking| %>
     <%= render "shared/card", parking: parking, features: @features, lat_long: @lat_long %>
-    <%= render "shared/popup", parking: parking %>
+    <%= render "shared/popup", parking: parking, lat_long: @lat_long %>
     <% end %>
     </div>
   </div>

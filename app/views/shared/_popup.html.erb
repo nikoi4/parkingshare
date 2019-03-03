@@ -51,9 +51,9 @@
             </div></a>
           </div>
           <div class="popup-dates">
-            <span>Feb 28 - 10:00 pm</span>
+            <span><%= @dates[0] %></span>
             <i class="fas fa-arrow-right primary-color margin-icon"></i>
-            <span>Feb 28 - 18:00 pm</span>
+            <span><%= @dates[1] %></span>
           </div>
         </div>
       </div>
@@ -62,7 +62,7 @@
           <span class="lot-category">Space details</span>
           <div class="lot-description-distance">
             <i class="fas fa-male lot-distance"></i>
-            <span>0.26km</span>
+            <span><%= parking.distance_from(@lat_long).to_d.round(2,:truncate).to_f %>km</span>
           </div>
         </div>
         <p> <%= parking.description %></p>
