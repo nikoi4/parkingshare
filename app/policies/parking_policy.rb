@@ -9,6 +9,10 @@ class ParkingPolicy < ApplicationPolicy
     true
   end
 
+  def owner_parkings?
+    true
+  end
+
   def update?
     record.user == user
   end
