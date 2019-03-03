@@ -51,9 +51,9 @@
             </div></a>
           </div>
           <div class="popup-dates">
-            <span>Feb 28 - 10:00 pm</span>
+            <span><%= @dates[0] %></span>
             <i class="fas fa-arrow-right primary-color margin-icon"></i>
-            <span>Feb 28 - 18:00 pm</span>
+            <span><%= @dates[1] %></span>
           </div>
         </div>
       </div>
@@ -62,7 +62,7 @@
           <span class="lot-category">Space details</span>
           <div class="lot-description-distance">
             <i class="fas fa-male lot-distance"></i>
-            <span>0.26km</span>
+            <span><%= parking.distance_from(@lat_long).to_d.round(2,:truncate).to_f %>km</span>
           </div>
         </div>
         <p> <%= parking.description %></p>
@@ -73,13 +73,34 @@
       </div>
       <div class="lot-photo-wrapper">
         <span class="lot-category">Photos</span>
-        <div class="lot-photo-group">
-          <div class="lot-photo-big" style="background-image: url('<%= cl_image_path parking.pictures[0].picture %>')"></div>
-          <div class="photo-group-2">
-            <div class="lot-photo-small photo-top" style="background-image: url('<%= cl_image_path parking.pictures[1].picture %>')"></div>
-            <div class="lot-photo-small" style="background-image: url('<%= cl_image_path parking.pictures[2].picture %>')"></div>
+        <% if parking.pictures.count == 3 %>
+          <div class="lot-photo-group">
+            <div class="lot-photo-big" style="background-image: url('<%= cl_image_path parking.pictures[0].picture %>')">
+            </div>
+            <div class="photo-group-2">
+              <div class="lot-photo-small photo-top" style="background-image: url('<%= cl_image_path parking.pictures[1].picture %>')"></div>
+              <div class="lot-photo-small" style="background-image: url('<%= cl_image_path parking.pictures[2].picture %>')">
+              </div>
+            </div>
           </div>
-        </div>
+        <% elsif parking.pictures.count == 2 %>
+          <div class="lot-photo-group">
+            <div class="lot-photo-big" style="background-image: url('<%= cl_image_path parking.pictures[0].picture %>')">
+            </div>
+            <div class="lot-photo-big" style="background-image: url('<%= cl_image_path parking.pictures[1].picture %>')">
+            </div>
+          </div>
+        <% elsif parking.pictures.count == 1 %>
+          <div class="lot-photo-group">
+            <div class="lot-photo-big" style="background-image: url('<%= cl_image_path parking.pictures[0].picture %>')">
+            </div>
+          </div>
+        <% else %>
+          <div class="lot-photo-group">
+            <div class="lot-photo-big" style="background-image: url(<%= image_path 'logo_only_transparent.png' %>); background-size: contain; background-repeat: no-repeat;">
+            </div>
+          </div>
+        <% end %>
       </div>
       <div class="lot-reviews">
         <span class="lot-category">Reviews</span>
