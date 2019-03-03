@@ -73,13 +73,36 @@
       </div>
       <div class="lot-photo-wrapper">
         <span class="lot-category">Photos</span>
-        <div class="lot-photo-group">
-          <div class="lot-photo-big" style="background-image: url('<%= cl_image_path parking.pictures[0].picture %>')"></div>
-          <div class="photo-group-2">
-            <div class="lot-photo-small photo-top" style="background-image: url('<%= cl_image_path parking.pictures[1].picture %>')"></div>
-            <div class="lot-photo-small" style="background-image: url('<%= cl_image_path parking.pictures[2].picture %>')"></div>
+        <% if parking.pictures.count == 3 %>
+          <div class="lot-photo-group">
+            <div class="lot-photo-big" style="background-image: url('<%= cl_image_path parking.pictures[0].picture %>')">
+            </div>
+            <div class="photo-group-2">
+              <div class="lot-photo-small photo-top" style="background-image: url('<%= cl_image_path parking.pictures[1].picture %>')"></div>
+              <div class="lot-photo-small" style="background-image: url('<%= cl_image_path parking.pictures[2].picture %>')">
+              </div>
+            </div>
           </div>
-        </div>
+        <% elsif parking.pictures.count == 2 %>
+          <div class="lot-photo-group">
+            <div class="lot-photo-big" style="background-image: url('<%= cl_image_path parking.pictures[0].picture %>')">
+            </div>
+          </div>
+          <div class="lot-photo-group">
+            <div class="lot-photo-big" style="background-image: url('<%= cl_image_path parking.pictures[1].picture %>')">
+            </div>
+          </div>
+        <% elsif parking.pictures.count == 1 %>
+          <div class="lot-photo-group">
+            <div class="lot-photo-big" style="background-image: url('<%= cl_image_path parking.pictures[0].picture %>')">
+            </div>
+          </div>
+        <% else %>
+          <div class="lot-photo-group">
+            <div class="lot-photo-big" style="background-image: url(<%= image_path 'logo_only_transparent.png' %>); background-size: contain; background-repeat: no-repeat;">
+            </div>
+          </div>
+        <% end %>
       </div>
       <div class="lot-reviews">
         <span class="lot-category">Reviews</span>
