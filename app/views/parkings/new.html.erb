@@ -34,9 +34,19 @@
           </div>
           <div class="form-img">
             <span>Images</span>
-            <%= f.file_field :pictures, multiple:true, label: false %>
+            <%= f.simple_fields_for :pictures do |p| %>
+              <%= p.input :picture, input_html: { class: 'hidden'},label_html: { class: 'upload-photo fas fa-plus-circle'}, label: '' %>
+            <% end %>
+            <%= f.simple_fields_for :pictures do |p| %>
+              <%= p.input :picture, input_html: { class: 'hidden'},label_html: { class: 'upload-photo fas fa-plus-circle'}, label: '' %>
+            <% end %>
+            <%= f.simple_fields_for :pictures do |p| %>
+              <%= p.input :picture, input_html: { class: 'hidden'},label_html: { class: 'upload-photo fas fa-plus-circle'}, label: '' %>
+            <% end %>
           </div>
-          <%= f.submit "Save", class: "btn btn-form"  %>
+          <div class="btn-center">
+            <%= f.submit "Save", class: "round-buttom"  %>
+          </div>
         <% end %>
       </div>
     </div>

@@ -1,12 +1,13 @@
 class ParkingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :new]
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_parking, only: [:update, :destroy]
 
   def index
     @parkings = policy_scope(Parking)
     @parkings = Parking.where.not(latitude: nil, longitude: nil)
     @features = Feature.all
-
+    @lat_long = params[:lat_long]
+    @dates = [params[:starting], params[:ending]]
     @markers = @parkings.map do |parking|
       {
         lng: parking.longitude,
@@ -17,17 +18,21 @@ class ParkingsController < ApplicationController
 
   def new
     @parking = Parking.new
+    @parking.pictures.build
     authorize @parking
   end
 
   def create
-    # binding.pry
     @parking = Parking.new(parking_params)
     @parking.user = current_user
     authorize @parking
-    @parking.save
+    if @parking.save
+      assign_features
+      redirect_to parkings_path
+    else
+      render :new
+    end
 
-    assign_features
   end
 
   def update
@@ -50,7 +55,7 @@ class ParkingsController < ApplicationController
   private
 
   def parking_params
-    params.require(:parking).permit(:name, :address, :size, :description, :price_cents, { pictures: [] }, feature_ids: [])
+    params.require(:parking).permit(:name, :address, :size, :description, :price_cents, pictures_attributes: [:picture], feature_ids: [])
   end
 
   def set_parking

@@ -9,7 +9,8 @@ class SearchesController < ApplicationController
     redirect_to parkings_path(
       address: search_params[:address],
       starting: search_params[:starting],
-      ending: search_params[:ending]
+      ending: search_params[:ending],
+      lat_long: [@search.latitude, @search.longitude]
     )
   end
 

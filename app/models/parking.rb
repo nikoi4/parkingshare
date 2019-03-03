@@ -7,6 +7,7 @@ class Parking < ApplicationRecord
   has_many :reviews, through: :bookings
   has_many :users, through: :bookings
   has_many :pictures, dependent: :destroy
+  accepts_nested_attributes_for :pictures
   validates :name, presence: true
   validates :address, presence: true, uniqueness: { scope: :name }
   validates :description, length: { minimum: 20 }
