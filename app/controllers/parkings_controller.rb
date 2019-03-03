@@ -32,7 +32,17 @@ class ParkingsController < ApplicationController
     else
       render :new
     end
+  end
 
+  def owner_parkings
+    @parkings = authorize current_user.owned_parkings.where.not(latitude: nil, longitude: nil)
+    @features = Feature.all
+    @markers = @parkings.map do |parking|
+      {
+        lng: parking.longitude,
+        lat: parking.latitude
+      }
+    end
   end
 
   def update
