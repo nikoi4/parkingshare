@@ -62,4 +62,15 @@ div > .feature-choice {
   display: flex;
 }
 
+.form-group > .file > .required > .parking_pictures_picture{
+margin: 0px;
+}
+
+.upload-photo {
+  border: #d3d3d3 solid 1px;
+  padding: 1px 2px;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 2px;
+}
 

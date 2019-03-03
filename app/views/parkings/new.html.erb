@@ -35,13 +35,13 @@
           <div class="form-img">
             <span>Images</span>
             <%= f.simple_fields_for :pictures do |p| %>
-              <%= p.input :picture, label: false %>
+              <%= p.input :picture, input_html: { class: 'hidden'},label_html: { class: 'upload-photo fas fa-plus-circle'}, label: '' %>
             <% end %>
             <%= f.simple_fields_for :pictures do |p| %>
-              <%= p.input :picture, label: false %>
+              <%= p.input :picture, input_html: { class: 'hidden'},label_html: { class: 'upload-photo fas fa-plus-circle'}, label: '' %>
             <% end %>
             <%= f.simple_fields_for :pictures do |p| %>
-              <%= p.input :picture, label: false %>
+              <%= p.input :picture, input_html: { class: 'hidden'},label_html: { class: 'upload-photo fas fa-plus-circle'}, label: '' %>
             <% end %>
           </div>
           <%= f.submit "Save", class: "btn btn-success"  %>
