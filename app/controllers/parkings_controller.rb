@@ -12,7 +12,9 @@ class ParkingsController < ApplicationController
     @markers = @parkings.map do |parking|
       {
         lng: parking.longitude,
-        lat: parking.latitude
+        lat: parking.latitude,
+        infoWindow: render_to_string(partial: "shared/infowindow", locals: { parking: parking }),
+        # id: parking.id
       }
     end
   end
