@@ -3,16 +3,17 @@ class ParkingsController < ApplicationController
   before_action :set_parking, only: [:update, :destroy]
 
   def index
-    @parkings = policy_scope(Parking)
-    @parkings = Parking.where.not(latitude: nil, longitude: nil)
-    @features = Feature.all
-    @search = Search.new
     @lat_long = params[:lat_long]
     @dates = [params[:starting], params[:ending]]
+    @parkings = policy_scope(Parking).near(params[:lat_long], 10)
+    @features = Feature.all
+    @search = Search.new
     @markers = @parkings.map do |parking|
       {
         lng: parking.longitude,
-        lat: parking.latitude
+        lat: parking.latitude,
+        infoWindow: render_to_string(partial: "shared/infowindow", locals: { parking: parking }),
+        # id: parking.id
       }
     end
   end

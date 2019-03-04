@@ -6,7 +6,7 @@
       <img class="avatar-large" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
     </div>
     <div class="lot-name">
-      <span><%= parking.name.truncate(21) %></span>
+      <span><%= parking.name.truncate(21).capitalize %></span>
       <div class="lot-rating">
         <ul class= "list-inline lot-stars">
          <li>
@@ -44,11 +44,12 @@
         </div>
 
         <div class="lot-cta">
-          <a class="round-buttom" href="">
+          <%= link_to new_parking_booking_path(parking_id: parking.id, start_date: @dates.first, end_date: @dates.last), class:"round-buttom" do %>
             <div class="vertical-align-items">
               Book now  |
               <strong>$ <%= parking.price_cents %></strong>
-            </div></a>
+            </div>
+          <% end %>
           </div>
           <div class="popup-dates">
             <span><%= @dates[0] %></span>

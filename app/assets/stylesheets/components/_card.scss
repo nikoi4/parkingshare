@@ -9,7 +9,6 @@
   margin: 0px;
   padding: 12px 20px 20px 20px;
   height: 180px;
-  width: 483px;
   border: 1px solid lightgrey;
   background-color: white;
   cursor: pointer;
@@ -59,7 +58,7 @@
   margin-bottom: 15px;
 }
 .card-title span {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0px;
 }
@@ -128,7 +127,7 @@
 }
 
 .card:hover {
-  background-color: rgba(20,152,213,0.01);
+  background-color: rgba(20,152,213,0.1);
 }
 
 .not-rated {
