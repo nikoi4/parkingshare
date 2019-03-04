@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+
   get 'chats/index'
   post "procesar-pago", to: 'bookings#create'
+
   get 'reviews/create'
   devise_for :users
   get "home", to: "pages#home"
