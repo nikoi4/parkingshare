@@ -1,4 +1,6 @@
 import mapboxgl from 'mapbox-gl';
+import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
+import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
@@ -58,10 +60,32 @@ const initMapbox = () => {
     trackUserLocation: true
   });
   map.addControl(geolocate, 'top-right');
-  map.on('load', function()
-  {
+
+  map.on('load', function(){
     geolocate.trigger();
   });
+
+
+  if (markers.length == 1) {
+
+    let directions = new MapboxDirections({
+      accessToken: mapboxgl.accessToken
+    })
+
+    geolocate.on('geolocate', function(){
+
+      //Get the updated user location, this returns a javascript object.
+      let userlocation = geolocate._lastKnownPosition;
+
+      //Your work here - Get coordinates like so
+      let lat1 = userlocation.coords.latitude;
+      let lng2 = userlocation.coords.longitude;
+      directions.setOrigin([lng2,lat1])
+    });
+
+    directions.setDestination([markers[0].lng, markers[0].lat])
+    map.addControl(directions, 'top-left')
+  }
 
   const cards = document.querySelectorAll('.card');
   cards.forEach((card) => {
