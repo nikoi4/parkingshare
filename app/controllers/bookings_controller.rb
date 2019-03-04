@@ -10,7 +10,8 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.new
+    @booking = Booking.new(search_params)
+    @booking.parking = @parking
     authorize @booking if @parking.user != current_user
   end
 
@@ -18,7 +19,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     authorize @booking
     @parking.features.each do |feature|
-      @booking.status = "approved" if feature.value
+      @booking.status = "approved" if feature.name == 'instant'
     end
     @booking.user = current_user
     @booking.parking = @parking
@@ -53,7 +54,11 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:car_plate, :start_date, :end_date, :price_cents)
+    params.require(:booking).permit(:car_plate, :start_date, :end_date, :price_cents, :phone_number)
+  end
+
+  def search_params
+    params.permit(:start_date, :end_date, :parking_id)
   end
 
   def set_booking
