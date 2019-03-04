@@ -1,14 +1,17 @@
 <div id="parking-holder">
   <div id="parkings-options">
     <div class="card-wrapper">
-      <%= simple_form_for (@parking) do |f| %>
+      <%= simple_form_for(owner_parkings_parkings_path) do |f| %>
         <div class="search-content" id="search-address">
           <div class="search-content-title">
             <span>Parking</span>
           </div>
           <div class="search-content-input">
-            <%= f.input :address, placeholder: "Where do you want to park?" %>
+            <%= f.text_field :address, id:'parking_address', placeholder: "Where do you want to park?" %>
           </div>
+        </div>
+        <div class="search-submit">
+          <%= f.submit "Show parking spaces" %>
         </div>
       <% end %>
       <% @parkings.each do |parking| %>
