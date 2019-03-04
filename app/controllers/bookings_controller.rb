@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update]
   before_action :set_parking, only: [:new, :create]
+  before_action :set_features, only: [:new, :show]
   def index
     @owned_bookings = current_user.owned_bookings
     @booked_bookings = current_user.bookings
@@ -61,6 +62,10 @@ class BookingsController < ApplicationController
 
   def set_parking
     @parking = Parking.find(params[:parking_id])
+  end
+
+  def set_features
+    @features = Feature.all
   end
 
 end
