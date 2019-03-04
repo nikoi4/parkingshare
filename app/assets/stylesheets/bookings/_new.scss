@@ -85,7 +85,7 @@
 .booking-car-form, {
   display: flex;
   justify-content: left;
-  align-items: center;
+  flex-direction: column;
   padding: 0px 10px;
   }
 

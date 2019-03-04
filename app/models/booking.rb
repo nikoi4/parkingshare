@@ -1,4 +1,6 @@
 class Booking < ApplicationRecord
+  attr_accessor :phone_number
+
   belongs_to :parking
   belongs_to :user
   has_many :reviews, dependent: :destroy

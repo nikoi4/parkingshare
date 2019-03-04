@@ -59,11 +59,11 @@
                   <th class="checkout-left">Leaving on:</th>
                 </tr>
                 <tr>
-                  <td class="checkout-dates checkout-pad"><span>Feb 28 - 10:00 pm</span></td>
+                  <td class="checkout-dates checkout-pad"><span><%= @booking.start_date.to_datetime.strftime("%b %e - %l:%M %p") %></span></td>
                   <td>
                     <i class="fas fa-arrow-right primary-color margin-icon checkout-pad"></i>
                   </td>
-                  <td class="checkout-dates checkout-left checkout-pad"><span>Feb 28 - 18:00 pm</span></td>
+                  <td class="checkout-dates checkout-left checkout-pad"><span><%= @booking.end_date.to_datetime.strftime("%b %e - %l:%M %p") %></span></td>
                 </tr>
 
                 <tr>
@@ -71,7 +71,7 @@
                 </tr>
                 <tr>
                   <td class="checkout-total checkout-right" colspan="3">
-                    <p>Total price:<span>$ 400</span></p></td>
+                    <p>Total price:<span>$<%= @booking.price_cents %></span></p></td>
                   </tr>
                 </table>
 
@@ -82,8 +82,13 @@
 
   <div class="booking-complete-info">
     <div class="booking-status">
-      <span class="booking-category">Approved</span>
-      <i class="fas fa-check-circle approved-status"></i>
+      <% if @booking.status == "approved" %>
+        <span class="booking-category"><%= @booking.status %></span>
+        <i class="fas fa-check-circle approved-status"></i>
+      <% else %>
+        <span class="booking-category"><%= @booking.status %></span>
+        <i class="fas fa-check-circle approved-status">cambiar icono</i>
+      <% end %>
     </div>
     <div class="booking-map">
       <div class="booking-map-container">

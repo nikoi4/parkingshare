@@ -2,11 +2,10 @@
   <div class="booking-summary">
     <div class="booking-head">
       <div class="booking-address">
-        <span><%= @parking.address.truncate(27) %></span>
+        <span><%= @parking.name.truncate(21) %></span>
         <img class="avatar-large" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
       </div>
       <div class="booking-name">
-        <span><%= @parking.name.truncate(21) %></span>
         <div class="booking-rating">
           <ul class= "list-inline booking-stars">
             <li>
@@ -51,6 +50,7 @@
               </div>
               <% end %>
             </div>
+            <span><%= @parking.address %></span>
             <div class="booking-checkout">
               <table style="width:100%">
                 <tr class="chekout-header">
@@ -93,35 +93,95 @@
             </div>
             <div class="booking-car-plate">
               <div class="booking-car-form">
-                <%= simple_form_for [@booking] do |f| %>
-                <%= f.input :car_plate, label: "Phone number (in case you need to be contacted)", placeholder: "" %>
-                <%= f.input :car_plate, label: "Car Plate", placeholder: "LLL-NNN / LL-NNN-LL" %>
+                <div class="form-group tel optional booking_phone_number">
+                  <label class="form-control-label tel optional" for="phone_number">Phone number (in case you need to be contacted)</label>
+                  <input class="form-control string tel optional" placeholder="" type="tel" name="phone_number" id="phone_number" />
+                </div>
+                <div class="form-group string optional booking_car_plate">
+                  <label class="form-control-label string optional" for="car_plate">Car Plate</label>
+                  <input class="form-control string optional" placeholder="LLL-NNN / LL-NNN-LL" type="text" name="" id="car_plate" />
+                </div>
               </div>
               <div class="booking-car-action">
-                <%= f.button :submit, "Add car plate", class: "btn-meli-square-small"%>
-                <% end %>
+                <input type="submit" name="" value="Add car plate" class="btn btn-meli-square-small disabled" id="add_car" disabled="disabled" />
               </div>
             </div>
             <div class="booking-cta">
-              <a class="btn-meli-square-small" href="">
-                <div class="vertical-align-items">
-                  Save and continue
-                </div></a>
-              </div>
+              <input type="submit" name="" value="Save and continue" class="btn btn-meli-square-small disabled" id="save-and-continue" disabled="disabled" />
+            </div>
 
           </div>
           <div class="booking-confirmation">
             <span class="booking-category">2. Payment information</span>
             <p class="booking-terms">Clicking below indicates that you have read and accept the Terms & Conditions</p>
             <div class="booking-cta">
-              <a class="btn-meli-square-small" href="">
+              <a class="" id="payment" href="">
                 <div class="vertical-align-items">
-                  Book now  |
-                  <strong>$ 50</strong>
-                </div></a>
-              </div>
+                  <input type="submit" name="commit" value="Create Booking" label="Book now | <%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil * @parking.price_cents.to_i %>" class="btn" data-disable-with="Create Booking">
+
+                    <div style="display: none;">
+                      <form action="/parkings/<%= @parking.id %>/bookings" method="POST">
+                        <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+                        <div class="form-group hidden booking_phone_number">
+                          <input class="form-control hidden" type="hidden" name="booking[phone_number]" id="booking_phone_number">
+                        </div>
+                        <div class="form-group hidden booking_car_plate">
+                          <input class="form-control hidden" type="hidden" name="booking[car_plate]" id="booking_car_plate">
+                        </div>
+                        <div class="form-group hidden booking_start_date form-group-valid">
+                          <input class="form-control is-valid hidden" type="hidden" value="<%= @booking.start_date %>" name="booking[start_date]" id="booking_start_date">
+                        </div>
+                        <div class="form-group hidden booking_end_date form-group-valid">
+                          <input class="form-control is-valid hidden" type="hidden" value="<%= @booking.end_date %>" name="booking[end_date]" id="booking_end_date">
+                        </div>
+                        <div class="form-group hidden booking_parking form-group-valid">
+                          <input class="form-control is-valid hidden" type="hidden" value="<%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil * @parking.price_cents.to_i %>" name="booking[price_cents]" id="booking_price_cents">
+                        </div>
+                        <script
+                          src="https://www.mercadopago.com.ar/integrations/v1/web-tokenize-checkout.js"
+                          data-public-key="TEST-1c867d97-58f2-40a3-af5e-573151ad9f1c"
+                          data-transaction-amount="<%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil * @parking.price_cents.to_i %>">
+                        </script>
+                      </form>
+                    </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
       </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
