@@ -77,7 +77,18 @@
                       <p>Total price:<span>$ <%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil * @parking.price_cents.to_i %></span></p>
                     <p class="chekout-per-hour">(<%= @parking.price_cents %>/hr)</p>
                   </td>
-                  </tr>
+                </tr>
+                <tr>
+                  <td>
+                    <% if @booking.reviews.first.nil? %>
+                      <button type="button" class="btn-meli-square-small" data-toggle="modal" data-target="#newBooking">Add review</button>
+                      <%= render "reviews/new", booking: @booking, review: Review.new %>
+                    <% else %>
+                      <%= render "reviews/show", parking: @parking, review: Review.new %>
+                    <% end %>
+
+                  </td>
+                </tr>
                 </table>
 
               </div>
