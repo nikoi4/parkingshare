@@ -1,0 +1,57 @@
+<div class="card" data-target="<%= parking.id %>">
+  <div class="card-title">
+    <span><%= parking.address.truncate(37) %></span>
+    <!-- <i class="fas fa-bolt active yellow"></i> -->
+  </div>
+  <div class="card-body">
+    <% if parking.pictures.first.nil? %>
+    <div class="card-img" style="background-image: url(<%= image_path 'logo_only_transparent.png' %>)">
+    </div>
+    <% else %>
+    <div class="card-img" style="background-image: url('<%= cl_image_path parking.pictures[0].picture %>'); width: 100%;">
+    </div>
+    <% end %>
+
+    <div class="card-description">
+      <div class="card-description-name">
+        <span><%= parking.name.truncate(21) %></span>
+        <div class="card-description-rating">
+          <ul class= "list-inline card-description-stars">
+            <li>
+              <% if parking.reviews.empty? %>
+                <% 5.times do %>
+                  <i class="fas fa-star not-rated"></i>
+                <% end %>
+              <% else %>
+              <% parking.rating.times do %>
+                <i class="fas fa-star rated"></i>
+              <% end %>
+              <% (5 - parking.rating).times do %>
+                <i class="fas fa-star not-rated"></i>
+              <% end %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-description-info">
+        <p><%= parking.size %></p>
+        <div class=" list-inline card-description-features">
+          <% @features.each do |feature| %>
+          <li>
+            <% if parking.includes_feature?(feature) %>
+            <% url = cl_image_path feature.icon, height: 5, width: 5 %>
+            <div style="background-image: url('<%= cl_image_path feature.icon, height: 5, width: 5 %>'); opacity: 0.6;";" class="feature-icon-2">
+              <% else %>
+              <div style="background-image: url('<%= cl_image_path feature.icon, height: 5, width: 5 %>'); opacity: 0.2;" class="feature-icon-2">
+                <% end %>
+              </li>
+              <% end %>
+            </div>
+          </div>
+          <div class="card-description-footer">
+            <span class="card-description-price">$ <%= parking.price_cents %></span>
+          </div>
+        </div>
+      </div>
+    </div>
