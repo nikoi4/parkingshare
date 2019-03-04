@@ -1,6 +1,6 @@
 <div class="card" data-target="<%= parking.id %>">
   <div class="card-title">
-    <span><%= parking.address.truncate(37) %></span>
+    <span><%= parking.address.truncate(48) %></span>
     <!-- <i class="fas fa-bolt active yellow"></i> -->
   </div>
   <div class="card-body">
@@ -14,7 +14,7 @@
 
     <div class="card-description">
       <div class="card-description-name">
-        <span><%= parking.name.truncate(21) %></span>
+        <span><%= parking.name.truncate(21).capitalize %></span>
         <div class="card-description-rating">
           <ul class= "list-inline card-description-stars">
             <li>
