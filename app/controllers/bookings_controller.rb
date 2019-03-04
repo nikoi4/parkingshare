@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new(search_params)
     @booking.parking = @parking
-    authorize @booking if @parking.user != current_user
+    authorize @booking
   end
 
   def create

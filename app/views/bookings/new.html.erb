@@ -143,10 +143,10 @@
                       <input class="form-control is-valid hidden" type="hidden" value="<%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil * @parking.price_cents.to_i %>" name="booking[price_cents]" id="booking_price_cents">
                     </div>
                     <script
-                    src="https://www.mercadopago.com.ar/integrations/v1/web-tokenize-checkout.js"
-                    data-public-key="TEST-1c867d97-58f2-40a3-af5e-573151ad9f1c"
-                    data-transaction-amount="<%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil * @parking.price_cents.to_i %>">
-                  </script>
+                        src="https://www.mercadopago.com.ar/integrations/v1/web-tokenize-checkout.js"
+                        data-public-key="<%= ENV['PUBLIC_KEY'] %>"
+                        data-transaction-amount="<%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil * @parking.price_cents.to_i %>">
+                    </script>
                 </form>
               </div>
             </div>
@@ -156,16 +156,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
 
 
 
