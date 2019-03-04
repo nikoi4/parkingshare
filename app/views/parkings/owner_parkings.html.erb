@@ -1,0 +1,17 @@
+<div id="parking-holder">
+  <div id="parkings-options">
+    <div class="card-wrapper">
+    <% @parkings.each do |parking| %>
+    <%= render "shared/cardparking", parking: parking, features: @features %>
+    <% end %>
+    </div>
+  </div>
+  <div id="parkings-map">
+    <div
+    id="map"
+    style="width: 100%; height: 100%;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
+</div>

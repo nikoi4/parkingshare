@@ -6,6 +6,7 @@ class ParkingsController < ApplicationController
     @parkings = policy_scope(Parking)
     @parkings = Parking.where.not(latitude: nil, longitude: nil)
     @features = Feature.all
+    @search = Search.new
     @lat_long = params[:lat_long]
     @dates = [params[:starting], params[:ending]]
     @markers = @parkings.map do |parking|
@@ -32,7 +33,17 @@ class ParkingsController < ApplicationController
     else
       render :new
     end
+  end
 
+  def owner_parkings
+    @parkings = authorize current_user.owned_parkings.where.not(latitude: nil, longitude: nil)
+    @features = Feature.all
+    @markers = @parkings.map do |parking|
+      {
+        lng: parking.longitude,
+        lat: parking.latitude
+      }
+    end
   end
 
   def update

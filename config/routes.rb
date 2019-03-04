@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   resources :parkings, only: [:index, :new, :create, :update, :delete] do
     resources :bookings, only: [:new, :create]
+    collection do
+      get 'owner_parkings'
+    end
 
   end
 
