@@ -55,19 +55,23 @@
   height:92%;
 }
 
-.booking-car-info, .booking-confirmation, .booking-description, .booking-price ,.booking-status{
+.booking-car-info, .booking-description, .booking-price ,.booking-status{
   border-bottom: 1px solid lightgrey;
   padding-bottom: 20px;
 }
 
 .booking-head {
-  border-bottom: 1px solid lightgrey;
   padding-bottom: 5px;
 }
 
-.booking-confirmation, .booking-description, .booking-price, {
+.booking-description, .booking-price, {
   border-bottom: 1px solid lightgrey;
   padding-top: 20px;
+}
+
+.booking-confirmation, {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .booking-car-plate, {
