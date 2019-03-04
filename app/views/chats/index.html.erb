@@ -1,28 +1,29 @@
 <h1>Chats#index</h1>
 <p>Find me in app/views/chats/index.html.erb</p>
+<div class="chat-wrapper">
+  <div class="chat-box" data-booking_id="<%= @booking.id %>">
+    <% @chats.each do |chat| %>
+    <%= render "message", chat: chat %>
+    <% end %>
 
-<div class="chat-box" data-booking_id="<%= @booking.id %>">
-<% @chats.each do |chat| %>
-  <%= render "message", chat: chat %>
-<% end %>
-
-</div>
-
-<div class="chat-text-input">
-  <%= form_with(model: [@booking, @chat], remote: true, format: :json, id: 'chat-form') do |form| %>
-  <% if @chat.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@chat.errors.count, "error") %> prohibited this chat from being saved:</h2>
-    <ul>
-      <% @chat.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
   </div>
-  <% end %>
-  <div class="field position-relative">
-    <%= form.text_field :message, id: :message, class: "form-control", required: true %>
-    <%= form.hidden_field :identifier, id: :username, value: current_user.identifier %>
+
+  <div class="chat-text-input">
+    <%= form_with(model: [@booking, @chat], remote: true, format: :json, id: 'chat-form') do |form| %>
+    <% if @chat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chat.errors.count, "error") %> prohibited this chat from being saved:</h2>
+      <ul>
+        <% @chat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <div class="field position-relative">
+      <%= form.text_field :message, id: :message, class: "form-control", required: true %>
+      <%= form.hidden_field :identifier, id: :username, value: current_user.identifier %>
+    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
