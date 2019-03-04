@@ -41,7 +41,9 @@
   justify-content: space-between;
   p{ display:flex}
 }
-
+.checkout-pad {
+  padding-bottom: 13px;
+}
 .primary-color {
   color: $primary;
 }
