@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'chats/index'
   post "procesar-pago", to: 'bookings#create'
   get 'reviews/create'
   devise_for :users
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:index, :show, :update] do
+    resources :chats, only: [:index, :create]
     resources :reviews, only: :create
   end
 

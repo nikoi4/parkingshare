@@ -4,6 +4,7 @@ class Booking < ApplicationRecord
   belongs_to :parking
   belongs_to :user
   has_many :reviews, dependent: :destroy
+  has_many :chats
   validates :status, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true

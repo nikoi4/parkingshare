@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :booked_parkings, through: :bookings, source: :parking, dependent: :destroy
   # has_many :owned_bookings, through: :parkings, source: :booking
   has_many :searches
+  has_many :chats
 
   def owned_bookings
     bookings = []
@@ -20,5 +21,13 @@ class User < ApplicationRecord
     end
 
     return bookings
+  end
+
+  def identifier
+    if first_name
+      first_name
+    else
+      email
+    end
   end
 end

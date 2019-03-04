@@ -38,10 +38,12 @@ user_attributes = [
   {
     email:         'owner@parking.com',
     password:      '12345678',
+    first_name:    'Meli'
   },
   {
     email:         'user@parking.com',
     password:      '12345678',
+    first_name:    'Rodrigo'
   },
   {
     email:         'owner1@parking.com',
@@ -223,7 +225,7 @@ parking_attributes = [
     description:  'Lorem ipsum sdafkljasfd  laksf askdljflajfds  aldsfkj',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(50..200),
-    user:         User.last,
+    user:         owner,
   },
 ]
 
@@ -335,7 +337,7 @@ end
 puts 'Creating bookings'
 
 p1 = Parking.first
-p2 = Parking.last
+p2 = Parking.first
 
 
 booking_attributes = [
@@ -353,7 +355,7 @@ booking_attributes = [
     car_plate: 'AC 826 KF',
     start_date:'27/02/19',
     end_date:  '28/02/19',
-    user:       user1,
+    user:       user,
     parking:    p2,
     price_cents: '400'
   },
