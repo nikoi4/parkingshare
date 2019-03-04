@@ -5,7 +5,7 @@ class ParkingsController < ApplicationController
   def index
     @lat_long = params[:lat_long]
     @dates = [params[:starting], params[:ending]]
-    @parkings = policy_scope(Parking).near(params[:lat_long], 10)
+    @parkings = policy_scope(Parking).near(params[:lat_long], 50)
     @features = Feature.all
     @search = Search.new
     @markers = @parkings.map do |parking|

@@ -87,7 +87,7 @@
   display: flex;
   justify-content: space-between;
   position: relative;
-  top: 45px;
+  top: 40px;
 }
 
 
@@ -133,7 +133,505 @@
 
 #banner-typed-text {
   position: relative;
-  top: 100px;
-  right: 500px;
+  top: 200px;
+  right: 80px;
+}
+
+.typed-wrapper {
+  min-height: 8em;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600,700" rel="stylesheet');
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600,700" rel="stylesheet');
+
+/*--------------------------------
+RESET
+---------------------------------*/
+*{
+  font-family: 'Raleway', sans-serif;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*--------------------------------
+GLOBAL
+---------------------------------*/
+
+
+p{
+  color: #767676;
+  line-height:23px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.btn {
+ background-color: #0B5577;
+  border: none;
+  color: white;
+  padding: 13px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-left: 20px;
+}
+
+.btn--opacity {
+    animation: opacity 3s;
+}
+
+.sect {
+    padding: 130px 0;
+}
+.sect--brown{
+  background-color: #1d140b;
+}
+
+.sect--grey{
+  background-color: #ebebeb;
+}
+
+.sect--no-bottom{
+  padding-bottom: 0;
+}
+
+.sect--white-text{
+  color: #fff;
+}
+.col--inbl{
+  display: inline-block;
+   float: none;
+}
+.row--center{
+  text-align: center;
 
 }
+.row--small {
+  max-width: 960px;
+  margin:0 auto;
+}
+
+.row--margin{
+  margin-top: 65px;
+}
+/*--------------------------------
+ANIOMATION
+---------------------------------*/
+@-webkit-keyframes banner-in {
+  0% {
+    background-color:rgba(0,0,0,1);
+  }
+  100% {
+     background-color:rgba(0,0,0,0.5);
+  }
+}
+@-moz-keyframes banner-in {
+  0% {
+    background-color:rgba(0,0,0,1);
+  }
+  100% {
+     background-color:rgba(0,0,0,0.5);
+  }
+}
+@-o-keyframes banner-in {
+  0% {
+    background-color:rgba(0,0,0,1);
+  }
+  100% {
+     background-color:rgba(0,0,0,0.5);
+  }
+}
+@keyframes banner-in {
+  0% {
+    background-color:rgba(0,0,0,1);
+  }
+  100% {
+     background-color:rgba(0,0,0,0.5);
+  }
+}
+
+@-webkit-keyframes opacity {
+  0% {
+    opacity:0;
+  }
+  100% {
+     opacity:1;
+  }
+}
+@-moz-keyframes opacity {
+  0% {
+    opacity:0;
+  }
+  100% {
+     opacity:1;
+  }
+}
+@-o-keyframes opacity {
+  0% {
+    opacity:0;
+  }
+  100% {
+     opacity:1;
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity:0;
+  }
+  100% {
+     opacity:1;
+  }
+}
+
+/*--------------------------------
+Park Wherever
+---------------------------------*/
+.sect--type{
+  background-color: #fff;
+}
+
+.sect__title {
+    margin-top: 0;
+    text-transform: uppercase;
+    line-height: 40px;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.sect__subtitle {
+    margin-bottom: 0;
+}
+
+.coffee {
+    padding: 0 25px;
+}
+
+.coffee__name {
+    letter-spacing: 1px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.coffee__img {
+    width: 90%;
+}
+
+.coffee__descr {
+    margin: 0;
+    line-height: 23px;
+}
+
+/*--------------------------------
+Community
+---------------------------------*/
+.half-sect__second {
+    background-image: url('https://images.unsplash.com/photo-1522318548694-a0b65c40b0c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1086&q=80');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:#EDEDED;
+}
+
+.half {
+    width: 50%;
+    display: table-cell;
+    background-color:#fff;
+}
+
+.half-sect__first {
+    padding: 150px;
+   background-color:#EDEDED;
+}
+
+.description__p {
+    margin-bottom: 40px;
+}
+
+.description__title {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+
+/*--------------------------------
+meli
+---------------------------------*/
+.sect--great {
+    background-image: url('https://images.unsplash.com/photo-1523362612182-052e9ff2c8da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color:#fff;
+    color: white;
+}
+
+/*--------------------------------
+blueparkinglot
+---------------------------------*/
+.sect--best {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 160px 0;
+    background-color:#fff;
+}
+
+.best__title {
+    letter-spacing: 1px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: #daa37f;
+}
+
+.best__img {
+    width: 50px;
+    color: black;
+}
+
+.best--margin {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    color: black;
+}
+
+.best--bottom {
+    margin-bottom: 40px;
+    color: black;
+}
+
+/*--------------------------------
+FOOTER
+---------------------------------*/
+.footer {
+  display: table;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.footer__half {
+    width: 50%;
+    display: table-cell;
+    padding: 100px 140px;
+}
+
+.footer__half-1 {
+    background-image: url('https://res.cloudinary.com/nikoi4/image/upload/v1551219919/sahin-yesilyaprak-1207014-unsplash_1.jpg');
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.footer__half-2 {
+    background-color: #ededed;
+}
+
+.footer__big-title {
+    margin-top: 0;
+    text-transform: uppercase;
+    line-height: 40px;
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: #000;
+}
+
+.footer__title {
+    letter-spacing: 1px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #daa37f;
+}
+
+.footer__desc {
+    color: #d7d7d7;
+    margin-bottom: 25px;
+}
+/*--------------------------------
+RESPONSIVE
+---------------------------------*/
+
+@media screen and (max-width:1024px){
+  .sect{
+    padding:100px 0;
+  }
+  .row--margin {
+    margin-top: 55px;
+}
+  .banner__title {
+    font-size: 54px;
+  }
+  .half-sect__first{
+    padding:100px;
+
+  }
+  .three-img__img{
+    padding-bottom: 40%;
+  }
+  .sect--no-bottom{
+    padding-bottom:0px !important;
+  }
+  .footer__half {
+    padding: 90px 120px;
+  }
+  .sect-t-footer{
+    display:none;
+  }
+  .footer{
+    position:relative;
+  }
+}
+
+
+@media screen and (max-width:991px){
+  .sect{
+    padding:80px 0;
+  }
+   .banner__title {
+    font-size: 50px;
+  }
+  .row--margin {
+    margin-top: 45px;
+}
+  .coffee {
+    padding: 0 15px;
+  }
+  .coffe__img{
+    width:100%;
+  }
+  .half-sect__first {
+    padding: 80px;
+  }
+  .last-articles{
+        margin-bottom:30px;
+  }
+
+  .sect__title, .description__title, .footer__big-title {
+    line-height: 38px;
+    font-size: 28px;
+  }
+  .footer__half {
+    padding: 60px 90px;
+}
+
+}
+
+@media screen and (max-width:767px){
+  .banner__title {
+    font-size: 48px;
+}
+  .three-img{
+    height:auto;
+  }
+  .sect{
+    padding:60px 0;
+  }
+  .row--margin {
+    margin-top: 30px;
+}
+  .coffee{
+    margin-bottom:30px;
+  }
+  .coffee__img {
+    width: 35%;
+  }
+  .coffee__descr, .sect__subtitle{
+    padding: 0 50px;
+  }
+  .sect__title, .description__title, .footer__big-title {
+    line-height: 36px;
+    font-size: 26px;
+  }
+  .half-sect__first {
+    padding: 50px;
+  }
+  .article-pre{
+    margin-bottom:15px;
+  }
+  .footer__half {
+    width: 100%;
+    display: block;
+    padding: 50px 50px;
+  }
+    .half-sect {
+    display: block;
+    height: auto;
+  }
+  .half {
+    width: 100%;
+    display: block;
+  }
+  .half-sect__second{
+    padding-bottom:60%;
+  }
+
+
+}
+
+@media screen and (max-width:480px){
+  .banner__title {
+    font-size: 44px;
+  }
+  .sect{
+    padding:50px 0;
+  }
+  .sect__title, .description__title {
+    line-height: 30px;
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  .sect__subtitle{
+    padding:0;
+  }
+  .coffee__img {
+    width: 65%;
+  }
+  .coffee__descr, .sect__subtitle {
+    padding: 0 15px;
+  }
+  .best--margin {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .row--margin {
+    margin-top: 15px;
+  }
+  .best__img {
+    width: 44px;
+  }
+  .best__title {
+    margin-top: 15px;
+  }
+  .three-img__img {
+    padding-bottom: 60%;
+    width:100%;
+  }
+
+  .footer__half {
+    padding: 35px 35px;
+}
+  .footer__desc {
+    margin-bottom: 10px;
+}
+
+}
+
