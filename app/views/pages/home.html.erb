@@ -1,43 +1,165 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url(https://res.cloudinary.com/nikoi4/image/upload/v1551219919/sahin-yesilyaprak-1207014-unsplash_1.jpg);">
-  <p>
-  <div><span id="banner-typed-text"></span></div>
-  </p>
-  <div class="form-wrapper">
-<div>
-<%= simple_form_for(@search) do |f| %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url(https://images.unsplash.com/photo-1493780758133-e5cfb0d00354?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1197&q=80.jpg);">
 
-<div class="search-wrapper">
-  <div class="search-content" id="search-address">
-    <div class="search-content-title">
-      <span>Parking</span>
+    <div class="typed-wrapper">
+      <span id="banner-typed-text"></span>
     </div>
-    <div class="search-content-input">
-      <%= f.text_field :address, id:'parking_address', placeholder: "Where do you want to park?" %>
+
+    <div class="form-wrapper">
+    <div>
+      <%= simple_form_for(@search) do |f| %>
+
+      <div class="search-wrapper">
+        <div class="search-content" id="search-address">
+          <div class="search-content-title">
+            <span>Parking</span>
+          </div>
+          <div class="search-content-input">
+            <%= f.text_field :address, id:'parking_address', placeholder: "Where do you want to park?" %>
+          </div>
+        </div>
+        <div class="search-content search-date">
+          <div class="search-content-title">
+            <span>Arriving</span>
+          </div>
+          <div class="search-content-input">
+            <%= f.input :starting, as: :string, required: false, input_html: { class: "datepicker", placeholder: "Select day and time", label: false }, label_html: { style: 'display: none' }, wrapper_html: { style: 'margin-bottom: 0;' } %>
+            <i class="fas fa-chevron-down primary-color"></i>
+          </div>
+        </div>
+        <div class="search-content search-date">
+          <div class="search-content-title">
+            <span>Leaving</span>
+          </div>
+          <div class="search-content-input">
+            <%= f.input :ending, as: :string, required: false, input_html: { class: "datepicker", placeholder: "Select day and time" }, label_html: { style: 'display: none' }, wrapper_html: { style: 'margin-bottom: 0;' } %>
+          <i class="fas fa-chevron-down primary-color"></i>
+          </div>
+        </div>
+        <div class="search-submit">
+          <%= f.submit "Show parking spaces" %>
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
-  <div class="search-content search-date">
-    <div class="search-content-title">
-      <span>Arriving</span>
-    </div>
-    <div class="search-content-input">
-      <%= f.input :starting, as: :string, required: false, input_html: { class: "datepicker", placeholder: "Select day and time", label: false }, label_html: { style: 'display: none' }, wrapper_html: { style: 'margin-bottom: 0;' } %>
-      <i class="fas fa-chevron-down primary-color"></i>
-    </div>
-  </div>
-  <div class="search-content search-date">
-    <div class="search-content-title">
-      <span>Leaving</span>
-    </div>
-    <div class="search-content-input">
-      <%= f.input :ending, as: :string, required: false, input_html: { class: "datepicker", placeholder: "Select day and time" }, label_html: { style: 'display: none' }, wrapper_html: { style: 'margin-bottom: 0;' } %>
-    <i class="fas fa-chevron-down primary-color"></i>
-    </div>
-  </div>
-  <div class="search-submit">
-    <%= f.submit "Show parking spaces" %>
-  </div>
-</div>
-<% end %>
-</div>
 </div>
 
+
+<div class="sect sect--type">
+  <div class="container">
+    <div class="row row--center">
+      <div class="col-md-5 col-xs-8 col-sm-6 col--inbl">
+        <h1 class="sect__title">Park Wherever.</h1>
+      <p class="sect__subtitle">
+        No more circling the block for parking. Now you can simply reserve, arrive and live your life. Book parking weeks in advance or search for available parking on demand. ParkingShare makes it easy for you to compare real-time prices, user reviews and walk times to find the perfect space for you. When you use ParkingShare to find parking, you can:
+      </p>
+      </div>
+    </div>
+    <div class="row row--small row--margin row--center">
+      <div class="col-md-4 col-sm-4 coffee">
+        <img src="https://image.flaticon.com/icons/png/512/51/51338.png" class="coffee__img">
+        <h2 class="coffee__name">Reserve exclusive spaces in advance</h2>
+      </div>
+
+      <div class="col-md-4 col-sm-4 coffee">
+        <img src="data:image/png;base64,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" class="coffee__img">
+        <h2 class="coffee__name">Compare real-time prices</h2>
+      </div>
+
+       <div class="col-md-4 col-sm-4 coffee">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs123qkrNOdvrAdJqBGOdJRwdTEz6-hZ2EcMXzzaiNSyRsqWP3" class="coffee__img">
+        <h2 class="coffee__name">Extend reservations right from the app</h2>
+      </div>
+    </div>
+       <div class="row row--margin row--center">
+         <a href="#" class="btn">Learn More about ParkingShare</a>
+       </div>
+  </div>
+</div>
+
+<div class="half-sect">
+  <div class="half half-sect__first">
+    <div class="description">
+      <h2 class="description__title">ParkingShare is more than a parking app. It’s a community!</h2>
+      <p class="description__p">
+ParkingShare connects people looking for parking with people who have parking to share. Going to the big game? Beat the crowd by reserving your parking space in advance. Have an extra space in your driveway? Share it on ParkingShare and start earning extra cash today! With the ParkingShare shared parking app, you can list a space in minutes and reserve one even faster. Arrive happier!</p>
+    </div>
+
+  </div>
+    <div class="half half-sect__second">  </div>
+</div>
+
+<div class="sect sect--great">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-sm-7 col-sm-offset-4 col-md-offset-6">
+        <div class="description">
+      <h2 class="description__title">Host with ParkingShare</h2>
+      <p class="description__p">Your home is an asset you can share to earn money when you're away. Now your driveway is too! Become a ParkingShare Host and be rewarded for helping drivers in your city get to their destinations faster.</p>
+      <a href="#" class="btn">Learn more about Hosting</a>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sect sect--best sect--center">
+  <div class="container">
+    <div class="row row--center">
+      <div class="col-md-6 col-sm-7 col-xs-12">
+        <h1 class="sect__title best--bottom sect--white-text">Make your city better</h1>
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-4">
+            <img src="https://image.ibb.co/n5gUtm/icon_1.png" class="best__img">
+            <h2 class="best__title">Reduce emissions in your city</h2>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4">
+            <img src="https://image.ibb.co/dwEXDm/icon_2.png" class="best__img">
+            <h2 class="best__title">Decrease street traffic</h2>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4">
+            <img src="https://image.ibb.co/j5Og66/icon_3.png" class="best__img">
+            <h2 class="best__title">Build a cooperative community</h2>
+          </div>
+        </div>
+
+      <p class="sect__subtitle best--margin sect--white-text ">
+       When you cruise the block for parking, your car stays busy emitting harmful greenhouse gases. Faster parking not only means less frustration for you, it also means less pollution.
+      </p>
+      </div>
+    </div>
+</div>
+  </div>
+
+
+<div class="three-img">
+  <div class="col-md-4 col-sm-4 col-xs-4 three-img__img three-img--1"></div>
+    <div class="col-md-4 col-xs-4 col-sm-4 three-img__img three-img--2"></div>
+    <div class="col-md-4 col-xs-4 col-sm-4 three-img__img three-img--3"></div>
+</div>
+
+
+
+<div class="sect-t-footer"></div>
+
+<footer class="footer">
+  <div class="footer__half footer__half-1">
+        <h2 class="footer__big-title"></h2>
+    <h3 class="footer__title"></h3>
+    <p class="footer__desc"></p>
+    <h3 class="footer__title"></h3>
+    <p class="footer__desc"></p>
+  </div>
+  <div class="footer__half footer__half-2">
+    <h2 class="footer__big-title">CONTACT</h2>
+    <h3 class="footer__title">Phone</h3>
+    <p class="footer__desc">+(000) 111 222 333</p>
+    <h3 class="footer__title">Mail</h3>
+    <p class="footer__desc">address@mail.com</p>
+    <h3 class="footer__title">Address</h3>
+    <p class="footer__desc">543 TN, doula street<br>
+      NY, New York
+    </p>
+  </div>
+</footer>
+</body>
