@@ -1,11 +1,27 @@
-.page-footer {
-  .item-wrapper {
-    display: flex;
-    justify-content: center;
-    width: 80%;
-    background-color: white;
-  }
-  .right-aligned {
-    text-align: right;
-  }
+.footer-meli {
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 42px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+  z-index: 200;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: $primary;
+  opacity: 0.5;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
 }
