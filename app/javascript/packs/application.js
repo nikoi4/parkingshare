@@ -6,8 +6,10 @@ import { initToggle } from '../components/toggle';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initMapbox } from '../plugins/init_mapbox';
 import { loadDynamicBannerText } from '../components/banner';
+import { bookingProcess } from '../components/booking';
 initToggle();
 initMapbox();
 initAutocomplete();
 loadDynamicBannerText();
+bookingProcess();
 

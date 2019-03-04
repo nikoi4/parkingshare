@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post "procesar-pago", to: 'bookings#create'
   get 'reviews/create'
   devise_for :users
   get "home", to: "pages#home"
