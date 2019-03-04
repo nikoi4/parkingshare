@@ -35,6 +35,7 @@ class BookingsController < ApplicationController
     @markers = [{
       lng: @parking.longitude,
       lat: @parking.latitude,
+      infoWindow: render_to_string(partial: "shared/infowindow", locals: { parking: @parking })
       }]
   end
 

@@ -11,6 +11,13 @@ items.forEach(item => {
   });
 });
 
+items.forEach(item => {
+  item.addEventListener("mouseover", e => {
+    popOvers.forEach(po => (po.style.display = "none"));
+  });
+});
+
+
 closePopupBtns.forEach(clbtn => {
   clbtn.addEventListener("click", e => {
     popOvers.forEach(po => (po.style.display = "none"));
