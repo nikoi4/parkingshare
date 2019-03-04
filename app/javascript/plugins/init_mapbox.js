@@ -65,7 +65,6 @@ const initMapbox = () => {
     geolocate.trigger();
   });
 
-
   if (markers.length == 1) {
 
     let directions = new MapboxDirections({

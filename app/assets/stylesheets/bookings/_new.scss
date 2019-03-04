@@ -6,7 +6,7 @@
 
 .booking-summary {
   flex: 1 0 30%;
-  height: 80vh;
+  height: 84vh;
   width: 100%;
   color: $greytext;
   padding: 30px;
@@ -17,7 +17,7 @@
 
 .booking-complete-info, {
   flex: 1 0 60%;
-  height: 80vh;
+  height: 84vh;
   width: 100%;
   color: $greytext;
   padding: 30px;
@@ -130,7 +130,7 @@
   padding-bottom: 10px;
 }
 .booking-address span {
- font-size: 24px;
+ font-size: 22px;
  font-weight: bold;
 }
 
@@ -182,6 +182,10 @@
   }
 }
 
+.checkout-total {
+  p {margin-bottom: 0px;
+  }
+}
 .chekout-header {
   color: rgb(150,150,150);
   font-size: 16px;
@@ -294,3 +298,15 @@
   font-size: 12px;
 }
 
+.booking-full-address {
+  font-size: 16px;
+  padding: 0px 10px;
+}
+
+.booking-full-address-dir {
+  font-size: 14px;
+}
+
+.chekout-per-hour {
+  font-size: 14px;
+}
