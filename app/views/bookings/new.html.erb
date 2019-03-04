@@ -59,11 +59,11 @@
                   <th class="checkout-left">Leaving on:</th>
                 </tr>
                 <tr>
-                  <td class="checkout-dates"><span>Feb 28 - 10:00 pm</span></td>
+                  <td class="checkout-dates"><span><%= @booking.start_date.to_datetime.strftime("%b %e - %l:%M %p") %></span></td>
                   <td>
                     <i class="fas fa-arrow-right primary-color margin-icon"></i>
                   </td>
-                  <td class="checkout-dates checkout-left"><span>Feb 28 - 18:00 pm</span></td>
+                  <td class="checkout-dates checkout-left"><span><%= @booking.end_date.to_datetime.strftime("%b %e - %l:%M %p") %></span></td>
                 </tr>
                 <tr>
                   <td class="checkout-description-link" colspan="3">
@@ -71,11 +71,11 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="checkout-hours checkout-right" colspan="3">8 hrs</span></td>
+                  <td class="checkout-hours checkout-right" colspan="3"><span><%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil %> hrs</span></td>
                 </tr>
                 <tr>
                   <td class="checkout-total checkout-right" colspan="3">
-                    <p>Total price:<span>$ 400</span></p></td>
+                    <p>Total price:<span>$ <%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil * @parking.price_cents.to_i %> (<%= @parking.price_cents %>/hrs)</span></p></td>
                   </tr>
                 </table>
 
