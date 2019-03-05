@@ -61,7 +61,7 @@
 
 
 .search-submit {
-  background-color: #0B5577;
+  background-color: #5FC2EF;
   border: none;
   color: white;
   padding: 13px;
@@ -170,8 +170,8 @@ p{
   font-family: 'Nunito', sans-serif;
 }
 
-.btn {
- background-color: #0B5577;
+.btn-meliz {
+ background-color: $lighter;
   border: none;
   color: white;
   padding: 13px;
@@ -488,7 +488,7 @@ RESPONSIVE
     padding-bottom: 40%;
   }
   .sect--no-bottom{
-    padding-bottom:0px !important;
+    padding-bottom:0px;
   }
   .footer__half {
     padding: 90px 120px;

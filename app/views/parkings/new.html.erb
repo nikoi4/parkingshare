@@ -1,12 +1,12 @@
-<div class="container-fluid" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('<%= cl_image_path 'https://res.cloudinary.com/nikoi4/image/upload/v1551219919/sahin-yesilyaprak-1207014-unsplash_1.jpg' %>'); background-position: center; background-size: cover;">
+<div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-sm-offset-4">
       <div class="form-parking">
-        <h1>Publish your spot</h1>
+        <h1>List your Space</h1>
         <%= simple_form_for(@parking) do |f| %>
-          <%= f.input :name, placeholder: "Cochera de" %>
+          <%= f.input :name, placeholder: "Great Parking Lot..." %>
           <%= f.input :address, placeholder: "Coronel Niceto Vega 2222, CABA" %>
-          <%= f.input :description, placeholder: "Your spot description" %>
+          <%= f.input :description, placeholder: "Your lot description" %>
         <div class="row">
           <div class="col-xs-6">
             <%= f.input :size, collection: Parking::SIZE_CAR, prompt: "Car size?" %>
