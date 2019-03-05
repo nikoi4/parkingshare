@@ -37,7 +37,7 @@ class User < ApplicationRecord
     if (first_name && last_name).nil?
       email
     else
-      (first_name.capitalize & " " & last_name.capitalize)
+      return "#{first_name.capitalize} #{last_name.capitalize}"
     end
   end
 end
