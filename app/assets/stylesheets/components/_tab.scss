@@ -16,4 +16,31 @@
 .tabs-underlined .tab-underlined.active {
   opacity: 1;
   border-bottom: 3px solid $primary;
+  }
+
+
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+ border: 0px solid #ddd !important;
+ padding-bottom: 1px !important;
+}
+
+.nav-tabs > li > a {
+   border: 0px solid #ddd !important;
+ padding-bottom: 1px !important;
+}
+
+
+
+
+
+
+.tab-content {
+  color : white;
+  background-color: #428bca;
+  padding : 5px 15px;
+}
+
+#bookingTabs {
+  color : white;
 }
