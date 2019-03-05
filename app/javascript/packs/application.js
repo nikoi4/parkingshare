@@ -8,9 +8,10 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initMapbox } from '../plugins/init_mapbox';
 import { loadDynamicBannerText } from '../components/banner';
 import { bookingProcess } from '../components/booking';
+import { initReview } from '../components/reviews';
 initToggle();
 initMapbox();
 initAutocomplete();
 loadDynamicBannerText();
 bookingProcess();
-
+initReview();
