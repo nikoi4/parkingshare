@@ -82,7 +82,7 @@
 
             </div>
             <div class="booking-add-review">
-                    <%  @booking.reviews.first.nil? %>
+                    <%if  @booking.reviews.first.nil? %>
                     <button type="button" class="btn-meli-square-small" data-toggle="modal" data-target="#newBooking">Add review</button>
                     <%= render "reviews/new", booking: @booking, review:    Review.new %>
                     <% else %>
