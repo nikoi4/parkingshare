@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
         # Hard coded remote address
         '200.5.83.150'
       else
-        request.remote_ip
+        request.location
       end
     end
 
