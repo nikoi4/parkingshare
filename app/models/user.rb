@@ -26,18 +26,18 @@ class User < ApplicationRecord
   end
 
   def identifier
-    if first_name
-      first_name
-    else
-      email
-    end
-  end
-
-  def identifierfull
     if (first_name && last_name).nil?
       email
     else
       return "#{first_name.capitalize} #{last_name.capitalize}"
     end
   end
+
+def identifierfull
+  if (first_name && last_name).nil?
+    email
+  else
+    return "#{first_name.capitalize} #{last_name.capitalize}"
+  end
+end
 end
