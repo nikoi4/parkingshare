@@ -11,18 +11,19 @@
   color: $greytext;
   padding: 30px;
   background-color: white;
-  margin: 20px;
+  margin: 20px 15px 0px 10px;
   box-shadow: 0px 0px 2px lightgrey;
+  min-width: 443px;
 }
 
 .booking-complete-info, {
-  flex: 1 0 60%;
+  flex: 1 0 64%;
   height: 84vh;
   width: 100%;
   color: $greytext;
-  padding: 30px;
+  padding: 10px;
   background-color: white;
-  margin: 20px;
+  margin: 20px 10px 0px 0px;
   box-shadow: 0px 0px 2px lightgrey;
 
 }
@@ -51,7 +52,7 @@
   text-align: right;
 }
 .booking-map {
-  padding-top: 20px;
+  padding-top: 5px;
   padding-bottom-bottom: 20px;
   width:100%;
   height:92%;
@@ -60,6 +61,11 @@
 .booking-car-info, .booking-description, .booking-price ,.booking-status{
   border-bottom: 1px solid lightgrey;
   padding-bottom: 20px;
+}
+
+.booking-car-info {
+  padding-left: 20px;
+  padding-top: 20px;
 }
 
 .booking-head {
@@ -74,6 +80,7 @@
 .booking-confirmation, {
   padding-top: 20px;
   padding-bottom: 20px;
+  padding-left:20px;
 }
 
 .booking-car-plate, {
