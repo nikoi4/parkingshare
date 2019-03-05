@@ -1,15 +1,6 @@
 <div class="booking-wrapper">
   <div class="booking-summary">
-   <div class="booking-status">
-    <% if @booking.status == "approved" %>
-    <span class="booking-category"><%= @booking.status %></span>
-    <i class="fas fa-check-circle approved-status"></i>
-    <% else %>
-    <span class="booking-category"><%= @booking.status %></span>
-    <i class="fas fa-check-circle approved-status">cambiar icono</i>
-    <% end %>
-  </div>
-  <div class="booking-head">
+   <div class="booking-head">
     <div class="booking-address">
       <span><%= @parking.address.truncate(27) %></span>
       <img class="avatar-large" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
@@ -91,12 +82,14 @@
 
           </div>
           <div class="booking-add-review">
+            <div class="booking-review-center">
             <%if  @booking.reviews.first.nil? %>
             <button type="button" class="btn-meli-square-small" data-toggle="modal" data-target="#newBooking">Add review</button>
             <%= render "reviews/new", booking: @booking, review:    Review.new %>
             <% else %>
-                <a class="see-review" id="see-review">See your review</a>
+            <a class="see-review" id="see-review">See your review</a>
             <% end %>
+            </div>
           </div>
         </div>
       </div>
@@ -131,8 +124,6 @@
           </div>
           <div class="tab-pane tabs-booking-height" id="2">
 
-
-
           </div>
           <div class="tab-pane tabs-booking-height" id="3">
             <div id="reviews">
@@ -145,6 +136,15 @@
 
           </div>
         </div>
+      </div>
+      <div class="booking-status">
+        <% if @booking.status == "approved" %>
+        <span class="booking-category status-ap"><%= @booking.status %></span>
+        <i class="fas fa-check-circle approved-status"></i>
+        <% else %>
+        <span class="booking-category status-di"><%= @booking.status %></span>
+        <i class="fas fa-exclamation-circle pending-status"></i>
+        <% end %>
       </div>
 
 
