@@ -3,6 +3,7 @@ class SearchesController < ApplicationController
 
   def create
     @search = Search.new(search_params)
+    raise
     default = Geocoder.search(remote_ip)
     @search.address = default.first.address if @search.address == ""
     @search.user = current_user if user_signed_in?
