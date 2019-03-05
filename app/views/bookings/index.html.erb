@@ -1,115 +1,19 @@
-<div class="container booking">
-
-  <div class="tabs">
-   <ul class="list-inline tabs-underlined">
-    <li>
-      <a href="#" class="tab-underlined active">Bookings made</a>
+<div id="bookingTabs" class="container">
+  <ul class="nav nav-tabs tabs-underlined">
+    <li class="active tab-underlined">
+      <a  href="#1" data-toggle="tab">Bookings made</a>
     </li>
-    <li>
-      <a href="#" class="tab-underlined">Bookings received</a>
+    <li class="tab-underlined">
+      <a href="#2" data-toggle="tab">Bookings received</a>
     </li>
   </ul>
 
-</div>
-<div class="bookings-wrapper">
-  <div class="bookings-board">
-    <% @owned_bookings.each do |booking| %>
-    <div class="message">
-      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-      <div class="message-name">
-        <p><%= booking.start_date.strftime("%m/%d/%Y")%></p>
-        <h3><%= booking.user.email %></h3>
-        <span><%= booking.car_plate %></span>
-      </div>
-      <div class="message-body">
-        <div class="message-info">
-          <p><strong><%= booking.parking.name %> - <%= booking.parking.address %></strong></p>
-          <div class="message-date">
-            <i class="far fa-calendar-alt"></i><span><%= booking.start_date.strftime("%d-%b-%y %k:%M") %>  <i class="fas fa-arrow-right"></i>  <%= booking.end_date.strftime("%d-%b-%y %k:%M") %> </span>
-          </div>
-          <div class="message-review">
-            <ul class= "list-inline card-description-stars">
-              <li>
-                <% if booking.reviews.empty? %>
-                <% 5.times do %>
-                <i class="fas fa-star not-rated"></i>
-                <% end %>
-                <% else %>
-                <% booking.reviews.last.rating.times do %>
-                <i class="fas fa-star rated"></i>
-                <% end %>
-                <% (5 - booking.reviews.last.rating).times do %>
-                <i class="fas fa-star not-rated"></i>
-                <% end %>
-                <% end %>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="message-action">
-          <%= link_to booking_path(booking), method: :patch do %>
-          <i class="far fa-check-circle">Approve</i>
-          <% end %>
-          <%= link_to do %>
-          <i class="far fa-comments">Chat</i>
-          <% end %>
-        </div>
-      </div>
-      <div class="message-status">
-        <p class="status pending"><%= booking.status %></p>
-        <p class="price">$<%= booking.price_cents %></p>
-      </div>
+  <div class="tab-content">
+    <div class="tab-pane active" id="1">
+      <%= render 'bookings/made' %>
     </div>
-    <% end %>
-  </div>
-</div>
-<div class="bookings-wrapper">
-  <div class="bookings-board">
-    <% @booked_bookings.each do |booking| %>
-    <div class="message">
-      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-      <div class="message-name">
-        <p><%= booking.start_date %></p>
-        <h3><%= booking.parking.user.email %></h3>
-        <span><%= booking.car_plate %></span>
-      </div>
-      <div class="message-body">
-        <div class="message-info">
-          <p><strong><%= booking.parking.name %> - <%= booking.parking.address %></strong></p>
-          <div class="message-date">
-            <i class="far fa-calendar-alt"></i><span><%= booking.start_date %>  <%= booking.end_date %> </span>
-          </div>
-          <div class="message-review">
-            <ul class= "list-inline card-description-stars">
-              <li>
-                <% if booking.reviews.empty? %>
-                <% 5.times do %>
-                <i class="fas fa-star not-rated"></i>
-                <% end %>
-                <% else %>
-                <% booking.reviews.last.rating.times do %>
-                <i class="fas fa-star rated"></i>
-                <% end %>
-                <% (5 - booking.reviews.last.rating).times do %>
-                <i class="fas fa-star not-rated"></i>
-                <% end %>
-                <% end %>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="message-action">
-          <%= link_to do %>
-          <i class="far fa-comments">Chat</i>
-          <% end %>
-        </div>
-      </div>
-      <div class="message-status">
-        <p class="status pending"><%= booking.status %></p>
-        <p class="price">$<%= booking.price_cents %></p>
-      </div>
+    <div class="tab-pane" id="2">
+      <%= render 'bookings/received' %>
     </div>
-    <% end %>
   </div>
-</div>
 </div>

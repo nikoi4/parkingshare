@@ -55,7 +55,7 @@ const initMapbox = () => {
       enableHighAccuracy: true,
     },
     fitBoundsOptions: {
-      maxZoom: 13
+      maxZoom: 15
     },
     trackUserLocation: true
   });

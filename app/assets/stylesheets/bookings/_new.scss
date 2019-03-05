@@ -11,20 +11,20 @@
   color: $greytext;
   padding: 30px;
   background-color: white;
-  margin: 20px;
+  margin: 20px 15px 0px 10px;
   box-shadow: 0px 0px 2px lightgrey;
+  min-width: 443px;
 }
 
 .booking-complete-info, {
-  flex: 1 0 60%;
+  flex: 1 0 64%;
   height: 84vh;
   width: 100%;
   color: $greytext;
-  padding: 30px;
+  padding: 10px;
   background-color: white;
-  margin: 20px;
+  margin: 20px 10px 0px 0px;
   box-shadow: 0px 0px 2px lightgrey;
-
 }
 
 .vertical-align-items {
@@ -49,17 +49,26 @@
 }
 .booking-status {
   text-align: right;
+  position: absolute;
+  top: 124px;
+  right: 20px;
+  z-index: 3;
 }
 .booking-map {
-  padding-top: 20px;
+  padding-top: 5px;
   padding-bottom-bottom: 20px;
   width:100%;
   height:92%;
 }
 
-.booking-car-info, .booking-description, .booking-price ,.booking-status{
+.booking-car-info, .booking-description, .booking-price ,{
   border-bottom: 1px solid lightgrey;
   padding-bottom: 20px;
+}
+
+.booking-car-info {
+  padding-left: 20px;
+  padding-top: 20px;
 }
 
 .booking-head {
@@ -74,6 +83,7 @@
 .booking-confirmation, {
   padding-top: 20px;
   padding-bottom: 20px;
+  padding-left:20px;
 }
 
 .booking-car-plate, {
@@ -87,7 +97,7 @@
   justify-content: left;
   flex-direction: column;
   padding: 0px 10px;
-  }
+}
 
 .booking-car-action {
   display: flex;
@@ -175,7 +185,7 @@
   padding: 18px 0px 10px 0px;
   text-align: right;
   color: rgb(150,150,150);
-    p>span {
+  p>span {
     font-size: 24px;
     color: rgb(74,74,74);
     padding-left: 4px;
@@ -261,8 +271,20 @@
 }
 
 .pending-status {
-  color: orange;
+  color: $complementary;
+  margin-left: 8px;
+  padding-right: 5px
 }
+
+.status-ap {
+  color: green;
+}
+
+.status-di {
+  color: $complementary;
+}
+
+
 
 .booking-map-container {
   height:100%;
@@ -309,4 +331,16 @@
 
 .chekout-per-hour {
   font-size: 14px;
+}
+
+.booking-add-review {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.booking-review-center {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
 }

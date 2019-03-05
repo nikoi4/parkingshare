@@ -1,0 +1,51 @@
+<div class="container-bookings">
+  <div class="bookings-wrapper">
+    <div class="bookings-board">
+      <% @booked_bookings.each do |booking| %>
+      <div class="message">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+        <div class="message-name">
+          <p><%= booking.start_date %></p>
+          <h3><%= booking.user.identifierfull %></h3>
+          <span><%= booking.car_plate %></span>
+        </div>
+        <div class="message-body">
+          <div class="message-info">
+            <p><strong><%= booking.parking.name %> - <%= booking.parking.address %></strong></p>
+            <div class="message-date">
+              <i class="far fa-calendar-alt"></i><span><%= booking.start_date %>  <%= booking.end_date %> </span>
+            </div>
+            <div class="message-review">
+              <ul class= "list-inline card-description-stars">
+                <li>
+                  <% if booking.reviews.empty? %>
+                  <% 5.times do %>
+                  <i class="fas fa-star not-rated"></i>
+                  <% end %>
+                  <% else %>
+                  <% booking.reviews.last.rating.times do %>
+                  <i class="fas fa-star rated"></i>
+                  <% end %>
+                  <% (5 - booking.reviews.last.rating).times do %>
+                  <i class="fas fa-star not-rated"></i>
+                  <% end %>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="message-action">
+            <%= link_to do %>
+            <i class="far fa-comments">Chat</i>
+            <% end %>
+          </div>
+        </div>
+        <div class="message-status">
+          <p class="status pending"><%= booking.status %></p>
+          <p class="price">$<%= booking.price_cents %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

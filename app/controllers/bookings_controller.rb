@@ -31,6 +31,8 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @chats = Chat.where(booking: @booking)
+    @chat = Chat.new
     @parking = @booking.parking
     @markers = [{
       lng: @parking.longitude,
