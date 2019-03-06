@@ -382,7 +382,12 @@ meli
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color:#fff;
-    color: white;
+    color: #EDEDED;
+}
+
+.description__pi {
+    margin-bottom: 40px;
+    color: #FFF;
 }
 
 /*--------------------------------
@@ -446,7 +451,7 @@ FOOTER
 }
 
 .footer__half-2 {
-    background-color: #ededed;
+    background-color: #EDEDED;
 }
 
 .footer__big-title {
