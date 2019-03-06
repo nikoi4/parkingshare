@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'chats/index'
   post "procesar-pago", to: 'bookings#create'
   get 'reviews/create'
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   get "home", to: "pages#home"
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   end
 
   resources :searches, only: :create
+
 end
