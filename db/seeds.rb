@@ -62,7 +62,10 @@ user_attributes = [
 ]
 
 User.create!(user_attributes)
-User.all.each { |u| u.image = "https://res.cloudinary.com/nikoi4/image/upload/v1551911466/icons/Papirus-Team-Papirus-Status-Avatar-default.ico"}
+User.all.each do |u|
+  u.image = "https://res.cloudinary.com/nikoi4/image/upload/v1551911466/icons/Papirus-Team-Papirus-Status-Avatar-default.ico"
+  u.save!
+end
 
 owner = User.all[0]
 user = User.all[1]
