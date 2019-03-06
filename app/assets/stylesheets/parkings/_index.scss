@@ -3,12 +3,12 @@
 }
 
 #parkings-options {
-  flex: 1 0 31%;
   height: 80vh;
+  min-width: 494px;
 }
 
 #parkings-map {
-  flex: 1 0 69%;
+  flex: 1 0 auto;
   height: 80vh;
 }
 

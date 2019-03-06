@@ -37,7 +37,7 @@ class ParkingsController < ApplicationController
     authorize @parking
     if @parking.save
       assign_features
-      redirect_to parkings_path
+      redirect_to owner_parkings_parkings_path
     else
       render :new
     end
