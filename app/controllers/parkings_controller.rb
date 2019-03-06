@@ -4,13 +4,10 @@ class ParkingsController < ApplicationController
 
   def index
     @dates = [params[:starting], params[:ending]]
-<<<<<<< HEAD
     @lat_long = params[:lat_long]
-    @parkings = Parking.available(@dates.first, @dates.last, @lat_long)
-=======
     @feature_ids = params[:feature_ids]
-    @parkings = policy_scope(Parking).where("features.id = ?", params[:feature_ids])
->>>>>>> 3bc869f64d6fd8d2dd1f320f6e456333fceb2494
+    @parkings = Parking.available(@dates.first, @dates.last, @lat_long)
+    # @parkings = policy_scope(Parking).where("features.id = ?", params[:feature_ids])
     raise
     @parkings = policy_scope(Parking).near(params[:lat_long], 50)
     @features = Feature.all
