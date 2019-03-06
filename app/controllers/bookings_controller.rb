@@ -53,6 +53,40 @@ class BookingsController < ApplicationController
     end
   end
 
+  def approve_transaction
+    @booking = Booking.find(params[:booking_id])
+    authorize @booking
+    @booking.status = "approved"
+    if @booking.save
+      respond_to do |format|
+        format.html { redirect_to @booking }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { render :show }
+        format.js
+      end
+    end
+  end
+
+  def decline_transaction
+    @booking = Booking.find(params[:booking_id])
+    authorize @booking
+    @booking.status = "declined"
+    if @booking.save
+      respond_to do |format|
+        format.html { redirect_to @booking }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { render :show }
+        format.js
+      end
+    end
+  end
+
   private
 
   def booking_params
@@ -75,5 +109,4 @@ class BookingsController < ApplicationController
   def set_features
     @features = Feature.all
   end
-
 end

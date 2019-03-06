@@ -1,0 +1,4 @@
+var bookingStatus = document.getElementById("booking-status");
+console.log(bookingStatus);
+bookingStatus.innerHTML = ""
+bookingStatus.insertAdjacentHTML('beforeend', "<%= j render 'bookings/booking_status_group', booking: @booking %>")
