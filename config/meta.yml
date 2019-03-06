@@ -1,0 +1,5 @@
+meta_product_name: "Parkingshare"
+meta_title: "Parkingshare | Testing product tagline"
+meta_description: "Relevant description"
+meta_image: "logo_only_transparent.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

@@ -16,13 +16,17 @@ class ApplicationController < ActionController::Base
   # end
 
   def remote_ip
-      if request.remote_ip == '127.0.0.1'
-        # Hard coded remote address
-        '200.5.83.150'
-      else
-        request.remote_ip
-      end
+    if request.remote_ip == '127.0.0.1'
+      # Hard coded remote address
+      '200.5.83.150'
+    else
+      request.remote_ip
     end
+  end
+
+  def default_url_options
+    { host: ENV["HOST"] || "localhost:3000" }
+  end
 
   private
 
