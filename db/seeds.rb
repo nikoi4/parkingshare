@@ -39,7 +39,7 @@ user_attributes = [
     email:         'owner@parking.com',
     password:      '12345678',
     first_name:    'Meli',
-    last_name:     'Fernandez S..'
+    last_name:     'Fernandez Sassone'
   },
   {
     email:         'user@parking.com',
@@ -62,6 +62,7 @@ user_attributes = [
 ]
 
 User.create!(user_attributes)
+User.all.each { |u| u.image = "https://res.cloudinary.com/nikoi4/image/upload/v1551911466/icons/Papirus-Team-Papirus-Status-Avatar-default.ico"}
 
 owner = User.all[0]
 user = User.all[1]
