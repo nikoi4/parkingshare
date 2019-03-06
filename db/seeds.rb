@@ -38,20 +38,26 @@ user_attributes = [
   {
     email:         'owner@parking.com',
     password:      '12345678',
-    first_name:    'Meli'
+    first_name:    'Meli',
+    last_name:     'Fernandez S..'
   },
   {
     email:         'user@parking.com',
     password:      '12345678',
-    first_name:    'Rodrigo'
+    first_name:    'Rodrigo',
+    last_name:     'Cabral'
   },
   {
     email:         'owner1@parking.com',
     password:      '12345678',
+    first_name:     'Nico',
+    last_name:     'Caif'
   },
   {
     email:         'user1@parking.com',
     password:      '12345678',
+    first_name:    'Charly',
+    last_name:     'Garcia'
   },
 ]
 

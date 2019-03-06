@@ -10,10 +10,14 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { loadDynamicBannerText } from '../components/banner';
 import { bookingProcess } from '../components/booking';
 import { calendarPlus2 } from '../components/calendarPlus2';
+import { initReview } from '../components/reviews';
+
 initToggle();
 initMapbox();
 initAutocomplete();
 loadDynamicBannerText();
 bookingProcess();
+
 calendarPlus2();
+initReview();
 

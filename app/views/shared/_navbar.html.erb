@@ -23,14 +23,14 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
     <!-- Links when logged in -->
-    <%= link_to "Publish your spot", new_parking_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "My parkings",  owner_parkings_parkings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "List your Space", new_parking_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "My Parking Lots",  owner_parkings_parkings_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <span data-toggle="dropdown">User</span>
+        <span data-toggle="dropdown"><%= current_user.identifierfull %></span>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to "#" do %>

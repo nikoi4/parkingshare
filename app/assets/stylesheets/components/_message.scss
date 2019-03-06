@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   padding: 20px;
-  border-bottom: 1px solid rgba(220,224,244,0.4) !important;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
   border-top: 1px solid rgba(220,224,244,0.4)
 }
 .message:last-child {
@@ -14,32 +14,41 @@
 .message-name {
   padding-left: 10px;
   min-width: 100px;
+  width: 200px;
   span{
-    font-size: 13px;
+    font-size: 14px;
+    padding-left: 5px;
+    padding-left: 30px;
   }
 }
 .message-name h3 {
-  font-size: 13px;
+  font-size: 15px;
   margin-bottom: 0px;
   margin-top: 0px;
+  font-weight: bold;
+  padding: 0px 2px;
+}
+.message-icon-info {
+  padding: 0px 8px;
 }
 .message-name p {
-  font-size: 10px;
+  font-size: 14px;
   font-weight: lighter;
   opacity: 0.6;
   margin-top: 1px;
   margin-bottom: 1px;
+  padding-left: 1px;
 }
 .message-body {
   padding-left: 10px;
-  font-size: 13px;
+  font-size: 15px;
   color: rgba(0,0,0,0.7);
   display: flex;
   align-items: center;
 }
 .message-body {
   padding-left: 20px;
-  color: rgba(0,0,0,0.4);
+  color: rgba(0,0,0,0.8);
 }
 .message-body strong{
   color: rgba(0,0,0,0.9);
@@ -49,7 +58,7 @@
   margin: 6px 0;
 }
 .message-status {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
   margin-left: 10px;
 }
@@ -60,9 +69,13 @@
   color: red;
 }
 .status.pending {
-  color: lightgrey;
+  color: $complementary;
 }
-
+.message-price {
+  text-align: right;
+  padding-right: 20px;
+  padding-top: 10px
+}
 .message-date{
   padding-bottom: 5px;
   span {
@@ -78,4 +91,18 @@
     margin-left: 10px;
     color: #5FC2EF;
   }
+}
+
+.message-approved-status {
+  color: green;
+  margin-left: 5px;
+  padding-right: 5px;
+  font-size: 13px;
+}
+
+.messsage-pending-status {
+  color: $complementary;
+  margin-left: 5px;
+  padding-right: 5px;
+  font-size: 13px;
 }

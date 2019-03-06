@@ -1,124 +1,165 @@
 <div class="booking-wrapper">
   <div class="booking-summary">
-    <div class="booking-head">
-      <div class="booking-address">
-        <span><%= @parking.address.truncate(27) %></span>
-        <img class="avatar-large" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+   <div class="booking-head">
+    <div class="booking-address">
+      <span><%= @parking.address.truncate(27) %></span>
+      <img class="avatar-large" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+    </div>
+    <div class="booking-name">
+      <span><%= @parking.name.truncate(21) %></span>
+      <div class="booking-rating">
+        <ul class= "list-inline booking-stars">
+          <li>
+            <% if @parking.reviews.empty? %>
+            <% 5.times do %>
+            <i class="fas fa-star not-rated"></i>
+            <% end %>
+            <% else %>
+            <% @parking.rating.times do %>
+            <i class="fas fa-star rated"></i>
+            <% end %>
+            <% (5 - @parking.rating).times do %>
+            <i class="fas fa-star not-rated"></i>
+            <% end %>
+            <% end %>
+          </li>
+        </ul>
       </div>
-      <div class="booking-name">
-        <span><%= @parking.name.truncate(21) %></span>
-        <div class="booking-rating">
-          <ul class= "list-inline booking-stars">
-            <li>
-              <% if @parking.reviews.empty? %>
-              <% 5.times do %>
-              <i class="fas fa-star not-rated"></i>
-              <% end %>
+    </div>
+    <div class="booking-info">
+      <div class="booking-features-group">
+        <span><%= @parking.size %></span>
+        <div class="list-inline booking-features">
+          <% @features.each do |feature| %>
+          <li>
+            <% if @parking.includes_feature?(feature) %>
+            <% url = cl_image_path feature.icon, height: 5, width: 5 %>
+            <div style="background-image: url('<%= cl_image_path feature.icon, height: 5, width: 5 %>'); opacity: 0.6;";" class="feature-icon-2">
               <% else %>
-              <% @parking.rating.times do %>
-              <i class="fas fa-star rated"></i>
-              <% end %>
-              <% (5 - @parking.rating).times do %>
-              <i class="fas fa-star not-rated"></i>
-              <% end %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="booking-info">
-        <div class="booking-features-group">
-          <span><%= @parking.size %></span>
-          <div class="list-inline booking-features">
-            <% @features.each do |feature| %>
-            <li>
-              <% if @parking.includes_feature?(feature) %>
-              <% url = cl_image_path feature.icon, height: 5, width: 5 %>
-              <div style="background-image: url('<%= cl_image_path feature.icon, height: 5, width: 5 %>'); opacity: 0.6;";" class="feature-icon-2">
-                <% else %>
-                <div style="background-image: url('<%= cl_image_path feature.icon, height: 5, width: 5 %>'); opacity: 0.2;" class="feature-icon-2">
-                  <% end %>
-                </li>
+              <div style="background-image: url('<%= cl_image_path feature.icon, height: 5, width: 5 %>'); opacity: 0.2;" class="feature-icon-2">
                 <% end %>
-              </div>
-            </div>
-            <div class="booking-picture">
-              <% if @parking.pictures.first.nil? %>
-              <div class="card-img" style="background-image: url(<%= image_path 'logo_only_transparent.png' %>)">
-              </div>
-              <% else %>
-              <div class="card-img" style="background-image: url('<%= cl_image_path @parking.pictures[0].picture %>'); width: 100%;">
-              </div>
+              </li>
               <% end %>
-            </div>
-            <div class="booking-full-address">
-              <p class="booking-full-address-dir"> <%= @parking.address %></p>
-            </div>
-            <div class="booking-checkout">
-              <table style="width:100%">
-                <tr class="chekout-header">
-                  <th>Arriving on:</th>
-                  <th></th>
-                  <th class="checkout-left">Leaving on:</th>
-                </tr>
-                <tr>
-                  <td class="checkout-dates checkout-pad"><span><%= @booking.start_date.to_datetime.strftime("%b %e - %l:%M %p") %></span></td>
-                  <td>
-                    <i class="fas fa-arrow-right primary-color margin-icon checkout-pad"></i>
-                  </td>
-                  <td class="checkout-dates checkout-left checkout-pad"><span><%= @booking.end_date.to_datetime.strftime("%b %e - %l:%M %p") %></span></td>
-                </tr>
-
-                <tr>
-                  <td class="checkout-hours checkout-right" colspan="3">8 hrs</span></td>
-                </tr>
-                <tr>
-                  <td class="checkout-total checkout-right" colspan="3">
-                      <p>Total price:<span>$ <%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil * @parking.price_cents.to_i %></span></p>
-                    <p class="chekout-per-hour">(<%= @parking.price_cents %>/hr)</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <% if @booking.reviews.first.nil? %>
-                      <button type="button" class="btn-meli-square-small" data-toggle="modal" data-target="#newBooking">Add review</button>
-                      <%= render "reviews/new", booking: @booking, review: Review.new %>
-                    <% else %>
-                      <%= render "reviews/show", parking: @parking, review: Review.new %>
-                    <% end %>
-
-                  </td>
-                </tr>
-                </table>
-
-              </div>
             </div>
           </div>
-        </div>
-
-        <div class="booking-complete-info">
-          <div class="booking-status">
-            <% if @booking.status == "approved" %>
-            <span class="booking-category"><%= @booking.status %></span>
-            <i class="fas fa-check-circle approved-status"></i>
+          <div class="booking-picture">
+            <% if @parking.pictures.first.nil? %>
+            <div class="card-img" style="background-image: url(<%= image_path 'logo_only_transparent.png' %>)">
+            </div>
             <% else %>
-            <span class="booking-category"><%= @booking.status %></span>
-            <i class="fas fa-check-circle approved-status">cambiar icono</i>
+            <div class="card-img" style="background-image: url('<%= cl_image_path @parking.pictures[0].picture %>'); width: 100%;">
+            </div>
             <% end %>
           </div>
-          <div class="booking-map">
-            <div class="booking-map-container">
-              <div
-              id="map"
-              style="width: 100%; height: 100%;"
-              data-markers="<%= @markers.to_json %>"
-              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-              ></div>
+          <div class="booking-full-address">
+            <p class="booking-full-address-dir"> <%= @parking.address %></p>
+          </div>
+          <div class="booking-checkout">
+            <table style="width:100%">
+              <tr class="chekout-header">
+                <th>Arriving on:</th>
+                <th></th>
+                <th class="checkout-left">Leaving on:</th>
+              </tr>
+              <tr>
+                <td class="checkout-dates checkout-pad"><span><%= @booking.start_date.to_datetime.strftime("%b %e - %l:%M %p") %></span></td>
+                <td>
+                  <i class="fas fa-arrow-right primary-color margin-icon checkout-pad"></i>
+                </td>
+                <td class="checkout-dates checkout-left checkout-pad"><span><%= @booking.end_date.to_datetime.strftime("%b %e - %l:%M %p") %></span></td>
+              </tr>
 
+              <tr>
+                <td class="checkout-hours checkout-right" colspan="3"><%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil %> hrs</span></td>
+              </tr>
+              <tr>
+                <td class="checkout-total checkout-right" colspan="3">
+                  <p>Total price:<span>$ <%= number_with_delimiter(((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil * @parking.price_cents.to_i , :delimiter => ',') %></span></p>
+                  <p class="chekout-per-hour">(<%= @parking.price_cents %>/hr)</p>
+                </td>
+              </tr>
+            </table>
+
+          </div>
+          <div class="booking-add-review">
+            <div class="booking-review-center">
+              <% if @booking.status == "approved" %>
+              <%if  @booking.reviews.first.nil? %>
+              <button type="button" class="btn-meli-square-small" data-toggle="modal" data-target="#newBooking">Add review</button>
+              <%= render "reviews/new", booking: @booking, review:    Review.new %>
+              <% else %>
+              <a class="see-review" id="see-review">See your review</a>
+              <% end %>
+              <% else %>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="booking-complete-info">
+      <div id="bookingTabsBar">
+        <ul class="nav nav-tabs tabs-underlined">
+          <li class="active tab-underlined">
+            <a  href="#1" data-toggle="tab">Maps</a>
+          </li>
+          <li class="tab-underlined">
+            <a href="#2" data-toggle="tab">Messages</a>
+          </li>
+          <li class="tab-underlined">
+            <a href="#3"  data-toggle="tab" id="your-review">Your Review</a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane tabs-booking-height active" id="1">
+            <div class="booking-map">
+              <div class="booking-map-container">
+                <div
+                id="map"
+                style="width: 100%; height: 100%;"
+                data-markers="<%= @markers.to_json %>"
+                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane tabs-booking-height" id="2">
+            <%= render "chats/chat", chats: @chats, chat: @chat %>
+          </div>
+          <div class="tab-pane tabs-booking-height" id="3">
+            <div id="reviews">
+              <% if @booking.status == "approved" %>
+                <% if !@booking.reviews.last.nil? %>
+                <%= render 'shared/review' , booking: @booking%>
+                <% else %>
+                <br>
+                <button type="button" class="btn-meli-square-small" data-toggle="modal" data-target="#newBooking">Add review</button>
+              <%= render "reviews/new", booking: @booking, review:    Review.new %>
+              <% end %>
+              <% else %>
+              <br>
+              <p>You will be able to write a review as soon the operation is <strong>approbed</strong> by the owner.</p>
+              <% end %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="booking-status">
+        <% if @booking.status == "approved" %>
+        <span class="booking-category status-ap"><%= @booking.status.capitalize %></span>
+        <i class="fas fa-check-circle approved-status"></i>
+        <% else %>
+        <span class="booking-category status-di"><%= @booking.status.capitalize %></span>
+        <i class="fas fa-exclamation-circle pending-status"></i>
+        <% end %>
+      </div>
+
+
+    </div>
   </div>
+</div>
+
 
