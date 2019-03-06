@@ -6,7 +6,7 @@ $(document).ready(() => {
       <div class="chat-bubble-wrapper">
         <div class="chat-bubble ${sender}">
           <div class="chat-username">${data.identifier}</div>
-          <div class="chat-message">${data.message}</p>
+          <div class="chat-message">${data.message}</div>
         </div>
       </div>
     `);
@@ -28,6 +28,8 @@ $(document).ready(() => {
     let sender = data.user_id == current_user ? "me" : "him"
     if (data.booking_id == booking_id) {
       updateChat(data, sender);
+      let chatBox = document.querySelector('.chat-box');
+      chatBox.scrollTop = chatBox.scrollHeight - chatBox.clientHeight;
     }
   });
 });

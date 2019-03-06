@@ -3,6 +3,7 @@
   flex-direction: column;
   position: relative;
   height: 100%;
+  padding-bottom: 7px;
   .chat-box {
     padding: 1.5em;
     height: 100%;
@@ -36,8 +37,8 @@
   }
 
   #chat-form {
-    position: absolute;
-    bottom: 37px;
+    // position: absolute;
+    // bottom: 37px;
     width: 100%;
     #message {
       background-color: white;
