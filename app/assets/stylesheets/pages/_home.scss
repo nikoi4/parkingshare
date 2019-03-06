@@ -98,8 +98,15 @@
 .search-content-input {
   display: flex;
   align-items: center;
+  flex: 1 0 auto;
   font-size: 14px;
   justify-content: space-between;
+}
+
+#features_filter{
+  &:hover{
+    cursor: pointer !important;
+  }
 }
 
 #search-address {

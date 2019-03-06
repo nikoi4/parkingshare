@@ -117,7 +117,7 @@
           <div class="booking-cta">
             <a class="" id="payment" href="">
               <div class="vertical-align-items">
-                <input type="submit" name="commit" value="Create Booking" label="Book now | <%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil * @parking.price_cents.to_i %>" class="btn" data-disable-with="Create Booking">
+                <input type="submit" name="commit" value="Create Booking" label="Book now | <%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil * @parking.price_cents.to_i %>" class="btn disabled" data-disable-with="Create Booking" disabled="disabled">
 
                 <div style="display: none;">
                   <form action="/parkings/<%= @parking.id %>/bookings" method="POST">
