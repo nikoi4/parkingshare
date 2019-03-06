@@ -1,5 +1,7 @@
 <div class="lot" id="<%= parking.id %>" style="display: none;">
- <i class="fas fa-times-circle close-popup"></i>
+  <div class="lot-close-group">
+    <i class="fas fa-times-circle close-popup lot-close"></i>
+  </div>
  <div class="lot-head">
   <div class="lot-address">
     <span><%= parking.address.truncate(27) %></span>

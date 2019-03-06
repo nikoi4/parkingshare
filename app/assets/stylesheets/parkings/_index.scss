@@ -3,13 +3,13 @@
 }
 
 #parkings-options {
-  flex: 1 0 31%;
-  height: 80vh;
+  height: 76vh;
+  min-width: 494px;
 }
 
 #parkings-map {
-  flex: 1 0 69%;
-  height: 80vh;
+  flex: 1 0 auto;
+  height: 76vh;
 }
 
 .index-filterbar{
@@ -35,6 +35,7 @@
   .search-content-inner {
     display: flex;
     flex-direction: column;
+    flex: 1 0 auto;
   }
 
   .search-content-outer {

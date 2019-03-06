@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="search-content search-content-outer" id="search-address">
-        <i class="fas fa-filter"></i>
+        <i class="fas fa-filter "></i>
         <div class="search-content-inner">
           <div class="search-content-title">
             <span>Filters</span>
@@ -37,14 +37,12 @@
           <div class="search-content-input">
             <div class="search-content-input">
 
-          <input type="text" placeholder="Apply special filters!", id='features_filter'>
+          <input type="text" readonly="readonly" placeholder="Apply special filters!", id='features_filter'>
             </div>
           </div>
         </div>
       </div>
-      <div class="search-submit">
-        <%= f.submit %>
-      </div>
+        <%= f.button :submit, "Search", class: "btn-meli-square-small"%>
     </div>
   <% end %>
 </div>
@@ -67,5 +65,4 @@
   </div>
 </div>
 
-<%= render "shared/footer" %>
 <%= render "parkings/featuresfilter", features: @features %>
