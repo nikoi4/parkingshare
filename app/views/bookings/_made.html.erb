@@ -13,7 +13,7 @@
           <div class="message-info">
             <p><strong><%= booking.parking.name %> - <%= booking.parking.address %></strong></p>
             <div class="message-date">
-             <i class="far fa-calendar-alt message-icon-info"></i><span><%= booking.start_date.strftime("%d-%b-%y %k:%M") %>  <i class="fas fa-arrow-right message-icon-info"></i>  <%= booking.end_date.strftime("%d-%b-%y %k:%M") %> </span>
+             <i class="far fa-calendar-alt message-icon-info"></i><span><%= booking.start_date.strftime("%b-%d-%y %k:%M") %>  <i class="fas fa-arrow-right message-icon-info"></i>  <%= booking.end_date.strftime("%b-%d-%y %k:%M") %> </span>
             </div>
             <div class="message-review">
               <ul class= "list-inline card-description-stars">
