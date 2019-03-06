@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:index, :show, :update] do
+    get "approve_transaction", to: "bookings#approve_transaction", as: :approve_transaction
+    get "decline_transaction", to: "bookings#decline_transaction", as: :decline_transaction
     resources :chats, only: [:index, :create]
     resources :reviews, only: :create
   end
