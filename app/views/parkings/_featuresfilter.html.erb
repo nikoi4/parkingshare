@@ -1,0 +1,23 @@
+<div class="features-container" style="display: none;">
+  <div class="features-container-header">
+    <label class="control-label check_boxes optional">Features</label>
+    <i class="fas fa-times-circle close-features-container"></i>
+  </div>
+  <input type="hidden"  id="feature_ids" name="search[feature_ids][]" value="">
+  <ul>
+    <% @features.each do |feature| %>
+      <li>
+        <div class="feature-container">
+          <input form="new_search" type="checkbox" class="hidden" value="<%= feature.id %>" name="search[feature_ids][]" id="search_feature_ids_<%= feature.id %>">
+          <label class="feature-choice" for="search_feature_ids_<%= feature.id %>">
+            <!-- <%= feature.name %> -->
+            <div style="background-image: url('<%= cl_image_path feature.icon, height: 200, width: 200 %>');" class="feature-icon">
+            </div>
+          </label>
+          <span><%= feature.name %></span>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
