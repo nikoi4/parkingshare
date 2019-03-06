@@ -7,7 +7,7 @@
         <div class="message-name">
           <p><%= booking.start_date.strftime("%m/%d/%Y")%></p>
           <h3><%= booking.user.identifierfull %></h3>
-          <span><%= booking.car_plate %></span>
+          <span><%= booking.car_plate.upcase %></span>
         </div>
         <div class="message-body">
           <div class="message-info">
@@ -44,8 +44,14 @@
           </div>
         </div>
         <div class="message-status">
-          <p class="status pending"><%= booking.status %></p>
-          <p class="price">$<%= booking.price_cents %></p>
+          <% if booking.status == "approved" %>
+          <span class="status accepted"><%= booking.status.capitalize %></span>
+          <i class="fas fa-check-circle message-approved-status"></i>
+          <% else %>
+          <span class="status pending"><%= booking.status.capitalize %></span>
+          <i class="fas fa-exclamation-circle messsage-pending-status"></i>
+          <% end %>
+          <p class="message-price">$ <%= number_with_delimiter(booking.price_cents, :delimiter => ',') %></p>
         </div>
       </div>
       <% end %>
