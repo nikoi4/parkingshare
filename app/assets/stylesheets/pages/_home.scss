@@ -61,7 +61,7 @@
 
 
 .search-submit {
-  background-color: #0B5577;
+  background-color: #5FC2EF;
   border: none;
   color: white;
   padding: 13px;
@@ -167,11 +167,11 @@ GLOBAL
 p{
   color: #767676;
   line-height:23px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
-.btn {
- background-color: #0B5577;
+.btn-meliz {
+ background-color: $lighter;
   border: none;
   color: white;
   padding: 13px;
@@ -396,7 +396,7 @@ blueparkinglot
     font-weight: 600;
     margin-top: 25px;
     margin-bottom: 15px;
-    color: #daa37f;
+    color: #D55013;
 }
 
 .best__img {
@@ -421,8 +421,6 @@ FOOTER
 .footer {
   display: table;
   width: 100%;
-  position: fixed;
-  bottom: 0;
   left: 0;
   z-index: -1;
 }
@@ -459,11 +457,11 @@ FOOTER
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: 10px;
-    color: #daa37f;
+    color: #D55013;
 }
 
 .footer__desc {
-    color: #d7d7d7;
+    color: #000;
     margin-bottom: 25px;
 }
 /*--------------------------------
@@ -488,7 +486,7 @@ RESPONSIVE
     padding-bottom: 40%;
   }
   .sect--no-bottom{
-    padding-bottom:0px !important;
+    padding-bottom:0px;
   }
   .footer__half {
     padding: 90px 120px;
@@ -587,7 +585,7 @@ RESPONSIVE
 
 }
 
-@media screen and (max-width:480px){
+ @media screen and (max-width:480px){
   .banner__title {
     font-size: 44px;
   }
