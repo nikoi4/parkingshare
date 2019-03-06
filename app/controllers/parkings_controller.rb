@@ -10,6 +10,15 @@ class ParkingsController < ApplicationController
     # @parkings = policy_scope(Parking).where("features.id = ?", params[:feature_ids])
     raise
     @parkings = policy_scope(Parking).near(params[:lat_long], 50)
+    # if params[:feature_ids].present?
+    #   parkings_test = policy_scope(Parking).near(params[:lat_long], 50)
+    #   @parkings = parkings_test.select do |parking|
+    #     (params[:feature_ids].map { |f| f.to_i } - parking.features.map { |f| f.id }).empty?
+    #   end
+    #     #.where(features: { id: params[:feature_ids] })
+    # else
+    #   @parkings = policy_scope(Parking).near(params[:lat_long], 50)
+    # end
     @features = Feature.all
     @search = Search.new
     @markers = @parkings.map do |parking|
