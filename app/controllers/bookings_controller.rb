@@ -3,8 +3,8 @@ class BookingsController < ApplicationController
   before_action :set_parking, only: [:new, :create]
   before_action :set_features, only: [:new, :show]
   def index
-    @owned_bookings = current_user.owned_bookings
-    @booked_bookings = current_user.bookings
+    @owned_bookings = current_user.owned_bookings.sort_by { |booking| booking.updated_at }.reverse
+    @booked_bookings = current_user.bookings.sort_by { |booking| booking.updated_at }.reverse
 
     skip_policy_scope
   end
