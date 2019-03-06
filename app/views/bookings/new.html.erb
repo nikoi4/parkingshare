@@ -115,9 +115,9 @@
           <span class="booking-category">2. Payment information</span>
           <p class="booking-terms">Clicking below indicates that you have read and accept the Terms & Conditions</p>
           <div class="booking-cta">
-            <a class="" id="payment" href="">
+            <a class="" href="" style="text-decoration: none;">
               <div class="vertical-align-items">
-                <input type="submit" name="commit" value="Create Booking" label="Book now | <%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil * @parking.price_cents.to_i %>" class="btn disabled" data-disable-with="Create Booking" disabled="disabled">
+                <input type="submit" name="commit" value="Create Booking" label="Book now | <%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil * @parking.price_cents.to_i %>" class="btn btn-meli-square-small disabled" data-disable-with="Create Booking" disabled="disabled" id="payment">
 
                 <div style="display: none;">
                   <form action="/parkings/<%= @parking.id %>/bookings" method="POST">

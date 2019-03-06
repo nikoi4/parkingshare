@@ -27,11 +27,12 @@ const bookingProcess = () => {
     addCar.addEventListener('click', (event) => {
       bookingCarPlate.value = carPlate.value;
       saveAndContinue.classList.remove('disabled');
-      saveAndContinue.removeAttribute('disabled')
+      saveAndContinue.removeAttribute('disabled');
     });
 
     saveAndContinue.addEventListener('click', (event) => {
       payment.classList.remove('disabled');
+      payment.removeAttribute('disabled');
     });
 
     payment.addEventListener('click', (event) => {
