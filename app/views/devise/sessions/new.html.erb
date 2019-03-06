@@ -2,7 +2,7 @@
   <div class= "row">
 <div class="col-sm-offset-3 col-sm-6">
 
-<div class="form-login">
+<div class="form-login text-center">
 <h2>Log in</h2>
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
@@ -17,7 +17,7 @@
                 label: false,
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, label_html: { style: 'padding-left: 10px; position: relative; top: 2px; font-weight: lighter;' }, as: :boolean if devise_mapping.rememberable? %>
+    <%= f.input :remember_me, label_html: { style: 'padding-left: 10px; position: relative; top: 2px; font-weight: lighter;' }, wrapper_html: { style: 'text-align: left;' } , as: :boolean if devise_mapping.rememberable? %>
   </div>
 
 
@@ -26,7 +26,6 @@
 
   </div>
 <% end %>
-<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
 <%= render "devise/shared/links" %>
     </div>
   </div>
