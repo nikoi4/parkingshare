@@ -22,11 +22,13 @@
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
  border: 0px solid #ddd !important;
  padding-bottom: 1px !important;
+ padding-top: 1px !important;
 }
 
 .nav-tabs > li > a {
  border: 0px solid #ddd !important;
  padding-bottom: 1px !important;
+ padding-top: 1px !important;
 }
 
 .tab-content {
@@ -50,7 +52,7 @@
 }
 
 .tabs-booking-height {
-  height: 76vh !important;
+  height: 70vh !important;
 }
 
 .see-review {
