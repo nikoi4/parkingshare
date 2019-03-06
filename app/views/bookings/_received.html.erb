@@ -45,11 +45,14 @@
         </div>
         <div class="message-status">
           <% if booking.status == "approved" %>
-          <span class="status accepted"><%= booking.status.capitalize %></span>
-          <i class="fas fa-check-circle message-approved-status"></i>
-          <% else %>
+            <span class="status accepted"><%= booking.status.capitalize %></span>
+            <i class="fas fa-check-circle message-approved-status"></i>
+          <% elsif booking.status == "Pending" %>
           <span class="status pending"><%= booking.status.capitalize %></span>
           <i class="fas fa-exclamation-circle messsage-pending-status"></i>
+          <% else %>
+          <span class="status declined"><%= booking.status.capitalize %></span>
+          <i class="fas fa-times-circle messsage-decline-status"></i>
           <% end %>
           <p class="message-price">$ <%= number_with_delimiter(booking.price_cents, :delimiter => ',') %></p>
         </div>

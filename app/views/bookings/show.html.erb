@@ -83,15 +83,18 @@
           </div>
           <div class="booking-add-review">
             <div class="booking-review-center">
-              <% if @booking.status == "approved" %>
-              <%if  @booking.reviews.first.nil? %>
-              <button type="button" class="btn-meli-square-small" data-toggle="modal" data-target="#newBooking">Add review</button>
-              <%= render "reviews/new", booking: @booking, review:    Review.new %>
-              <% else %>
-              <a class="see-review" id="see-review">See your review</a>
-              <% end %>
-              <% else %>
-              <% end %>
+              <% if current_user.id == @booking.user_id %>
+                <% if @booking.status == "approved" %>
+                <%if  @booking.reviews.first.nil? %>
+                <button type="button" class="btn-meli-square-small" data-toggle="modal" data-target="#newBooking">Add review</button>
+                <%= render "reviews/new", booking: @booking, review:    Review.new %>
+                <% else %>
+                <a class="see-review" id="see-review">See your review</a>
+                <% end %>
+                <% else %>
+                <% end %>
+                <% else %>
+                <% end %>
             </div>
           </div>
         </div>
