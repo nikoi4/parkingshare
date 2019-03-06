@@ -5,20 +5,14 @@ class ParkingsController < ApplicationController
   def index
     @dates = [params[:starting], params[:ending]]
     @lat_long = params[:lat_long]
-    @feature_ids = params[:feature_ids]
+    @parkings = policy_scope(Parking)
     @parkings = Parking.available(@dates.first, @dates.last, @lat_long)
-    # @parkings = policy_scope(Parking).where("features.id = ?", params[:feature_ids])
-    raise
-    @parkings = policy_scope(Parking).near(params[:lat_long], 50)
-    # if params[:feature_ids].present?
-    #   parkings_test = policy_scope(Parking).near(params[:lat_long], 50)
-    #   @parkings = parkings_test.select do |parking|
-    #     (params[:feature_ids].map { |f| f.to_i } - parking.features.map { |f| f.id }).empty?
-    #   end
-    #     #.where(features: { id: params[:feature_ids] })
-    # else
-    #   @parkings = policy_scope(Parking).near(params[:lat_long], 50)
-    # end
+    if params[:feature_ids].present?
+      @feature_ids = params[:feature_ids]
+      @parkings = @parkings.select do |parking|
+        (params[:feature_ids].map { |f| f.to_i } - parking.features.map { |f| f.id }).empty?
+      end
+    end
     @features = Feature.all
     @search = Search.new
     @markers = @parkings.map do |parking|

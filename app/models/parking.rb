@@ -28,13 +28,14 @@ class Parking < ApplicationRecord
     self.reviews.map { |review| review.rating }.sum / self.reviews.count.ceil
   end
 
-  def self.available(search_start, search_end, location)
-    return nil if search_start <= search_end || location.empty?
+  def self.available(start_date, end_date, location)
+    return nil if end_date <= start_date || location.empty?
 
-    booked = self.includes(:bookings).near(location, 5).where("(?, ?) OVERLAPS (bookings.start_date, bookings.end_date)", start_date, end_date)
+    sd = start_date.to_datetime.strftime("%e-%m-%y %H:%M")
+    ed = end_date.to_datetime.strftime("%e-%m-%y %H:%M")
+    booked = self.includes(:bookings).where.not(bookings: { car_plate: "" }).where("(?, ?) OVERLAPS (bookings.start_date, bookings.end_date)", sd, ed).near(location, 50)
     booked_ids = booked.map { |parking| parking.id }
-    raise
-    self.near(location, 5).where.not(id: booked_ids)
+    self.near(location, 50).where.not(id: booked_ids)
   end
 
 end
