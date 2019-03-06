@@ -12,13 +12,14 @@ class SearchesController < ApplicationController
       address: search_params[:address],
       starting: search_params[:starting],
       ending: search_params[:ending],
-      lat_long: [@search.latitude, @search.longitude]
+      lat_long: [@search.latitude, @search.longitude],
+      feature_ids: search_params[:feature_ids]
     )
   end
 
   private
 
   def search_params
-    params.require(:search).permit(:address, :starting, :ending)
+    params.require(:search).permit(:address, :starting, :ending, feature_ids: [])
   end
 end
