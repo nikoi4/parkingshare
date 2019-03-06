@@ -16,10 +16,10 @@
         </ul>
       </div>
     <% end %>
-    <div class="field position-relative">
+
+    <div class="field">
       <%= form.text_field :message, id: :message, class: "form-control", required: true %>
       <%= form.hidden_field :identifier, id: :identifier, value: current_user.identifier %>
     </div>
   <% end %>
-  test
 </div>
