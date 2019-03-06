@@ -3,7 +3,7 @@
     <div class="booking-head">
       <div class="booking-address">
         <span><%= @parking.address.truncate(27) %></span>
-        <img class="avatar-large" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+        <%= image_tag @parking.user.image, alt: "avatar-bordered", class:"avatar-large" %>
       </div>
       <div class="booking-name">
         <span><%= @parking.name.truncate(21) %></span>
