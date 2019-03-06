@@ -10,8 +10,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def show?
-    true
-    # record.user == user || record.parking.user == user
+    record.user == user || record.parking.user == user
   end
 
   def create?
@@ -20,5 +19,13 @@ class BookingPolicy < ApplicationPolicy
 
   def update?
     record.parking.user == user
+  end
+
+  def approve_transaction?
+    update?
+  end
+
+  def decline_transaction?
+    update?
   end
 end

@@ -108,7 +108,13 @@
             <a href="#2" data-toggle="tab">Messages</a>
           </li>
           <li class="tab-underlined">
-            <a href="#3"  data-toggle="tab" id="your-review">Your Review</a>
+            <a href="#3"  data-toggle="tab" id="your-review">
+              <% if current_user.id == @booking.user_id %>
+              <%= "Your Review" %>
+              <% else %>
+              <%= "User Review" %>
+              <% end %>
+            </a>
           </li>
         </ul>
 
@@ -130,34 +136,40 @@
           </div>
           <div class="tab-pane tabs-booking-height" id="3">
             <div id="reviews">
+              <% if current_user.id == @booking.user_id %>
               <% if @booking.status == "approved" %>
-                <% if !@booking.reviews.last.nil? %>
-                <%= render 'shared/review' , booking: @booking%>
-                <% else %>
-                <br>
-                <button type="button" class="btn-meli-square-small" data-toggle="modal" data-target="#newBooking">Add review</button>
+              <% if !@booking.reviews.last.nil? %>
+              <%= render 'shared/review' , booking: @booking%>
+              <% else %>
+              <br>
+              <button type="button" class="btn-meli-square-small" data-toggle="modal" data-target="#newBooking">Add review</button>
               <%= render "reviews/new", booking: @booking, review:    Review.new %>
               <% end %>
               <% else %>
               <br>
               <p>You will be able to write a review as soon the operation is <strong>approbed</strong> by the owner.</p>
               <% end %>
+              <% else %>
+              <% if @booking.status == "approved" %>
+              <% if !@booking.reviews.last.nil? %>
+              <%= render 'shared/review' , booking: @booking%>
+              <% else %>
+              <br>
+              <p>Your parking lot has not been reviewd yet.</p>
+              <% end %>
+              <% else %>
+              <br>
+              <p>Review not available untill operation is <strong>approbed</strong>.</p>
+              <% end %>
+              <% end %>
             </div>
 
           </div>
         </div>
       </div>
-      <div class="booking-status">
-        <% if @booking.status == "approved" %>
-        <span class="booking-category status-ap"><%= @booking.status.capitalize %></span>
-        <i class="fas fa-check-circle approved-status"></i>
-        <% else %>
-        <span class="booking-category status-di"><%= @booking.status.capitalize %></span>
-        <i class="fas fa-exclamation-circle pending-status"></i>
-        <% end %>
+      <div id="booking-status">
+        <%= render "booking_status_group", booking: @booking %>
       </div>
-
-
     </div>
   </div>
 </div>

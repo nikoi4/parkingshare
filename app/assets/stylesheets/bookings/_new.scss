@@ -47,10 +47,10 @@
 .primary-color {
   color: $primary;
 }
-.booking-status {
+#booking-status {
   text-align: right;
   position: absolute;
-  top: 124px;
+  top: 107px;
   right: 20px;
   z-index: 3;
 }
@@ -59,6 +59,11 @@
   padding-bottom-bottom: 20px;
   width:100%;
   height:98%;
+}
+.booking-status-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .booking-car-info, .booking-description, .booking-price ,{
@@ -106,9 +111,7 @@
   padding: 0px 8px;
   position: relative;
   top: -13px;
-
 }
-
 
 .booking-address, .booking-description-details, .booking-name {
   display: flex;
@@ -276,15 +279,23 @@
   padding-right: 5px;
 }
 
+.declined-status {
+  color: red;
+  margin-left: 8px;
+  padding-right: 5px;
+}
+
 .status-ap {
   color: green;
 }
 
-.status-di {
+.status-pe {
   color: $complementary;
 }
 
-
+.status-di {
+  color: red;
+}
 
 .booking-map-container {
   height:100%;
