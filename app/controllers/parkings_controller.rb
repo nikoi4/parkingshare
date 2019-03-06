@@ -3,17 +3,15 @@ class ParkingsController < ApplicationController
   before_action :set_parking, only: [:update, :destroy]
 
   def index
-    @lat_long = params[:lat_long]
     @dates = [params[:starting], params[:ending]]
-    @feature_ids = params[:feature_ids]
+    @lat_long = params[:lat_long]
+    @parkings = policy_scope(Parking)
+    @parkings = Parking.available(@dates.first, @dates.last, @lat_long)
     if params[:feature_ids].present?
-      parkings_test = policy_scope(Parking).near(params[:lat_long], 50)
-      @parkings = parkings_test.select do |parking|
+      @feature_ids = params[:feature_ids]
+      @parkings = @parkings.select do |parking|
         (params[:feature_ids].map { |f| f.to_i } - parking.features.map { |f| f.id }).empty?
       end
-        #.where(features: { id: params[:feature_ids] })
-    else
-      @parkings = policy_scope(Parking).near(params[:lat_long], 50)
     end
     @features = Feature.all
     @search = Search.new
