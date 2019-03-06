@@ -75,9 +75,15 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.status = "declined"
     if @booking.save
-      redirect_to @booking
+      respond_to do |format|
+        format.html { redirect_to @booking }
+        format.js
+      end
     else
-      render :show
+      respond_to do |format|
+        format.html { render :show }
+        format.js
+      end
     end
   end
 
