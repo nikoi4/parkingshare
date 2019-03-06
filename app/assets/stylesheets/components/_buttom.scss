@@ -116,6 +116,64 @@
   text-decoration: none;
  }
 
+
+.btn-meli-square-small-approved{
+  display: flex;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: green;
+  border: none;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: 10px;
+  &:focus{
+    outline: none;
+    text-decoration: none;
+  }
+}
+
+.btn-meli-square-small-approved:hover{
+  text-decoration: none;
+  background-color: #016f01;
+  color: white;
+}
+
+.btn-meli-square-small-decline{
+  display: flex;
+  padding: 8px 15px;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: red;
+  border: none;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: space-around;
+  &:focus{
+    outline: none;
+    text-decoration: none;
+  }
+}
+
+.btn-meli-square-small-decline:hover{
+  text-decoration: none;
+  background-color: green;
+  color: white;
+  opacity: 0.7;
+}
+
 /* Shared */
 .loginFB {
   box-sizing: border-box;
@@ -169,5 +227,30 @@
 }
 
 
+.btn-meli-square-small-orange{
+  display: flex;
+  margin-right:2px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  font-weight: bold;
+  background-color: #D55013;
+  border: none;
+  border-radius: 1px;
+  align-items: center;
+  justify-content: space-around;
+  &:focus{
+    outline: none;
+    text-decoration: none;
+  }
+}
 
-
+.btn-meli-square-small-orange:hover{
+  text-decoration: none;
+  background-color: #ce3a00;
+  color: white;
+}

@@ -1,0 +1,32 @@
+
+  <div class="booking-status-group">
+  <% if booking.status == "approved" %>
+    <div>
+    <span class="booking-category status-ap"><%= booking.status.capitalize %></span>
+    <i class="fas fa-check-circle approved-status"></i>
+    </div>
+  <% elsif booking.status == "Pending" %>
+      <% if current_user.id == @parking.user_id %>
+        <div>
+        <%= link_to "Approve", booking_approve_transaction_path(booking), class: "btn-meli-square-small-approved", remote: true %>
+        </div>
+        <div>
+        <%= link_to "Decline", booking_decline_transaction_path(booking), class: "btn-meli-square-small-decline", remote: true  %>
+        </div>
+        <div>
+        <span class="booking-category status-pe"><%= booking.status.capitalize %></span>
+        <i class="fas fa-exclamation-circle pending-status"></i>
+        </div>
+      <% else  %>
+        <div>
+        <span class="booking-category status-pe"><%= booking.status.capitalize %></span>
+         <i class="fas fa-exclamation-circle pending-status"></i>
+        </div>
+      <% end %>
+  <% else %>
+       <div>
+       <span class="booking-category status-di"><%= booking.status.capitalize %></span>
+        <i class="fas fa-times-circle declined-status"></i>
+      </div>
+  <% end %>
+  </div>
