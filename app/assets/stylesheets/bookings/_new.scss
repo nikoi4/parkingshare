@@ -267,13 +267,13 @@
 .approved-status {
   color: green;
   margin-left: 8px;
-  padding-right: 5px
+  padding-right: 5px;
 }
 
 .pending-status {
   color: $complementary;
   margin-left: 8px;
-  padding-right: 5px
+  padding-right: 5px;
 }
 
 .status-ap {
@@ -343,4 +343,11 @@
   display:flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.booking-index-scroll {
+  height: 70vh;
+  width: 100%;
+  overflow: scroll;
+  min-width: 700px;
 }
