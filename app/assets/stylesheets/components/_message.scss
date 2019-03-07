@@ -85,9 +85,9 @@
 }
 
 .message-action {
-  width: 150px;
+  width: 210px;
   margin-left: 10px;
-  a{
+   a{
     text-decoration: none;
     margin-left: 10px;
     color: #a8e3ff;
@@ -113,4 +113,24 @@
   margin-left: 5px;
   padding-right: 5px;
   font-size: 13px;
+}
+
+.message-border-i {
+ border: 1px solid rgba(220,224,244,0.4);
+ padding: 8px 8px;
+ border-radius: 6px;
+ background-color: white;
+ color: $primary;
+ font-weight: bold;
+ font-size: 10px;
+ span {
+  padding-left: 5px;
+  font-size: 13px;
+ }
+}
+
+.message-border-i:hover {
+ text-decoration: none;
+ background-color: white;
+ color: #0a86bf;
 }
