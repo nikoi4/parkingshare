@@ -148,7 +148,7 @@ parking_attributes = [
     {
     name:         "Alfie's Place",
     address:      'Juramento 1000, Buenos Aires',
-    description:  '***NEW LISTING***',
+    description:  '***NEW LISTING******NEW LISTING******NEW LISTING***',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
     user:         owner,
@@ -358,40 +358,40 @@ booking_attributes = [
   {
     status:    'approved',
     car_plate: 'HPM 147',
-    start_date:'19/02/19',
-    end_date:  '19/02/19',
+    start_date:'19/02/20',
+    end_date:  '19/02/21',
     user: user,
     price_cents: '250'
   },
   {
     status:    'pending',
     car_plate: 'AC 826 KF',
-    start_date:'27/02/19',
-    end_date:  '28/02/19',
+    start_date:'19/02/22',
+    end_date:  '19/02/23',
     user: user,
     price_cents: '400'
   },
   {
     status:    'pending',
     car_plate: 'AC 826 KF',
-    start_date:'27/02/19',
-    end_date:  '28/02/19',
+    start_date:'19/02/21',
+    end_date:  '19/02/22',
     user: user1,
     price_cents: '400'
   },
   {
     status:    'pending',
     car_plate: 'AC 826 KF',
-    start_date:'27/02/19',
-    end_date:  '28/02/19',
+    start_date:'19/02/26',
+    end_date:  '19/02/27',
     user: user1,
     price_cents: '400'
   },
   {
     status:    'pending',
     car_plate: 'AC 826 KF',
-    start_date:'27/02/19',
-    end_date:  '28/02/19',
+    start_date:'19/02/18',
+    end_date:  '19/02/19',
     user: user1,
     price_cents: '400'
   },
@@ -432,7 +432,7 @@ reviews_attributes = [
   },
 ]
 
-Bookings.all.each do |booking|
+Booking.all.each do |booking|
   booking.reviews.create!(reviews_attributes)
 end
 
