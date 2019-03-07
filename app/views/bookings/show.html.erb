@@ -96,7 +96,7 @@
               <% if current_user.id == @booking.user_id %>
               <% if @booking.status == "approved" %>
               <%if  @booking.reviews.first.nil? %>
-              <button type="button" class="btn-meli-square-small" data-toggle="modal" data-target="#newBooking">Add review</button>
+              <button type="button" class="see-review see-btn-review" data-toggle="modal" data-target="#newBooking">Add review</button>
               <%= render "reviews/new", booking: @booking, review:    Review.new %>
               <% else %>
               <a class="see-review" id="see-review">See your review</a>
