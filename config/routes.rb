@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'profile', to: 'pages#profile', as: 'profile'
   get 'chats/index'
   post "procesar-pago", to: 'bookings#create'
   get 'reviews/create'
