@@ -18,12 +18,13 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     authorize @booking
-    @parking.features.each do |feature|
-      @booking.status = "approved" if feature.name == 'instant'
-    end
     @booking.user = current_user
     @booking.parking = @parking
     if @booking.save
+      @parking.features.each do |feature|
+        @booking.status = "approved" if feature.name == 'Instant'
+        @booking.save
+      end
       redirect_to @booking
     else
       render :new
