@@ -13,21 +13,38 @@
       width: 100%;
       display: flex;
       flex-direction: column;
+      .chat-timestamp {
+        display: flex;
+        font-size: 13px;
+        &.me {
+          justify-content: flex-end;
+        }
+      }
       .chat-bubble {
         width: 10em;
         border-radius: 5px;
         padding: 0.5em;
         box-shadow: 4px 7px 8px -11px #000000;
+
         &.me {
-          background-color: #5FC2EF;
+          background-color: #DCF8C5;
           align-self: flex-end;
+          font-family: 'Raleway';
+
         }
         &.him {
           background-color: #f4f4f4;
+          font-family: 'Raleway';
+
+        }
+        &.parking-share {
+          // play here
+          background-color: #E1F3FB;
         }
         .chat-username {
           font-size: 0.7em;
-          color: gray;
+          color: black;
+          font-weight: bold;
         }
         .chat-message {
           font-size: 1em;
