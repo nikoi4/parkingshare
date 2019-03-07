@@ -2,47 +2,54 @@
   <div class="bookings-wrapper">
     <div class="bookings-board">
       <% @owned_bookings.each do |booking| %>
-      <div class="message">
+     <div class="message">
         <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
         <div class="message-name">
           <p><%= booking.start_date.strftime("%m/%d/%Y")%></p>
           <h3><%= booking.user.identifierfull %></h3>
-          <span><%= booking.car_plate.upcase %></span>
+
         </div>
         <div class="message-body">
           <div class="message-info">
-            <p><strong><%= booking.parking.name %> - <%= booking.parking.address %></strong></p>
-            <div class="message-date">
-              <i class="far fa-calendar-alt"></i><span><%= booking.start_date.strftime("%b-%d-%y %k:%M") %>  <i class="fas fa-arrow-right"></i>  <%= booking.end_date.strftime("%b-%d-%y %k:%M") %> </span>
+            <div class="message-name-space">
+              <span><strong><%= booking.parking.name %></strong></span>
+              <div class="message-review">
+                <ul class= "list-inline card-description-stars">
+                  <li>
+                    <% if booking.reviews.empty? %>
+                    <% 5.times do %>
+                    <i class="fas fa-star not-rated"></i>
+                    <% end %>
+                    <% else %>
+                    <% booking.reviews.last.rating.times do %>
+                    <i class="fas fa-star rated"></i>
+                    <% end %>
+                    <% (5 - booking.reviews.last.rating).times do %>
+                    <i class="fas fa-star not-rated"></i>
+                    <% end %>
+                    <% end %>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="message-review">
-              <ul class= "list-inline card-description-stars">
-                <li>
-                  <% if booking.reviews.empty? %>
-                  <% 5.times do %>
-                  <i class="fas fa-star not-rated"></i>
-                  <% end %>
-                  <% else %>
-                  <% booking.reviews.last.rating.times do %>
-                  <i class="fas fa-star rated"></i>
-                  <% end %>
-                  <% (5 - booking.reviews.last.rating).times do %>
-                  <i class="fas fa-star not-rated"></i>
-                  <% end %>
-                  <% end %>
-                </li>
-              </ul>
+            <p class="message-info-small"><%= booking.parking.address %></p>
+           <div class="message-date">
+             <i class="far fa-calendar-alt message-icon-info"></i><span><%= booking.start_date.strftime("%b-%d-%y %k:%M") %>  <i class="fas fa-arrow-right message-icon-info"></i>  <%= booking.end_date.strftime("%b-%d-%y %k:%M") %> </span>
+           </div>
+            <p>Car Plate: <span><strong><%= booking.car_plate.upcase %></strong></span></p>
+           <div class="message-action-group">
+             <div class="message-action">
+              <%= link_to booking_path(booking) do %>
+              <i class="far fa-circle message-border-i"><span>Go to Booking</span></i>
+              <% end %>
+              <%= link_to booking_path(booking, chat: :true) do %>
+              <i class="far fa-comments message-border-i"><span>Chat</span></i>
+              <% end %>
             </div>
-          </div>
-          <div class="message-action">
-            <%= link_to booking_path(booking) do %>
-            <i class="far fa-circle message-border-i"><span>Go to Booking</span></i>
-            <% end %>
-            <%= link_to booking_path(booking) do %>
-            <i class="far fa-comments message-border-i"><span>Chat</span></i>
-            <% end %>
           </div>
         </div>
+
+      </div>
         <div class="message-status">
           <% if booking.status == "approved" %>
             <span class="status accepted"><%= booking.status.capitalize %></span>
