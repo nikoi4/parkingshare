@@ -86,3 +86,24 @@
     color: white;
   }
 }
+
+#booking-amount {
+    position: relative;
+    font-size: 11px;
+    z-index: 0;
+    top: -7px;
+    font-weight: bold;
+    background-color: #4f99ff;
+    color: white;
+    border-radius: 30px;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 20px;
+}
+
+.booking-display {
+  display: none !important;
+}

@@ -26,7 +26,7 @@
     <%= link_to "List your Space", new_parking_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "My Parking Lots",  owner_parkings_parkings_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
+      <span id="booking-amount" class="booking-display"><%= current_user.owned_bookings.count %></span>
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
