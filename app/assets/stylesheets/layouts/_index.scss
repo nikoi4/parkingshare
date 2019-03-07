@@ -32,23 +32,40 @@ input:active {
   outline: none;
 }
 
-.chat-box, .booking-index-scroll, .card-wrapper ,.lot{
-    -ms-overflow-style: none;  // IE 10+
-    overflow: -moz-scrollbars-none;  // Firefox
-}
+
 
 .chat-box::-webkit-scrollbar {
-    display: none; // Safari and Chrome
+    width: 6px;
+    background-color: #F5F5F5; // Safari and Chrome
 }
 
 .booking-index-scroll::-webkit-scrollbar {
-    display: none; // Safari and Chrome
+    width: 6px;
+    background-color: #F5F5F5; // Safari and Chrome
 }
 
 .card-wrapper::-webkit-scrollbar {
-    display: none; // Safari and Chrome
+    width: 6px;
+    background-color: #F5F5F5; // Safari and Chrome
 }
 
 .lot::-webkit-scrollbar {
-    display: none; // Safari and Chrome
+    width: 6px;
+    background-color: #F5F5F5;// Safari and Chrome
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background-color: $primary;
+}
+
+.booking-index-scroll::-webkit-scrollbar-thumb {
+    background-color: $primary;
+}
+
+.card-wrapper::-webkit-scrollbar-thumb {
+    background-color: $primary;
+}
+
+.lot::-webkit-scrollbar-thumb {
+    background-color: $primary;
 }
