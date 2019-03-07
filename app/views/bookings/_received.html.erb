@@ -7,7 +7,6 @@
         <div class="message-name">
           <p><%= booking.start_date.strftime("%m/%d/%Y")%></p>
           <h3><%= booking.user.identifierfull %></h3>
-
         </div>
         <div class="message-body">
           <div class="message-info">
@@ -43,12 +42,11 @@
               <i class="far fa-circle message-border-i"><span>Go to Booking</span></i>
               <% end %>
               <%= link_to booking_path(booking, chat: :true) do %>
-              <i class="far fa-comments message-border-i"><span>Chat</span></i>
+              <i class="far fa-comments message-border-i"><span>Chat</span><span id="chat-booking-<%= booking.id %>" style="color:orange;"></span></i>
               <% end %>
             </div>
           </div>
         </div>
-
       </div>
         <div class="message-status">
           <% if booking.status == "approved" %>
@@ -67,5 +65,4 @@
       <% end %>
     </div>
   </div>
-
 </div>
