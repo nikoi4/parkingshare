@@ -33,11 +33,23 @@ input:active {
   outline: none;
 }
 
-.left {
+.chat-box, .booking-index-scroll, .card-wrapper ,.lot{
     -ms-overflow-style: none;  // IE 10+
     overflow: -moz-scrollbars-none;  // Firefox
 }
 
-.left::-webkit-scrollbar {
+.chat-box::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+}
+
+.booking-index-scroll::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+}
+
+.card-wrapper::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+}
+
+.lot::-webkit-scrollbar {
     display: none; // Safari and Chrome
 }
