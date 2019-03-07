@@ -5,6 +5,7 @@ class ParkingsController < ApplicationController
   def index
     @dates = [params[:starting], params[:ending]]
     @lat_long = params[:lat_long]
+    @address = params[:address]
     @parkings = policy_scope(Parking)
     @parkings = Parking.available(@dates.first, @dates.last, @lat_long)
     if params[:feature_ids].present?
