@@ -28,8 +28,8 @@ $(document).ready(() => {
 
   const notification = data => {
     chatBtn = document.getElementById(`chat-booking-${data.booking_id}`);
-    if (chatBtn) {console.log(data)
-      chatBtn.insertAdjacentHTML("beforeend", "<i class='fas fa-circle'></i>");
+    if (chatBtn) {
+      chatBtn.innerHTML = "(You have new messages)";
     }
   };
 
