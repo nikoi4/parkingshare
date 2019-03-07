@@ -1,11 +1,10 @@
 $(document).ready(() => {
-  let username = '';
-
 
   const updateChat = (data, sender) => {
     const formatDate = (date) => {
       return `${date.getDay()}-${date.getMonth()}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
     };
+
     $('.chat-box').append(`
       <div class="chat-bubble-wrapper">
         <div class="chat-bubble ${sender}">
@@ -27,10 +26,20 @@ $(document).ready(() => {
     encrypted: true
   });
 
+  const notification = data => {
+    chatBtn = document.getElementById(`chat-booking-${data.booking_id}`);
+    if (chatBtn) {
+      chatBtn.innerHTML = "(You have new messages)";
+    }
+  };
+
   const channel = pusher.subscribe('chat');
+
   let booking_id = $('.chat-box').data("booking_id")
   let current_user = $('.chat-box').data("current_user")
+
   channel.bind('new', function(data) {
+    notification(data);
     let sender = data.user_id == current_user ? "me" : "him"
     if (data.booking_id == booking_id) {
       updateChat(data, sender);
@@ -39,3 +48,5 @@ $(document).ready(() => {
     }
   });
 });
+
+
