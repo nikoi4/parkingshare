@@ -67,11 +67,11 @@
                   <th class="checkout-left">Leaving on:</th>
                 </tr>
                 <tr>
-                  <td class="checkout-dates checkout-pad"><span><%= @booking.start_date.to_datetime.strftime("%b-%e %H:%M") %></span></td>
+                  <td class="checkout-dates checkout-pad"><span><%= @booking.start_date.to_datetime.strftime("%b-%d %H:%M") %></span></td>
                   <td>
                     <i class="fas fa-arrow-right primary-color margin-icon"></i>
                   </td>
-                  <td class="checkout-dates checkout-left checkout-pad"><span><%= @booking.end_date.to_datetime.strftime("%b-%e %H:%M") %></span></td>
+                  <td class="checkout-dates checkout-left checkout-pad"><span><%= @booking.end_date.to_datetime.strftime("%b-%d %H:%M") %></span></td>
                 </tr>
                 <tr>
                   <td class="checkout-hours checkout-right" colspan="3"><span><%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil %> hrs</span></td>
@@ -84,7 +84,7 @@
                 </tr>
                 <tr>
                   <td>
-                    <%= link_to "go back", parkings_path(:starting => @booking.start_date.to_datetime.strftime("%b-%e %H:%M"), :ending => @booking.start_date.to_datetime.strftime("%b-%e %H:%M"), :lat_long => [@parking.latitude, @parking.longitude]), class:"btn-meli-square-small"  %>
+                    <%= link_to "go back", parkings_path(:starting => @booking.start_date.to_datetime.strftime("%b-%d %H:%M"), :ending => @booking.end_date.to_datetime.strftime("%b-%d %H:%M"), :lat_long => [@parking.latitude, @parking.longitude]), class:"btn-meli-square-small"  %>
                   </td>
                 </tr>
               </table>
