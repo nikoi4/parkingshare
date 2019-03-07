@@ -1,7 +1,8 @@
 .lot {
   height: 74vh;
   width: 494px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   color: $greytext;
   padding: 20px;
   background-color: white;

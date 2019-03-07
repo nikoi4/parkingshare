@@ -7,7 +7,8 @@
   .chat-box {
     padding: 1.5em;
     height: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     .chat-bubble-wrapper {
       padding-bottom: 1em;
       width: 100%;
