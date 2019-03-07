@@ -39,33 +39,37 @@ user_attributes = [
     email:         'owner@parking.com',
     password:      '12345678',
     first_name:    'Meli',
-    last_name:     'Fernandez Sassone'
+    last_name:     'Fernandez Sassone',
+    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1551962122/icons/46222774.jpg'
   },
   {
     email:         'user@parking.com',
     password:      '12345678',
     first_name:    'Rodrigo',
-    last_name:     'Cabral'
+    last_name:     'Cabral',
+    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1551962124/icons/41546766.jpg'
   },
   {
     email:         'owner1@parking.com',
     password:      '12345678',
     first_name:     'Nico',
-    last_name:     'Caif'
+    last_name:     'Caif',
+    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1551962131/icons/45802152.jpg'
   },
   {
     email:         'user1@parking.com',
     password:      '12345678',
     first_name:    'Charly',
-    last_name:     'Garcia'
+    last_name:     'Garcia',
+    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1551961442/icons/gnr_prf.png'
   },
 ]
 
 User.create!(user_attributes)
-User.all.each do |u|
-  u.image = "https://res.cloudinary.com/nikoi4/image/upload/v1551911466/icons/Papirus-Team-Papirus-Status-Avatar-default.ico"
-  u.save!
-end
+# User.all.each do |u|
+#   u.image = "https://res.cloudinary.com/nikoi4/image/upload/v1551961442/icons/gnr_prf.png"
+#   u.save!
+# end
 
 owner = User.all[0]
 user = User.all[1]
