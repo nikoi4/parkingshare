@@ -1,5 +1,5 @@
 meta_product_name: "Parkingshare"
 meta_title: "Parkingshare - Find the parking that you need"
 meta_description: "Find the parking that you need, earn the money that you want."
-meta_image: "logo_only_transparent.png" # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account"   # required for Twitter Cards
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@melinosauriorex"   # required for Twitter Cards
