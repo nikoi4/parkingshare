@@ -1,9 +1,10 @@
 .form-parking {
   background: white;
-  margin: 50px 0;
+  margin: 10px 0;
   padding: 20px;
   border-radius: 10px;
-  height: 80vh;
+  height: 70vh;
+
   h1 {
     text-align: center;
     font-weight: bold;
@@ -28,6 +29,30 @@
     margin-top: 30px;
     border-radius: 5px;
   }
+  .form-control.string.required{
+    font-weight: normal;
+    font-size: 18px;
+  }
+  .form-control.string.required.ap-input {
+    font-weight: normal;
+    font-size: 18px !important;
+    border: 1px solid #ccc !important;
+    height: 39px !important;
+    padding: 6px 12px !important;
+    border-radius: 2px !important;
+    text-align: top !important;
+    display: block !important;
+  }
+  .algolia-places {
+    span{
+      font-weight: normal;
+      font-size: 18px;
+    }
+    }
+    .btn.btn-meli {
+      margin: 0px 0px !important;
+  }
+
 }
 .btn-form{
   background-color: #0B5577;
@@ -63,7 +88,7 @@ div > .feature-choice {
 }
 
 .form-group > .file > .required > .parking_pictures_picture{
-margin: 0px;
+  margin: 0px;
 }
 
 .upload-photo {
@@ -84,3 +109,6 @@ margin: 0px;
   fill: $primary;
 }
 
+.new-parking-submit-wrapper {
+ margin: 0px 98px !important;
+}

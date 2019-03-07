@@ -1,142 +1,142 @@
-.booking-wrapper {
-  display: flex;
-  background-color: white;
-  justify-content: space-between;
-}
+  .booking-wrapper {
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+  }
 
-.booking-summary {
-  flex: 1 0 30%;
-  height: 81vh;
-  width: 100%;
-  color: $greytext;
-  padding: 30px;
-  background-color: white;
-  margin: 20px 15px 0px 10px;
-  box-shadow: 0px 0px 2px lightgrey;
-  min-width: 443px;
-}
+  .booking-summary {
+    flex: 1 0 30%;
+    height: 81vh;
+    width: 100%;
+    color: $greytext;
+    padding: 18px 30px;
+    background-color: white;
+    margin: 20px 15px 0px 10px;
+    box-shadow: 0px 0px 2px lightgrey;
+    min-width: 443px;
+  }
 
-.booking-complete-info, {
-  flex: 1 0 64%;
-  height: 81vh;
-  width: 100%;
-  color: $greytext;
-  padding: 10px;
-  background-color: white;
-  margin: 20px 10px 0px 0px;
-  box-shadow: 0px 0px 2px lightgrey;
-}
+  .booking-complete-info, {
+    flex: 1 0 64%;
+    height: 81vh;
+    width: 100%;
+    color: $greytext;
+    padding: 10px;
+    background-color: white;
+    margin: 20px 10px 0px 0px;
+    box-shadow: 0px 0px 2px lightgrey;
+  }
 
-.vertical-align-items {
-  display: flex;
-  align-items: center;
-}
+  .vertical-align-items {
+    display: flex;
+    align-items: center;
+  }
 
-.booking-price-details{
-  display: flex;
-  align-items: center;
-  margin: 0px 80px;
-  padding: 2px 50px;
-  height: 27px;
-  justify-content: space-between;
-  p{ display:flex}
-}
-.checkout-pad {
-  padding-bottom: 13px;
-}
-.checkout-mar {
-  padding-bottom: 8px;
-}
-.primary-color {
-  color: $primary;
-}
-#booking-status {
-  text-align: right;
-  position: absolute;
-  top: 107px;
-  right: 20px;
-  z-index: 3;
-}
-.booking-map {
-  padding-top: 5px;
-  padding-bottom-bottom: 20px;
-  width:100%;
-  height:98%;
-}
-.booking-status-group {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+  .booking-price-details{
+    display: flex;
+    align-items: center;
+    margin: 0px 80px;
+    padding: 2px 50px;
+    height: 27px;
+    justify-content: space-between;
+    p{ display:flex}
+  }
+  .checkout-pad {
+    padding-bottom: 13px;
+  }
+  .checkout-mar {
+    padding-bottom: 8px;
+  }
+  .primary-color {
+    color: $primary;
+  }
+  #booking-status {
+    text-align: right;
+    position: absolute;
+    top: 107px;
+    right: 20px;
+    z-index: 3;
+  }
+  .booking-map {
+    padding-top: 5px;
+    padding-bottom-bottom: 20px;
+    width:100%;
+    height:98%;
+  }
+  .booking-status-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-.booking-car-info, .booking-description, .booking-price ,{
-  border-bottom: 1px solid lightgrey;
-  padding-bottom: 20px;
-}
+  .booking-car-info, .booking-description, .booking-price ,{
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 20px;
+  }
 
-.booking-car-info {
-  padding-left: 20px;
-  padding-top: 20px;
-}
+  .booking-car-info {
+    padding-left: 20px;
+    padding-top: 20px;
+  }
 
-.booking-head {
-  padding-bottom: 5px;
-}
+  .booking-head {
+    padding-bottom: 5px;
+  }
 
-.booking-description, .booking-price, {
-  border-bottom: 1px solid lightgrey;
-  padding-top: 20px;
-}
+  .booking-description, .booking-price, {
+    border-bottom: 1px solid lightgrey;
+    padding-top: 20px;
+  }
 
-.booking-confirmation, {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left:20px;
-}
+  .booking-confirmation, {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left:20px;
+  }
 
-.booking-car-plate, {
-  display: flex;
-  justify-content: left;
-  align-items: flex-end;
-}
+  .booking-car-plate, {
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+  }
 
-.booking-car-form, {
-  display: flex;
-  justify-content: left;
-  flex-direction: column;
-  padding: 0px 10px;
-}
+  .booking-car-form, {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    padding: 0px 10px;
+  }
 
-.booking-car-action {
-  display: flex;
-  justify-content: left;
-  align-items: end;
-  padding: 0px 8px;
-  position: relative;
-  top: -13px;
-}
+  .booking-car-action {
+    display: flex;
+    justify-content: left;
+    align-items: end;
+    padding: 0px 8px;
+    position: relative;
+    top: -13px;
+  }
 
-.booking-address, .booking-description-details, .booking-name {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.booking-rating-group {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 6px
-}
+  .booking-address, .booking-description-details, .booking-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .booking-rating-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 6px
+  }
 
-.margin-icon {
-  margin: 0px 4px;
-}
-.booking-stars, .booking-distance {
- margin: 0px;
- padding-left: 10px;
- font-size: 12px;
-}
-.booking-stars li {
+  .margin-icon {
+    margin: 0px 4px;
+  }
+  .booking-stars, .booking-distance {
+   margin: 0px;
+   padding-left: 10px;
+   font-size: 12px;
+ }
+ .booking-stars li {
   padding: 0px;
 }
 .booking-category {
@@ -150,7 +150,7 @@
   margin: 12px 10px
 }
 .booking-address {
-  padding-bottom: 10px;
+  padding-bottom: 2px;
 }
 .booking-address span {
  font-size: 22px;
@@ -348,6 +348,7 @@
 
 .booking-full-address-dir {
   font-size: 14px;
+  margin: 0px !important;
 }
 
 .chekout-per-hour {
@@ -371,4 +372,10 @@
   width: 100%;
   overflow: scroll;
   min-width: 700px;
+}
+
+.see-btn-review {
+  border: none;
+  background: transparent;
+  color: $primary;
 }
