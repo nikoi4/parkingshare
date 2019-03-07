@@ -3,10 +3,16 @@
    <div class="booking-head">
     <div class="booking-address">
       <span><%= @parking.address.truncate(27) %></span>
-      <img class="avatar-large" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+        <%= image_tag @parking.user.image, alt: "avatar-bordered", class:"avatar-large" %>
+
     </div>
     <div class="booking-name">
       <span><%= @parking.name.truncate(21) %></span>
+      <div class="booking-rating">
+        <span><%= @parking.user.identifier %></span>
+      </div>
+    </div>
+    <div class="booking-rating-group">
       <div class="booking-rating">
         <ul class= "list-inline booking-stars">
           <li>
@@ -56,6 +62,10 @@
           </div>
           <div class="booking-checkout">
             <table style="width:100%">
+               <tr class="checkout-dates " colspan="3">
+                <td class="checkout-mar"> Booking number : <span> <%= @booking.id %></span>
+                  </td>
+              </tr>
               <tr class="chekout-header">
                 <th>Arriving on:</th>
                 <th></th>
@@ -84,17 +94,17 @@
           <div class="booking-add-review">
             <div class="booking-review-center">
               <% if current_user.id == @booking.user_id %>
-                <% if @booking.status == "approved" %>
-                <%if  @booking.reviews.first.nil? %>
-                <button type="button" class="btn-meli-square-small" data-toggle="modal" data-target="#newBooking">Add review</button>
-                <%= render "reviews/new", booking: @booking, review:    Review.new %>
-                <% else %>
-                <a class="see-review" id="see-review">See your review</a>
-                <% end %>
-                <% else %>
-                <% end %>
-                <% else %>
-                <% end %>
+              <% if @booking.status == "approved" %>
+              <%if  @booking.reviews.first.nil? %>
+              <button type="button" class="btn-meli-square-small" data-toggle="modal" data-target="#newBooking">Add review</button>
+              <%= render "reviews/new", booking: @booking, review:    Review.new %>
+              <% else %>
+              <a class="see-review" id="see-review">See your review</a>
+              <% end %>
+              <% else %>
+              <% end %>
+              <% else %>
+              <% end %>
             </div>
           </div>
         </div>

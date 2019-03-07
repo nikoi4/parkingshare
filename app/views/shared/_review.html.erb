@@ -2,7 +2,8 @@
   <div class="review">
     <div class="review-description ">
       <ul class="list-inline">
-        <li><img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+        <li>
+        <%= image_tag booking.user.image, alt: "avatar-bordered", class:"avatar-large" %>
           <li><div class="review-name">
             <p><%= booking.reviews.last.date %></p>
              <h3><%= booking.user.identifierfull %></h3>

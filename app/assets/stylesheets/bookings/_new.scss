@@ -44,6 +44,9 @@
 .checkout-pad {
   padding-bottom: 13px;
 }
+.checkout-mar {
+  padding-bottom: 8px;
+}
 .primary-color {
   color: $primary;
 }
@@ -118,6 +121,13 @@
   justify-content: space-between;
   align-items: center;
 }
+.booking-rating-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 6px
+}
+
 .margin-icon {
   margin: 0px 4px;
 }
