@@ -1,5 +1,16 @@
 <div class="chat-wrapper">
   <div class="chat-box" data-booking_id="<%= @booking.id %>" data-current_user="<%= current_user.id %>">
+    <% if @chats.empty? %>
+
+      <div class="chat-bubble-wrapper">
+        <div class="chat-bubble parking-share">
+          <div class="chat-username">Parking Share</div>
+          <div class="chat-message">Your chat is here!</div>
+        </div>
+        <div class="chat-timestamp him"><%= Time.now.strftime("%m-%e-%Y %H:%M") %></div>
+      </div>
+
+    <% end %>
     <% @chats.each do |chat| %>
       <%= render 'chats/message', chat: chat %>
     <% end %>
@@ -18,7 +29,7 @@
     <% end %>
 
     <div class="field">
-      <%= form.text_field :message, id: :message, class: "form-control", required: true %>
+      <%= form.text_field :message, id: :message, class: "form-control", required: true, placeholder: "Type a message..." %>
       <%= form.hidden_field :identifier, id: :identifier, value: current_user.identifier %>
     </div>
   <% end %>
