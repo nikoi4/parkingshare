@@ -111,16 +111,22 @@
       </div>
     </div>
 
+    <%
+      maps_active    = (not params[:chat] and not params[:reviews]) ? "active" : ""
+      chat_active    = params[:chat]   ? "active" : ""
+      reviews_active = params[:reviews] ? "active" : ""
+    %>
+
     <div class="booking-complete-info">
       <div id="bookingTabsBar">
         <ul class="nav nav-tabs tabs-underlined">
-          <li class="active tab-underlined">
+          <li class="tab-underlined <%= maps_active %>">
             <a  href="#1" data-toggle="tab">Maps</a>
           </li>
-          <li class="tab-underlined">
+          <li class="tab-underlined <%= chat_active %>">
             <a href="#2" data-toggle="tab">Messages</a>
           </li>
-          <li class="tab-underlined">
+          <li class="tab-underlined <%= reviews_active %>">
             <a href="#3"  data-toggle="tab" id="your-review">
               <% if current_user.id == @booking.user_id %>
               <%= "Your Review" %>
@@ -132,7 +138,7 @@
         </ul>
 
         <div class="tab-content">
-          <div class="tab-pane tabs-booking-height active" id="1">
+          <div class="tab-pane tabs-booking-height <%= maps_active %>" id="1">
             <div class="booking-map">
               <div class="booking-map-container">
                 <div
@@ -144,10 +150,10 @@
               </div>
             </div>
           </div>
-          <div class="tab-pane tabs-booking-height" id="2">
+          <div class="tab-pane tabs-booking-height <%= chat_active %>" id="2">
             <%= render "chats/chat", chats: @chats, chat: @chat %>
           </div>
-          <div class="tab-pane tabs-booking-height" id="3">
+          <div class="tab-pane tabs-booking-height <%= reviews_active %>" id="3">
             <div id="reviews">
               <% if current_user.id == @booking.user_id %>
               <% if @booking.status == "approved" %>
