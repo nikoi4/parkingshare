@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="new-parking-wrapper">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-sm-offset-4">
       <div class="form-parking">
@@ -6,13 +6,13 @@
         <%= simple_form_for(@parking) do |f| %>
           <%= f.input :name, placeholder: "Great Parking Lot..." %>
           <%= f.input :address, placeholder: "Coronel Niceto Vega 2222, CABA" %>
-          <%= f.input :description, placeholder: "Your lot description" %>
+          <%= f.input :description, label:"Description (min. 20 characters)", placeholder: "Your lot description" %>
         <div class="row">
           <div class="col-xs-6">
             <%= f.input :size, collection: Parking::SIZE_CAR, prompt: "Car size?" %>
           </div>
           <div class="col-xs-6">
-            <%= f.input :price_cents, label: "Price / hr",placeholder: "80.00 $/hr" %>
+            <%= f.input :price_cents, label: "Price / hr",placeholder: "50.00 $/hr" %>
           </div>
         </div>
           <!-- Inject categories here -->
@@ -44,8 +44,8 @@
               <%= p.input :picture, input_html: { class: 'hidden'},label_html: { class: 'upload-photo fas fa-plus-circle'}, label: '' %>
             <% end %>
           </div>
-          <div class="btn-center">
-            <%= f.submit "Save", class: "round-buttom"  %>
+          <div class="new-parking-submit-wrapper">
+            <%= f.submit "Save", class: "btn btn-meli"  %>
           </div>
         <% end %>
       </div>
