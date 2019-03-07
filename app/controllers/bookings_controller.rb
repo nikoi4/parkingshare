@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     authorize @booking
     @parking.features.each do |feature|
-      @booking.status = "approved" if feature.name == 'instant'
+      @booking.status = "approved" if feature.name == 'Instant'
     end
     @booking.user = current_user
     @booking.parking = @parking
