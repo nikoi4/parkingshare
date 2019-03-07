@@ -21,10 +21,14 @@
         }
       }
       .chat-bubble {
-        width: 10em;
         border-radius: 5px;
         padding: 0.5em;
         box-shadow: 4px 7px 8px -11px #000000;
+        text-overflow: ellipsis;
+        min-width: 10em;
+        display: flex;
+        flex-direction: column;
+        flex: auto;
 
         &.me {
           background-color: #DCF8C5;
@@ -34,6 +38,7 @@
         }
         &.him {
           background-color: #f4f4f4;
+          align-self: flex-start;
           font-family: 'Raleway';
 
         }
