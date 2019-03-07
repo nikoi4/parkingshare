@@ -45,10 +45,10 @@ end
   end
 
   def identifier
-    if (first_name && last_name).nil?
+    if (first_name).nil?
       email
     else
-      return "#{first_name.capitalize} #{last_name.capitalize}"
+      return "#{first_name.capitalize}"
     end
   end
 
