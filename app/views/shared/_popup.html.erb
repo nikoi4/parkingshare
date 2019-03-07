@@ -53,7 +53,7 @@
         <%= link_to new_parking_booking_path(parking_id: parking.id, start_date: @dates.first, end_date: @dates.last), class:"round-buttom" do %>
         <div class="vertical-align-items">
           Book now  |
-          <strong>$ <%= parking.price_cents %></strong>
+          <strong>$ <%= number_with_delimiter(((@dates.last.to_datetime - @dates.first.to_datetime).to_f * 24).ceil * parking.price_cents.to_i , :delimiter => ',') %></strong>
         </div>
         <% end %>
       </div>
