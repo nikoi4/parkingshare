@@ -360,8 +360,7 @@ booking_attributes = [
     car_plate: 'HPM 147',
     start_date:'19/02/19',
     end_date:  '19/02/19',
-    user:       user,
-    parking:    p1,
+    user: user,
     price_cents: '250'
   },
   {
@@ -369,31 +368,72 @@ booking_attributes = [
     car_plate: 'AC 826 KF',
     start_date:'27/02/19',
     end_date:  '28/02/19',
-    user:       user,
-    parking:    p2,
+    user: user,
+    price_cents: '400'
+  },
+  {
+    status:    'pending',
+    car_plate: 'AC 826 KF',
+    start_date:'27/02/19',
+    end_date:  '28/02/19',
+    user: user1,
+    price_cents: '400'
+  },
+  {
+    status:    'pending',
+    car_plate: 'AC 826 KF',
+    start_date:'27/02/19',
+    end_date:  '28/02/19',
+    user: user1,
+    price_cents: '400'
+  },
+  {
+    status:    'pending',
+    car_plate: 'AC 826 KF',
+    start_date:'27/02/19',
+    end_date:  '28/02/19',
+    user: user1,
     price_cents: '400'
   },
 ]
-Booking.create!(booking_attributes)
+
+Parking.all.each do |parking|
+  parking.bookings.create!(booking_attributes)
+end
 
 #-----------------------------------------------------------
 
 puts 'Creating reviews...'
 reviews_attributes = [
   {
-    content:      'Really easy to find and access. Would definitely use again',
-    rating:       5,
+    content:      'Horrible place, would not recommend at all',
+    rating:       1,
     date:         '20/02/19',
-    booking:      Booking.first,
   },
   {
-    content:      'Easy to find and to park',
+    content:      'Convenient,close to centre,safe,hassle free parking.',
     rating:       4,
     date:         '28/02/19',
-    booking:      Booking.last,
+  },
+  {
+    content:      'Easy to find and good location close to town.',
+    rating:       4,
+    date:         '28/02/19',
+  },
+  {
+    content:      'Brilliant, safe space, easy to park, near station, helpful people.',
+    rating:       5,
+    date:         '28/02/19',
+  },
+  {
+    content:      'Muy buena cochera, dueño muy atento y pendiente',
+    rating:       4,
+    date:         '28/02/19',
   },
 ]
-Review.create!(reviews_attributes)
 
+Bookings.all.each do |booking|
+  booking.reviews.create!(reviews_attributes)
+end
 
-  puts "finished seeding"
+puts "finished seeding"
