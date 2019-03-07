@@ -9,6 +9,12 @@
   </div>
   <div class="lot-name">
     <span><%= parking.name.truncate(21).capitalize %></span>
+  <span><%= parking.user.identifier %></span>
+
+</div>
+<div class="lot-info">
+  <div class="lot-name">
+  <p><%= parking.size %></p>
     <div class="lot-rating">
       <ul class= "list-inline lot-stars">
        <li>
@@ -27,9 +33,7 @@
       </li>
     </ul>
   </div>
-</div>
-<div class="lot-info">
-  <span><%= parking.size %></span>
+  </div>
   <div class="popup-features">
     <ul class= "list-inline lot-features popup-mgn">
       <% @features.each do |feature| %>

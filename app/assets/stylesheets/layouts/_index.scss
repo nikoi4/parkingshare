@@ -32,3 +32,12 @@ input:focus {
 input:active {
   outline: none;
 }
+
+.left {
+    -ms-overflow-style: none;  // IE 10+
+    overflow: -moz-scrollbars-none;  // Firefox
+}
+
+.left::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+}
