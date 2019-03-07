@@ -35,8 +35,11 @@
             </div>
           </div>
           <div class="message-action">
-            <%= link_to do %>
-            <i class="far fa-comments">Chat</i>
+            <%= link_to booking_path(booking) do %>
+            <i class="far fa-circle message-border-i"><span>Go to Booking</span></i>
+            <% end %>
+            <%= link_to booking_path(booking) do %>
+            <i class="far fa-comments message-border-i"><span>Chat</span></i>
             <% end %>
           </div>
         </div>
