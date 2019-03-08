@@ -26,6 +26,9 @@ $(document).ready(() => {
     encrypted: true
   });
 
+  const chatChannel = pusher.subscribe('chat');
+  const bookingChannel = pusher.subscribe('booking');
+
   const notification = data => {
     chatBtn = document.getElementById(`chat-booking-${data.booking_id}`);
     if (chatBtn) {
@@ -33,18 +36,24 @@ $(document).ready(() => {
     }
   };
 
-  const channel = pusher.subscribe('chat');
-
   let booking_id = $('.chat-box').data("booking_id")
   let current_user = $('.chat-box').data("current_user")
 
-  channel.bind('new', function(data) {
+  chatChannel.bind('new', function(data) {
     notification(data);
     let sender = data.user_id == current_user ? "me" : "him"
     if (data.booking_id == booking_id) {
       updateChat(data, sender);
       let chatBox = document.querySelector('.chat-box');
       chatBox.scrollTop = chatBox.scrollHeight - chatBox.clientHeight;
+    }
+  });
+
+  bookingChannel.bind('new', function(data) {
+    const bookingAmount = document.getElementById("booking-amount")
+    if (bookingAmount && data.parking_owner_id == bookingAmount.dataset.current_user_id) {
+      bookingAmount.innerHTML = data.booking_amount
+      bookingAmount.style.backgroundColor = "red"
     }
   });
 });
