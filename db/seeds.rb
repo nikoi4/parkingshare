@@ -46,20 +46,20 @@ user_attributes = [
     email:         'user@parking.com',
     password:      '12345678',
     first_name:    'Seba',
-    last_name:     'Buffo Sempe',
-    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1551962122/icons/46222774.jpg'
+    last_name:     'BuffoSempe',
+    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1552062097/icons/seba.jpg'
   },
   {
     email:         'owner1@parking.com',
     password:      '12345678',
-    first_name:     'Nico',
+    first_name:    'Nico',
     last_name:     'Caif',
     image:         'https://res.cloudinary.com/nikoi4/image/upload/v1551962131/icons/45802152.jpg'
   },
   {
     email:         'owner3@parking.com',
     password:      '12345678',
-    first_name:     'Samuel',
+    first_name:    'Samuel',
     last_name:     'Levy',
     image:         'https://res.cloudinary.com/nikoi4/image/upload/v1552062299/icons/sam.jpg'
   },
@@ -69,6 +69,13 @@ user_attributes = [
     first_name:    'Charly',
     last_name:     'Garcia',
     image:         'https://res.cloudinary.com/nikoi4/image/upload/v1552010000/icons/charly.jpg_423682103-2.jpg'
+  },
+  {
+    email:         'user2@parking.com',
+    password:      '12345678',
+    first_name:    'Boris',
+    last_name:     'Paillard',
+    image:         'https://pbs.twimg.com/profile_images/990936890726670336/gApnSP5j_400x400.jpg'
   },
 ]
 
@@ -81,7 +88,9 @@ User.create!(user_attributes)
 owner = User.all[0]
 user = User.all[1]
 owner1 = User.all[2]
-user1 = User.all[3]
+owner3 = User.all[3]
+user1 = User.all[4]
+user2 = User.all[5]
 
 #-----------------------------------------------------------
 
@@ -142,7 +151,7 @@ parking_attributes = [
     description:  'Parking spot in apartment building 2 mins walk from Kansas',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
-    user:         owner1,
+    user:         owner3,
   },
     {
     name:         "Claire appt 14b",
@@ -174,7 +183,7 @@ parking_attributes = [
     description:  'Reasonable space, not suitable for larger vehicles e.g. vans and minibuses',
     size:         "Small Car",
     price_cents:  rand(40..90),
-    user:         owner,
+    user:         owner3,
   },
     {
     name:         "Cris'Residential Garage",
@@ -214,7 +223,7 @@ parking_attributes = [
     description:  'There are great connections to city center',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
-    user:         owner,
+    user:         owner3,
   },
     {
     name:         "Lionel's Parking Garage",
@@ -375,7 +384,7 @@ booking_attributes = [
     car_plate: 'AC 826 KF',
     start_date:'19/02/22',
     end_date:  '19/02/23',
-    user: user,
+    user: user2,
     price_cents: (24 * rand(40..90)).to_s
   },
   {
@@ -391,7 +400,7 @@ booking_attributes = [
     car_plate: 'AC 826 KF',
     start_date:'19/02/26',
     end_date:  '19/02/27',
-    user: user1,
+    user: user,
     price_cents: (24 * rand(40..90)).to_s
   },
   {
@@ -442,10 +451,40 @@ reviews_attributes = [
     rating:       4,
     date:         '19/03/05',
   },
+  {
+    content:      'The space was ok, but it was dirty',
+    rating:       3,
+    date:         '19/03/05',
+  },
+    {
+    content:      'Everything was great',
+    rating:       5,
+    date:         '19/03/05',
+  },
+    {
+    content:      'The space was ok, but it was dirty',
+    rating:       3,
+    date:         '19/03/05',
+  },
+    {
+    content:      'The owner was very kind and helpful',
+    rating:       5,
+    date:         '19/03/05',
+  },
+  {
+    content:      'Easy to park, close to stores',
+    rating:       5,
+    date:         '19/03/05',
+  },
+  {
+    content:      'Good location close to town.',
+    rating:       4,
+    date:         '19/03/03',
+  },
 ]
 
 Booking.all.each do |booking|
-  booking.reviews.create!(reviews_attributes[rand(0..4)])
+  booking.reviews.create!(reviews_attributes[rand(0..10)])
 end
 
 
