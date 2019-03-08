@@ -7,7 +7,7 @@
 
     </div>
     <div class="booking-name">
-      <span><%= @parking.name.truncate(21) %></span>
+      <span><%= @parking.name.capitalize.truncate(27) %></span>
       <div class="booking-rating">
         <span><%= @parking.user.identifier %></span>
       </div>
@@ -62,9 +62,8 @@
           </div>
           <div class="booking-checkout">
             <table style="width:100%">
-               <tr class="checkout-dates " colspan="3">
-                <td class="checkout-mar"> <span>Booking number : <%= @booking.id %></span>
-                  </td>
+               <tr class="checkout-dates" colspan="3">
+                <td class="checkout-mar"> <span>Booking: <%= @booking.id %></span></td>
               </tr>
               <tr class="chekout-header">
                 <th>Arriving on:</th>
