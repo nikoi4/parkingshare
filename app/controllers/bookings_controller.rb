@@ -58,6 +58,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.status = "approved"
     if @booking.save
+      transaction_notify_pusher(@booking)
       respond_to do |format|
         format.html { redirect_to @booking }
         format.js
@@ -75,6 +76,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.status = "declined"
     if @booking.save
+      transaction_notify_pusher(@booking)
       respond_to do |format|
         format.html { redirect_to @booking }
         format.js
@@ -88,6 +90,10 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def transaction_notify_pusher(booking)
+    Pusher.trigger('booking', 'transaction', booking.as_json)
+  end
 
   def booking_params
     params.require(:booking).permit(:car_plate, :start_date, :end_date, :price_cents, :phone_number)
