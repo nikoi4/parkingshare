@@ -106,7 +106,7 @@ parking_attributes = [
     user:         owner3,
   },
   {
-    name:         "Greg's Driveway",
+    name:         "Greg's Parking",
     address:      'Thames 2138, Buenos Aires',
     description:  'Secure car parking space in Palermo',
     size:         Parking::SIZE_CAR.sample,
