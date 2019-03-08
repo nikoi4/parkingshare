@@ -53,8 +53,8 @@ end
   end
 
 def identifierfull
-  if (first_name && last_name).nil?
-    email
+  if (last_name).nil?
+    first_name.capitalize
   else
     return "#{first_name.capitalize} #{last_name.capitalize}"
   end
