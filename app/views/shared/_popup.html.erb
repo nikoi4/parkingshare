@@ -111,11 +111,8 @@
   </div>
   <div class="lot-reviews">
     <span class="lot-category">Reviews</span>
-      <% parking.bookings.each do |booking| %>
-        <% if !booking.reviews.last.nil? %>
-          <%= render "shared/review", booking: booking %>
-        <% else %>
-        <% end %>
+      <% parking.reviews.first(5).each do |review| %>
+        <%= render "shared/review", review: review %>
       <% end %>
     <div class="lot-review-link">
       <a class="link-more" href="">Read More Reviews</a>
