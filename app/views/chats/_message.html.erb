@@ -1,7 +1,7 @@
 <div class="chat-bubble-wrapper">
   <% sender = chat.user == current_user ? "me" : "him" %>
   <div class="chat-bubble <%= sender %>">
-    <div class="chat-username"><%= chat.user.identifierfull %></div>
+    <div class="chat-username"><%= chat.user.identifierfull.capitalize %></div>
     <div class="chat-message"><%= chat.message %></div>
   </div>
 
