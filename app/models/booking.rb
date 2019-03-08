@@ -10,8 +10,13 @@ class Booking < ApplicationRecord
   validates :end_date, presence: true
 
   after_initialize :set_defaults
+  after_create :notify_pusher, on: :create
 
   private
+
+  def notify_pusher
+    Pusher.trigger('booking', 'new', {parking_owner_id: self.parking.user.id, booking_amount: self.parking.user.owned_bookings.count}.as_json)
+  end
 
   def set_defaults
     self.status = "Pending" if self.new_record?
