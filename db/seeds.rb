@@ -106,7 +106,7 @@ parking_attributes = [
     user:         owner3,
   },
   {
-    name:         "Greg's Driveway",
+    name:         "Greg's Parking",
     address:      'Thames 2138, Buenos Aires',
     description:  'Secure car parking space in Palermo',
     size:         Parking::SIZE_CAR.sample,
@@ -156,10 +156,10 @@ parking_attributes = [
     {
     name:         "Claire appt 14b",
     address:      'Thames 2038, Buenos Aires',
-    description:  'Parking space in front of house. Off road',
+    description:  'Parking space at building 2nd floor',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
-    user:         user3,
+    user:         owner3,
   },
     {
     name:         "Alfie's Place",
