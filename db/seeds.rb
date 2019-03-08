@@ -59,9 +59,9 @@ user_attributes = [
   {
     email:         'owner3@parking.com',
     password:      '12345678',
-    first_name:    'Samuel',
-    last_name:     'Levy',
-    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1552062299/icons/sam.jpg'
+    first_name:    'Boris',
+    last_name:     'Paillard',
+    image:         'https://pbs.twimg.com/profile_images/990936890726670336/gApnSP5j_400x400.jpg'
   },
   {
     email:         'user1@parking.com',
@@ -73,9 +73,9 @@ user_attributes = [
   {
     email:         'user2@parking.com',
     password:      '12345678',
-    first_name:    'Boris',
-    last_name:     'Paillard',
-    image:         'https://pbs.twimg.com/profile_images/990936890726670336/gApnSP5j_400x400.jpg'
+    first_name:    'Samuel',
+    last_name:     'Levy',
+    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1552062299/icons/sam.jpg'
   },
 ]
 
@@ -103,7 +103,7 @@ parking_attributes = [
     description:  'Centrally located spot only minutes from Old Street station',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
-    user:         owner,
+    user:         owner3,
   },
   {
     name:         "Greg's Driveway",
@@ -111,7 +111,7 @@ parking_attributes = [
     description:  'Secure car parking space in Palermo',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
-    user:         owner1,
+    user:         owner3,
   },
     {
     name:         "Rodri's Parking Garage",
@@ -139,7 +139,7 @@ parking_attributes = [
   },
     {
     name:         "Mike' Garage Space",
-    address:      'Malabia 1500, Buenos Aires',
+    address:      'Malabia 1000, Buenos Aires',
     description:  'Space in a small fenced car park at the front of a residential building',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
@@ -159,7 +159,7 @@ parking_attributes = [
     description:  'Parking space in front of house. Off road',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
-    user:         user,
+    user:         user3,
   },
     {
     name:         "Alfie's Place",
@@ -202,12 +202,12 @@ parking_attributes = [
     user:         owner,
   },
     {
-    name:         "Meli's Lot",
+    name:         "Cochera 25b",
     address:      'San Martin de Tours 2908, Buenos Aires',
     description:  'Perfectly located for those driving into city center looking to avoid congestion',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
-    user:         owner,
+    user:         owner3,
   },
     {
     name:         "Elizabeth - Parking Lot",
@@ -239,7 +239,7 @@ parking_attributes = [
     description:  'Space in my back garden, 15 minutes walk from Alto Palermo',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
-    user:         owner,
+    user:         owner3,
   },
     {
     name:         "D1eg0's Lot",
@@ -255,7 +255,7 @@ parking_attributes = [
     description:  'Right in the heart of Palermo',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
-    user:         owner,
+    user:         owner3,
   },
 ]
 
