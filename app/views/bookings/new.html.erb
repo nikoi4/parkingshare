@@ -16,15 +16,15 @@
           <ul class= "list-inline booking-stars">
             <li>
               <% if @parking.reviews.empty? %>
-              <% 5.times do %>
-              <i class="fas fa-star not-rated"></i>
-              <% end %>
+                <% 5.times do %>
+                  <i class="fas fa-star not-rated"></i>
+                <% end %>
               <% else %>
-              <% @parking.rating.times do %>
-              <i class="fas fa-star rated"></i>
+                <% (@parking.reviews.map{|review| review.rating}.sum.to_f / @parking.reviews.size).round.times do %>
+                <i class="fas fa-star rated"></i>
               <% end %>
-              <% (5 - @parking.rating).times do %>
-              <i class="fas fa-star not-rated"></i>
+                <% (5 - (@parking.reviews.map{|review| review.rating}.sum.to_f / @parking.reviews.size).round).times do %>
+                <i class="fas fa-star not-rated"></i>
               <% end %>
               <% end %>
             </li>

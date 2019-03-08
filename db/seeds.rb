@@ -61,7 +61,7 @@ user_attributes = [
     password:      '12345678',
     first_name:    'Charly',
     last_name:     'Garcia',
-    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1551961442/icons/gnr_prf.png'
+    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1552010000/icons/charly.jpg_423682103-2.jpg'
   },
 ]
 
@@ -331,7 +331,7 @@ Parking.all.each_with_index do |parking, index|
   pic2.save!
 end
 
-#-----------------------------------------------------------
+#------------------------------------------------------(24 * rand(40..90)).to_s
 
 puts 'Creating Parking Lot Features'
 
@@ -361,39 +361,39 @@ booking_attributes = [
     start_date:'19/02/20',
     end_date:  '19/02/21',
     user: user,
-    price_cents: '250'
+    price_cents: (24 * rand(40..90)).to_s
   },
   {
-    status:    'pending',
+    status:    'approved',
     car_plate: 'AC 826 KF',
     start_date:'19/02/22',
     end_date:  '19/02/23',
     user: user,
-    price_cents: '400'
+    price_cents: (24 * rand(40..90)).to_s
   },
   {
-    status:    'pending',
+    status:    'approved',
     car_plate: 'AC 826 KF',
     start_date:'19/02/21',
     end_date:  '19/02/22',
     user: user1,
-    price_cents: '400'
+    price_cents: (24 * rand(40..90)).to_s
   },
   {
-    status:    'pending',
+    status:    'approved',
     car_plate: 'AC 826 KF',
     start_date:'19/02/26',
     end_date:  '19/02/27',
     user: user1,
-    price_cents: '400'
+    price_cents: (24 * rand(40..90)).to_s
   },
   {
-    status:    'pending',
+    status:    'approved',
     car_plate: 'AC 826 KF',
     start_date:'19/02/18',
     end_date:  '19/02/19',
     user: user1,
-    price_cents: '400'
+    price_cents: (24 * rand(40..90)).to_s
   },
 ]
 
@@ -401,39 +401,46 @@ Parking.all.each do |parking|
   parking.bookings.create!(booking_attributes)
 end
 
+Booking.all.each do |booking|
+  booking.status = 'approved'
+  booking.save!
+end
+
 #-----------------------------------------------------------
 
 puts 'Creating reviews...'
 reviews_attributes = [
   {
-    content:      'Horrible place, would not recommend at all',
-    rating:       1,
-    date:         '20/02/19',
+    content:      'Nice place, but not such a nice experience',
+    rating:       3,
+    date:         '19/03/01',
   },
   {
-    content:      'Convenient,close to centre,safe,hassle free parking.',
-    rating:       4,
-    date:         '28/02/19',
+    content:      'Convenient, close to centre, safe, hassle free parking.',
+    rating:       3,
+    date:         '19/03/02',
   },
   {
     content:      'Easy to find and good location close to town.',
     rating:       4,
-    date:         '28/02/19',
+    date:         '19/03/03',
   },
   {
     content:      'Brilliant, safe space, easy to park, near station, helpful people.',
     rating:       5,
-    date:         '28/02/19',
+    date:         '19/03/04',
   },
   {
-    content:      'Muy buena cochera, dueño muy atento y pendiente',
+    content:      'Great location, easy to park, close to stores',
     rating:       4,
-    date:         '28/02/19',
+    date:         '19/03/05',
   },
 ]
 
 Booking.all.each do |booking|
-  booking.reviews.create!(reviews_attributes)
+  booking.reviews.create!(reviews_attributes[rand(0..4)])
 end
+
+
 
 puts "finished seeding"
