@@ -38,16 +38,16 @@ user_attributes = [
   {
     email:         'owner@parking.com',
     password:      '12345678',
-    first_name:    'Meli',
-    last_name:     'Fernandez Sassone',
-    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1551962122/icons/46222774.jpg'
+    first_name:    'Rodrigo',
+    last_name:     'Cabral',
+    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1551962124/icons/41546766.jpg'
   },
   {
     email:         'user@parking.com',
     password:      '12345678',
-    first_name:    'Rodrigo',
-    last_name:     'Cabral',
-    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1551962124/icons/41546766.jpg'
+    first_name:    'Seba',
+    last_name:     'Buffo Sempe',
+    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1551962122/icons/46222774.jpg'
   },
   {
     email:         'owner1@parking.com',
@@ -55,6 +55,13 @@ user_attributes = [
     first_name:     'Nico',
     last_name:     'Caif',
     image:         'https://res.cloudinary.com/nikoi4/image/upload/v1551962131/icons/45802152.jpg'
+  },
+  {
+    email:         'owner3@parking.com',
+    password:      '12345678',
+    first_name:     'Samuel',
+    last_name:     'Levy',
+    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1552062299/icons/sam.jpg'
   },
   {
     email:         'user1@parking.com',
@@ -103,7 +110,7 @@ parking_attributes = [
     description:  'Ideally located - only a 2-3 minute walk to UBA Med School',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
-    user:         owner,
+    user:         owner1,
   },
     {
     name:         "Bill's Garage",
@@ -135,20 +142,20 @@ parking_attributes = [
     description:  'Parking spot in apartment building 2 mins walk from Kansas',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
-    user:         owner,
+    user:         owner1,
   },
     {
-    name:         "Claire Parking Lot",
+    name:         "Claire appt 14b",
     address:      'Thames 2038, Buenos Aires',
     description:  'Parking space in front of house. Off road',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
-    user:         owner,
+    user:         user,
   },
     {
     name:         "Alfie's Place",
     address:      'Juramento 1000, Buenos Aires',
-    description:  '***NEW LISTING******NEW LISTING******NEW LISTING***',
+    description:  '****** NEW LISTING *******',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
     user:         owner,
@@ -159,7 +166,7 @@ parking_attributes = [
     description:  'Safe parking space available just for you',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
-    user:         owner,
+    user:         owner1,
   },
     {
     name:         "Connie's Parking Place",
