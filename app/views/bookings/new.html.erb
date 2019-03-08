@@ -6,7 +6,7 @@
         <%= image_tag @parking.user.image, alt: "avatar-bordered", class:"avatar-large" %>
       </div>
       <div class="booking-name">
-        <span><%= @parking.name.truncate(21) %></span>
+        <span><%= @parking.name.capitalize.truncate(27) %></span>
         <div class="booking-rating">
         <span><%= @parking.user.identifier %></span>
         </div>
@@ -126,7 +126,7 @@
           <div class="booking-cta">
             <a class="" href="" style="text-decoration: none;">
               <div class="vertical-align-items">
-                <input type="submit" name="commit" value="Create Booking" label="Book now | <%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil * @parking.price_cents.to_i %>" class="btn btn-meli-square-small disabled" data-disable-with="Create Booking" disabled="disabled" id="payment">
+                <input type="submit" name="commit" value="Pay & Reserve" label="Book now | <%= ((@booking.end_date.to_datetime - @booking.start_date.to_datetime).to_f * 24).ceil * @parking.price_cents.to_i %>" class="btn btn-meli-square-small disabled" data-disable-with="Create Booking" disabled="disabled" id="payment">
 
                 <div style="display: none;">
                   <form action="/parkings/<%= @parking.id %>/bookings" method="POST">
