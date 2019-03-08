@@ -38,16 +38,16 @@ user_attributes = [
   {
     email:         'owner@parking.com',
     password:      '12345678',
-    first_name:    'Meli',
-    last_name:     'Fernandez Sassone',
-    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1551962122/icons/46222774.jpg'
+    first_name:    'Rodrigo',
+    last_name:     'Cabral',
+    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1551962124/icons/41546766.jpg'
   },
   {
     email:         'user@parking.com',
     password:      '12345678',
-    first_name:    'Rodrigo',
-    last_name:     'Cabral',
-    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1551962124/icons/41546766.jpg'
+    first_name:    'Meli',
+    last_name:     'Fernandez Sassone',
+    image:         'https://res.cloudinary.com/nikoi4/image/upload/v1551962122/icons/46222774.jpg'
   },
   {
     email:         'owner1@parking.com',
@@ -138,17 +138,17 @@ parking_attributes = [
     user:         owner,
   },
     {
-    name:         "Claire Parking Lot",
+    name:         "Meli's appt 14b",
     address:      'Thames 2038, Buenos Aires',
     description:  'Parking space in front of house. Off road',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
-    user:         owner,
+    user:         user,
   },
     {
     name:         "Alfie's Place",
     address:      'Juramento 1000, Buenos Aires',
-    description:  '***NEW LISTING******NEW LISTING******NEW LISTING***',
+    description:  '****** NEW LISTING *******',
     size:         Parking::SIZE_CAR.sample,
     price_cents:  rand(40..90),
     user:         owner,
