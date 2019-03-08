@@ -46,20 +46,20 @@ user_attributes = [
     email:         'user@parking.com',
     password:      '12345678',
     first_name:    'Seba',
-    last_name:     'Buffo Sempe',
+    last_name:     'BuffoSempe',
     image:         'https://res.cloudinary.com/nikoi4/image/upload/v1552062097/icons/seba.jpg'
   },
   {
     email:         'owner1@parking.com',
     password:      '12345678',
-    first_name:     'Nico',
+    first_name:    'Nico',
     last_name:     'Caif',
     image:         'https://res.cloudinary.com/nikoi4/image/upload/v1551962131/icons/45802152.jpg'
   },
   {
     email:         'owner3@parking.com',
     password:      '12345678',
-    first_name:     'Samuel',
+    first_name:    'Samuel',
     last_name:     'Levy',
     image:         'https://res.cloudinary.com/nikoi4/image/upload/v1552062299/icons/sam.jpg'
   },
@@ -451,10 +451,40 @@ reviews_attributes = [
     rating:       4,
     date:         '19/03/05',
   },
+  {
+    content:      'The space was ok, but it was dirty',
+    rating:       3,
+    date:         '19/03/05',
+  },
+    {
+    content:      'Everything was great',
+    rating:       5,
+    date:         '19/03/05',
+  },
+    {
+    content:      'The space was ok, but it was dirty',
+    rating:       3,
+    date:         '19/03/05',
+  },
+    {
+    content:      'The owner was very kind and helpful',
+    rating:       5,
+    date:         '19/03/05',
+  },
+  {
+    content:      'Easy to park, close to stores',
+    rating:       5,
+    date:         '19/03/05',
+  },
+  {
+    content:      'Good location close to town.',
+    rating:       4,
+    date:         '19/03/03',
+  },
 ]
 
 Booking.all.each do |booking|
-  booking.reviews.create!(reviews_attributes[rand(0..4)])
+  booking.reviews.create!(reviews_attributes[rand(0..10)])
 end
 
 
