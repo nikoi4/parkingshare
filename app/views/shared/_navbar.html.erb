@@ -30,7 +30,11 @@
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <span data-toggle="dropdown"><%= image_tag current_user.image, width:"40px", class:"avatar" %></span>
+        <% if  current_user.image.nil? %>
+          <span data-toggle="dropdown"><%= image_tag 'https://res.cloudinary.com/nikoi4/image/upload/v1551961442/icons/gnr_prf.png', width:"40px", class:"avatar" %></span>
+        <% else %>
+          <span data-toggle="dropdown"><%= image_tag current_user.image, width:"40px", class:"avatar" %></span>
+        <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to "#" do %>
