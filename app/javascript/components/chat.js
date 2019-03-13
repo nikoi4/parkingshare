@@ -1,8 +1,9 @@
+const dateFormat = require('dateformat');
 $(document).ready(() => {
 
   const updateChat = (data, sender) => {
     const formatDate = (date) => {
-      return `${date.getDay()}-${date.getMonth()}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
+      return `${date.getMonth()+1}-${date.getDate()}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
     };
 
     $('.chat-box').append(`
@@ -12,7 +13,7 @@ $(document).ready(() => {
           <div class="chat-message">${data.message}</div>
         </div>
 
-        <div class="chat-timestamp  ${sender}">${formatDate(new Date(data.created_at))}</div>
+        <div class="chat-timestamp  ${sender}">${dateFormat((new Date(data.created_at)), 'mm-dd-yyyy HH:MM')}</div>
       </div>
     `);
   };
@@ -35,7 +36,7 @@ $(document).ready(() => {
       chatBtn.innerHTML = "(You have new messages)";
     }
   };
-  
+
   const buildBookingStatus = booking => {
     if (booking.status == 'approved') {
       return (`
