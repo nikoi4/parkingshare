@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :searches
   has_many :chats
 
+  before_create :set_defaults
+
 def self.from_omniauth(auth)
   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
     user.email = auth.info.email
@@ -40,7 +42,6 @@ end
         bookings << booking
       end
     end
-
     return bookings
   end
 
@@ -52,11 +53,17 @@ end
     end
   end
 
-def identifierfull
-  if (last_name).nil?
-    first_name.capitalize
-  else
-    return "#{first_name.capitalize} #{last_name.capitalize}"
+  def identifierfull
+    if (last_name).nil?
+      first_name.capitalize
+    else
+      return "#{first_name.capitalize} #{last_name.capitalize}"
+    end
   end
-end
+
+  private
+
+  def set_defaults
+    self.image = 'https://res.cloudinary.com/nikoi4/image/upload/v1551961442/icons/gnr_prf.png'
+  end
 end
