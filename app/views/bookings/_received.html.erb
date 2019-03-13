@@ -3,7 +3,7 @@
     <div class="bookings-board">
       <% @owned_bookings.each do |booking| %>
      <div class="message">
-         <%= image_tag booking.user.image, alt: "avatar-bordered", class:"avatar-large" %>
+        <%= image_tag booking.user.image, alt: "avatar-bordered", class:"avatar-large" %>
         <div class="message-name">
           <p><%= booking.start_date.strftime("%b-%d-%y")%></p>
           <h3><%= booking.user.identifierfull %></h3>
