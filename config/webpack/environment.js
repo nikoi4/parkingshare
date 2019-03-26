@@ -1,5 +1,4 @@
 const { environment } = require('@rails/webpacker')
-const customConfig = require('./custom')
 
 // Bootstrap 3 has a dependency over jQuery:
 const webpack = require('webpack');
@@ -10,7 +9,11 @@ environment.plugins.prepend('Provide',
   })
 );
 
-// Merge custom config
-environment.config.merge(customConfig)
+
+//DefinePlugin for webpack:
+
+new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
+});
 
 module.exports = environment
